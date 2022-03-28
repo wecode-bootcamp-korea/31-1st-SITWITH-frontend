@@ -1,0 +1,14 @@
+@charset "utf-8";
+@import './variables.scss';
+// 볼드
+.bold {
+  font-weight: 700;
+}
+// 그레이
+.gray {
+  color: #8e8e8e;
+}
+// 메인컬러 블루 (ex: 파란색)
+.mainBlue {
+  color: #0095f6;
+}
