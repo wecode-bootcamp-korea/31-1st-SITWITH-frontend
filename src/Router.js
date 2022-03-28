@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
 import Main from './pages/Main/Main';
+
 const Router = () => {
   return (
     <BrowserRouter>
