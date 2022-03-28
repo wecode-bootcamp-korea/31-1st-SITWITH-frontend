@@ -11,7 +11,10 @@ h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+  font-weight: bold;
+  line-height: 1.5em;
+}
 pre,
 code,
 form,
@@ -24,27 +27,8 @@ th,
 td,
 input,
 select,
-textarea,
-button {
-  margin: 0;
-  padding: 0;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: bold;
-  line-height: 1.5em;
-}
-fieldset,
 img,
-dl,
-ul,
-ol,
 menu,
-li,
 blockquote,
 q {
   quotes: none;
@@ -57,21 +41,13 @@ q:after {
   content: none;
 }
 input select,
-textarea,
-button,
-body,
-th,
-td,
-input,
-select,
-textarea,
 button {
   font-size: 14px;
   line-height: 1.5;
   font-family: 'Noto Sans KR', 'Malgun Gothic', '돋움', dotum, sans-serif;
   color: #333;
 }
-a a:active,
+a,
 address,
 caption,
 cite,
