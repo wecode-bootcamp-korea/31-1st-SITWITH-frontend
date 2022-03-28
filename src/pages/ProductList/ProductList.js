@@ -1,8 +1,8 @@
 import React from 'react';
 import 'Products.scss';
 
-const Products = () => {
-  return <div>Products</div>;
+const ProductList = () => {
+  return <div>ProductList</div>;
 };
 
-export default Products;
+export default ProductList;
