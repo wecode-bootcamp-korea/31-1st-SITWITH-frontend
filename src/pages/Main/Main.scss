@@ -5,10 +5,13 @@ li {
 }
 
 .main {
+  // 제품 섹션
   .section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .link-more {
+    }
   }
   .section-title {
     font-size: 24px;
@@ -23,7 +26,7 @@ li {
       justify-content: space-between;
       &.col-2 {
         .menu-item {
-          width: calc(50% - 20px);
+          width: calc(50% - 50px);
           &:nth-child(even) {
             .img-thumb {
               height: 800px;
@@ -38,7 +41,7 @@ li {
       }
       &.col-3 {
         .menu-item {
-          width: calc(33% - 20px);
+          width: calc(33% - 50px);
         }
         .img-thumb {
           height: 400px;

@@ -19,7 +19,7 @@ const Main = () => {
                 <img
                   className="img-thumb"
                   src="images/main/task_chair_1.jpeg"
-                  alt="이미지 썸네일"
+                  alt="제품이미지"
                 />
                 <h3 className="item-title">T80</h3>
                 <p className="item-desc">ULTIMATE CHAIR</p>
@@ -28,7 +28,7 @@ const Main = () => {
                 <img
                   className="img-thumb"
                   src="images/main/task_chair_2.jpeg"
-                  alt="이미지 썸네일"
+                  alt="제품이미지"
                 />
                 <h3 className="item-title">T50</h3>
                 <p className="item-desc">좋은 의자의 기본</p>
@@ -52,7 +52,7 @@ const Main = () => {
                 <img
                   className="img-thumb"
                   src="images/main/kids_chair_1.jpeg"
-                  alt="이미지 썸네일"
+                  alt="제품이미지"
                 />
                 <h3 className="item-title">molti</h3>
                 <p className="item-desc">앉음마부터 좋은 자세로</p>
@@ -61,7 +61,7 @@ const Main = () => {
                 <img
                   className="img-thumb"
                   src="images/main/kids_chair_2.jpeg"
-                  alt="이미지 썸네일"
+                  alt="제품이미지"
                 />
                 <h3 className="item-title">atti</h3>
                 <p className="item-desc">플레이 체어</p>
@@ -70,7 +70,7 @@ const Main = () => {
                 <img
                   className="img-thumb"
                   src="images/main/kids_chair_3.jpeg"
-                  alt="이미지 썸네일"
+                  alt="제품이미지"
                 />
                 <h3 className="item-title">ringo</h3>
                 <p className="item-desc">생각이 자라는 의자</p>
