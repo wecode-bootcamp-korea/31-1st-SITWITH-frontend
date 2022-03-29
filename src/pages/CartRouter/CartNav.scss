@@ -1,0 +1,43 @@
+.cart-nav {
+  width: 100%;
+  border-bottom: 1px solid #e6e6e6;
+
+  dl {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 115px 20px 20px 20px;
+    display: flex;
+
+    button {
+      height: 40px;
+      vertical-align: middle;
+      text-align: center;
+      color: #828282;
+      font-weight: bold;
+      margin: 0;
+      border: none;
+      background-color: inherit;
+      cursor: pointer;
+    }
+
+    dt button {
+      font-size: 15px;
+      padding: 0 0 0 15px;
+    }
+
+    dd {
+      button {
+        font-size: 12px;
+        padding: 10px;
+      }
+    }
+
+    .selected {
+      border: 1px solid #ee4130;
+    }
+
+    .selected button {
+      color: #ee4130;
+    }
+  }
+}

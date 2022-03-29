@@ -1,24 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './CartNav.scss';
 
 const CartNav = () => {
+  const [select, setSelect] = useState(true);
+
+  const handleSelect = () => {
+    setSelect(!select);
+  };
   return (
-    <div className="CartNav">
+    <div className="cart-nav">
       <dl>
         <dt>
           <Link to="/">
-            <span>HOME</span>
+            <button>HOME</button>
           </Link>
         </dt>
-        <dd>
+        <dd className={select ? 'selected' : ''} onClick={handleSelect}>
           <Link to="/cart">
-            <span>장바구니</span>
+            <button>장바구니</button>
           </Link>
         </dd>
-        <dd>
+        <dd className={select ? '' : 'selected'} onClick={handleSelect}>
           <Link to="/cart/compare">
-            <span>비교하기</span>
+            <button>비교하기</button>
           </Link>
         </dd>
       </dl>
