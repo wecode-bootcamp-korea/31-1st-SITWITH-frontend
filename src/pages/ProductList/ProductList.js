@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import './ProductList.scss';
 
 const ProductList = () => {
-  const [style, setStyle] = useState('');
-
   const priceList = [0, 10, 20, 30, 40];
 
   const category = [
