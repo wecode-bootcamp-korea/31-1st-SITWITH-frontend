@@ -5,13 +5,14 @@ const Main = () => {
   return (
     <main className="main">
       {/* carousel-seciton */}
-      <section className="carousel-section"></section>
       {/* taskchair-section */}
       <section className="product-section">
         <article className="section-inner">
           <div className="section-header">
             <h2 className="section-title">TASK CHAIR</h2>
-            <a className="link-more">ALL PRODUCTS</a>
+            <a className="link-more" href="#;">
+              ALL PRODUCTS
+            </a>
           </div>
           <div className="section-body">
             <ul className="menu-list col-2">
