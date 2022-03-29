@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "T40 side",
+    "category": "studying",
+    "color": "red"
+  },
+  {
+    "id": 2,
+    "name": "PRONARD",
+    "category": "office",
+    "color": "black"
+  },
+  {
+    "id": 3,
+    "name": "NOOI",
+    "category": "meeting",
+    "color": "pink"
+  },
+  {
+    "id": 4,
+    "name": "LoLLY",
+    "category": "studying",
+    "color": "red"
+  },
+  {
+    "id": 5,
+    "name": "T40 side",
+    "category": "interior",
+    "color": "green"
+  },
+  {
+    "id": 6,
+    "name": "atti",
+    "category": "studying",
+    "color": "red"
+  },
+  {
+    "id": 7,
+    "name": "CELIOS",
+    "category": "office",
+    "color": "blue"
+  },
+  {
+    "id": 8,
+    "name": "T50 AIR",
+    "category": "studying",
+    "color": "beige"
+  },
+  {
+    "id": 9,
+    "name": "T55",
+    "category": "office",
+    "color": "white"
+  },
+  {
+    "id": 10,
+    "name": "T50",
+    "category": "meeting",
+    "color": "yellow"
+  }
+]

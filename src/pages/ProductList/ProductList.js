@@ -1,7 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProductList.scss';
+import ProductListShow from './ProductListShow';
 
 const ProductList = () => {
+  const [chairs, setChairs] = useState([]);
+  const [usetSearchInput, setUserSearchInput] = useState('');
+
+  const handleUserSearch = event => {
+    setUserSearchInput(event.target.value);
+  };
+
+  useEffect(() => {
+    fetch('/data/productListData/productMockData.json')
+      .then(res => res.json())
+      .then(res => console.log(res));
+  }, []);
+
   const priceList = [0, 10, 20, 30, 40];
 
   const category = [
@@ -91,6 +105,10 @@ const ProductList = () => {
         </div>
         <div className="product-list"></div>
       </div>
+      <ProductListShow
+      // userSearch={handleUserSearch}
+      // searchProduct={searchProduct}
+      />
     </div>
   );
 };
