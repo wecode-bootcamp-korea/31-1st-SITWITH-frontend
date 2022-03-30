@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductCard from './ProductCard';
 import './ProductListShow.scss';
-import SearchBox from './searchBox';
+import SearchBox from './SearchBox';
 
 const ProductListShow = props => {
   return (

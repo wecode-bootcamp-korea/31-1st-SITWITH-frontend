@@ -1,5 +1,5 @@
 import React from 'react';
-import './searchBox.scss';
+import './SearchBox.scss';
 
 const SearchBox = props => {
   return (
