@@ -1,9 +1,128 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Cart.scss';
+import CartProduct from './CartProduct/CartProduct';
 
 const Cart = () => {
   const [cartList, setCartList] = useState([]);
+  const [checkList, setCheckList] = useState([]);
   const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    fetch('/data/data.json')
+      .then(res => res.json())
+      .then(data => {
+        setCartList(data.result);
+        let totalList = data.result.map(
+          product => product.quantity * product.price
+        );
+
+        let sum = 0;
+        for (let i of totalList) {
+          sum += i;
+        }
+        setTotal(sum);
+      });
+  }, []);
+
+  const checkAllHandler = e => {
+    if (e.target.checked) {
+      setCheckList(cartList.map(product => product.id));
+    } else {
+      setCheckList([]);
+    }
+  };
+  const checkHandler = (e, id) => {
+    if (e.target.checked) {
+      setCheckList([...checkList, id]);
+    } else {
+      setCheckList(checkList.filter(checkId => checkId !== id));
+    }
+  };
+  const deleteHandler = (e /*, id*/) => {
+    e.preventDefault();
+    fetch('/data/data.json').then(res => {
+      if (res.status === 200) {
+        fetch('/data/data2.json')
+          .then(res => res.json())
+          .then(data => {
+            setCartList(data.result);
+            let totalList = data.result.map(
+              product => product.quantity * product.price
+            );
+
+            let sum = 0;
+            for (let i of totalList) {
+              sum += i;
+            }
+            setTotal(sum);
+          });
+      }
+    });
+    //  APi 사용 때 수정
+    /*
+    fetch('http://주소/삭제/id', {
+      method: 'delete',
+      headers: {
+        Authorization: localStorage.getItem('Authorization'),
+      },
+    }).then(res => {
+      if (res.status === 204) {
+        fetch('http://주소/장바구니', {
+          headers: {
+            Authorization: localStorage.getItem('Authorization'),
+          },
+        })
+          .then(res.json())
+          .then(data => {
+            setCartList(data.result);
+            let totalList = data.result.map(
+              product => product.quantity * product.price
+            );
+
+            let sum = 0;
+            for (let i of totalList) {
+              sum += i;
+            }
+            setTotal(sum);
+          });
+      }
+    });
+    */
+  };
+  // APi 사용 때 수정
+  /*
+  const deleteCheckHandler = e => {
+    e.preventDefault();
+    fetch('http://주소/삭제', {
+      method: 'delete',
+      headers: {
+        Authorization: localStorage.getItem('Authorization'),
+      },
+      body: JSON.stringify({
+        cart_id: checkList,
+      }),
+    }).then(res => {
+      if (res.statusCode === 204) {
+        fetch('http://주소/장바구니', {
+          headers: {
+            Authorization: localStorage.getItem('Authorization'),
+          },
+        })
+          .then(res.json())
+          .then(data => {
+            setCartList(data.result);
+            let totalList = data.result.map(
+              product => product.quantity * product.price
+            );
+            let sum = 0;
+            for (let i of totalList) {
+              sum += i;
+            }
+            setTotal(sum);
+          });
+      }
+    });
+  };*/
   return (
     <div className="contents">
       <h1>장바구니</h1>
@@ -30,9 +149,13 @@ const Cart = () => {
             <thead>
               <tr>
                 <th className="width-50">
-                  <input type="checkbox" className="check-all" />
+                  <input
+                    type="checkbox"
+                    className="check-all"
+                    onChange={checkAllHandler}
+                  />
                 </th>
-                <th colSpan={2}>제품명</th>
+                <th colSpan={2}>제품정보</th>
                 <th className="width-100">색상</th>
                 <th className="width-90">판매가격</th>
                 <th className="width-80">수량</th>
@@ -43,24 +166,13 @@ const Cart = () => {
             {cartList.length !== 0 ? (
               <tbody>
                 {cartList.map(product => (
-                  <tr key={product.id}>
-                    <td>
-                      <input type="checkbox" className="check-{product.id}" />
-                    </td>
-                    <td className="tct wide-100">
-                      <div className="product-img">
-                        <img
-                          src="/img/credit-card"
-                          alt="상품이미지{product.id}"
-                        />
-                      </div>
-                    </td>
-                    <td>
-                      <p>{product.name}</p>
-                    </td>
-                    <td>{product.color}</td>
-                    <td>{product.price}</td>
-                  </tr>
+                  <CartProduct
+                    key={product.id}
+                    product={product}
+                    checkList={checkList}
+                    checkHandler={checkHandler}
+                    deleteHandler={deleteHandler}
+                  />
                 ))}
               </tbody>
             ) : (

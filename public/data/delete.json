@@ -1,0 +1,12 @@
+{
+  "result": [
+    {
+      "id": 1,
+      "name": "홍길동",
+      "price": 10000,
+      "color": "black",
+      "img": "/images/sample.jpg",
+      "quantity": 4
+    }
+  ]
+}

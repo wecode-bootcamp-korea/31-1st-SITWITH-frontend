@@ -59,6 +59,13 @@
   }
   .tct {
     text-align: center;
+    border-bottom: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+  }
+  .trt {
+    text-align: right;
+    border-bottom: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
   }
   .input-cart {
     margin-top: 20px;
@@ -97,8 +104,6 @@
           display: table-header-group;
           vertical-align: middle;
           border-color: inherit;
-        }
-        tbody {
         }
         tfoot {
           display: table-footer-group;
