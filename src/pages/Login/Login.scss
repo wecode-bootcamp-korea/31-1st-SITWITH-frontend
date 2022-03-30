@@ -1,9 +1,17 @@
 .login {
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
+
   .login-title {
     color: gray;
   }
 
   .bar {
+    height: 15px;
+    border-left: 1px solid #b5b5b5;
+    border-right: 1px solid #b5b5b5;
+
     p {
       border-bottom: 1px solid #b5b5b5;
       height: 4px;
@@ -13,8 +21,63 @@
 
   .member-login {
     .member-login-title {
-      font-size: large;
+      text-align: center;
+      height: 25px;
+      font-size: 20px;
       color: gray;
+    }
+  }
+
+  .login-container {
+    .login-table {
+      border: 1px solid #d1d1d1;
+
+      .table-box {
+        height: 200px;
+
+        .id-box {
+          .id-title {
+            text-align: left;
+            color: gray;
+            padding: 15px;
+            font-size: small;
+            border-right: 1px solid #d1d1d1;
+            border-bottom: 1px solid #d1d1d1;
+          }
+
+          td {
+            border-bottom: 1px solid #d1d1d1;
+            padding: 15px;
+
+            input {
+              line-height: 25px;
+              width: 30%;
+              border: 1px solid gray;
+            }
+          }
+        }
+        .pw-box {
+          .pw-title {
+            text-align: left;
+            color: gray;
+            padding: 15px;
+            font-size: small;
+            border-right: 1px solid #d1d1d1;
+            border-bottom: 1px solid #d1d1d1;
+          }
+
+          td {
+            padding: 15px;
+            border-bottom: 1px solid #d1d1d1;
+
+            input {
+              border: 1px solid gray;
+              line-height: 25px;
+              width: 30%;
+            }
+          }
+        }
+      }
     }
   }
 }
