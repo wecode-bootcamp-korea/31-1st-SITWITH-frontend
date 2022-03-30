@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import Cart from './Cart/Cart';
 import Compare from './Compare/Compare';
 import CartNav from './CartNav';
-import './CartRouter.scss';
 
 const CartRouter = () => {
   return (

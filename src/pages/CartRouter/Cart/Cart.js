@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Cart.scss';
 import CartProduct from './CartProduct/CartProduct';
 
@@ -200,7 +201,9 @@ const Cart = () => {
       <div className="button-list">
         <ul>
           <li>
-            <button>계속쇼핑하기</button>
+            <Link to="/">
+              <button>계속쇼핑하기</button>
+            </Link>
           </li>
           <li>
             <button>선택상품 삭제하기</button>
