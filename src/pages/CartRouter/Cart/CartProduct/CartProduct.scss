@@ -15,10 +15,12 @@ tr {
       margin: 0 auto;
     }
   }
+
   .product-name {
     border-bottom: 1px solid #d1d1d1;
     border-right: 1px solid #d1d1d1;
   }
+
   button {
     background-color: inherit;
     border: none;
@@ -28,11 +30,13 @@ tr {
     padding: 0;
     cursor: pointer;
   }
+
   .count p {
     font-weight: bold;
     font-size: 20px;
     margin-top: 15px;
   }
+
   .btn-list {
     button {
       border-radius: 5px;
@@ -42,6 +46,7 @@ tr {
       font-size: 12px;
       padding: 5px;
     }
+
     .order-btn {
       background-color: #ef4130;
       margin-bottom: 3px;

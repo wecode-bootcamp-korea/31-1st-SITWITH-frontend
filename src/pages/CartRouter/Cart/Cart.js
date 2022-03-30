@@ -8,20 +8,24 @@ const Cart = () => {
   const [checkList, setCheckList] = useState([]);
   const [total, setTotal] = useState(0);
 
+  const sum = data => {
+    let totalList = data.result.map(
+      product => product.quantity * product.price
+    );
+
+    let sum = 0;
+    for (let i of totalList) {
+      sum += i;
+    }
+    setTotal(sum);
+  };
+
   useEffect(() => {
     fetch('/data/data.json')
       .then(res => res.json())
       .then(data => {
         setCartList(data.result);
-        let totalList = data.result.map(
-          product => product.quantity * product.price
-        );
-
-        let sum = 0;
-        for (let i of totalList) {
-          sum += i;
-        }
-        setTotal(sum);
+        sum(data);
       });
   }, []);
 
@@ -47,15 +51,7 @@ const Cart = () => {
           .then(res => res.json())
           .then(data => {
             setCartList(data.result);
-            let totalList = data.result.map(
-              product => product.quantity * product.price
-            );
-
-            let sum = 0;
-            for (let i of totalList) {
-              sum += i;
-            }
-            setTotal(sum);
+            sum(data);
           });
       }
     });
@@ -76,15 +72,7 @@ const Cart = () => {
           .then(res.json())
           .then(data => {
             setCartList(data.result);
-            let totalList = data.result.map(
-              product => product.quantity * product.price
-            );
-
-            let sum = 0;
-            for (let i of totalList) {
-              sum += i;
-            }
-            setTotal(sum);
+            sum(data);
           });
       }
     });
@@ -112,14 +100,7 @@ const Cart = () => {
           .then(res.json())
           .then(data => {
             setCartList(data.result);
-            let totalList = data.result.map(
-              product => product.quantity * product.price
-            );
-            let sum = 0;
-            for (let i of totalList) {
-              sum += i;
-            }
-            setTotal(sum);
+            sum(data);
           });
       }
     });
@@ -192,7 +173,9 @@ const Cart = () => {
                   &nbsp;
                 </th>
                 <th className="tct">총 결제금액</th>
-                <th className="tct">{total}원</th>
+                <th className="tct">
+                  {total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원
+                </th>
               </tr>
             </tfoot>
           </table>

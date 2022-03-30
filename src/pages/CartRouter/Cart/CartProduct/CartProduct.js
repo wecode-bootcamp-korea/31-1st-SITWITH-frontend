@@ -36,7 +36,9 @@ const CartProduct = ({ product, checkList, checkHandler, deleteHandler }) => {
         <p>{name}</p>
       </td>
       <td className="tct">{color}</td>
-      <td className="trt">{price}</td>
+      <td className="trt">
+        {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+      </td>
       <td className="tct count">
         <button onClick={decrease}>
           <p>-</p>
@@ -46,7 +48,9 @@ const CartProduct = ({ product, checkList, checkHandler, deleteHandler }) => {
           <p>+</p>
         </button>
       </td>
-      <td className="trt">{quantity * price}</td>
+      <td className="trt">
+        {(quantity * price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+      </td>
       <td className="tct btn-list">
         <button className="order-btn">주문하기</button>
         <button onClick={e => deleteHandler(e, id)}>삭제</button>
