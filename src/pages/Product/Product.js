@@ -9,7 +9,7 @@ const Product = () => {
           <img
             className="product-image"
             alt="product-image"
-            src="/images/product-image/unsplash-chair-image-1.jpg"
+            src="/images/product/unsplash-chair-image-1.jpg"
           />
         </div>
         <div className="product-order-information">
@@ -53,40 +53,47 @@ const Product = () => {
             <img
               className="produdct-image"
               alt="product-image"
-              src="/images/product-image/unsplash-chair-image-1.jpg"
+              src="/images/product/unsplash-chair-image-1.jpg"
             />
           </li>
           <li>
             <img
               className="produdct-image"
               alt="product-image"
-              src="/images/product-image/unsplash-chair-image-1.jpg"
+              src="/images/product/unsplash-chair-image-1.jpg"
             />
           </li>
           <li>
             <img
               className="produdct-image"
               alt="product-image"
-              src="/images/product-image/unsplash-chair-image-1.jpg"
+              src="/images/product/unsplash-chair-image-1.jpg"
             />
           </li>
           <li>
             <img
               className="produdct-image"
               alt="product-image"
-              src="/images/product-image/unsplash-chair-image-1.jpg"
+              src="/images/product/unsplash-chair-image-1.jpg"
             />
           </li>
           <li>
             <img
               className="produdct-image"
               alt="product-image"
-              src="/images/product-image/unsplash-chair-image-1.jpg"
+              src="/images/product/unsplash-chair-image-1.jpg"
             />
           </li>
         </ul>
       </div>
-      <div className="product-detail"></div>
+      <div className="product-detail">
+        <div className="product-detail-delivery">
+          <img
+            alt="delivery details"
+            src="/images/product/product-delivery-details.jpg"
+          />
+        </div>
+      </div>
     </div>
   );
 };

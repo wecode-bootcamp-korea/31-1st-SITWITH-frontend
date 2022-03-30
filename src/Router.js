@@ -9,9 +9,9 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Nav />
-      <Product />
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/product" element={<Product />} />
       </Routes>
       <Footer />
     </BrowserRouter>
