@@ -17,9 +17,9 @@ const Carousel = ({ slides }) => {
       <ul className="carousel-list">
         {slides.map((slide, index) => {
           return (
-            <li className="carousel-item" key={index}>
+            <>
               {index === current && (
-                <>
+                <li className="carousel-item" key={index}>
                   <div className="img-area">
                     <img className="img-thumb" src={slide.image} alt="" />
                   </div>
@@ -27,9 +27,9 @@ const Carousel = ({ slides }) => {
                     <div className="sub-txt">{slide.sub}</div>
                     <div className="title-txt">{slide.title}</div>
                   </div>
-                </>
+                </li>
               )}
-            </li>
+            </>
           );
         })}
       </ul>

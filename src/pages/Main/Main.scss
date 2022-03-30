@@ -130,6 +130,14 @@ body {
       object-fit: cover;
     }
   }
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   .carousel-item {
     // display: none;
     justify-content: space-between;
@@ -139,9 +147,12 @@ body {
     bottom: 0;
     right: 0;
     overflow: hidden;
+    // opacity: 0;
+    transition: opacity 0.2s;
     // &:first-child {
     //   display: block;
     // }
+    animation: fadein 2s;
     .txt-area {
       position: absolute;
       top: 50px;
