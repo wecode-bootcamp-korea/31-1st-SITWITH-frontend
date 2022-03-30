@@ -16,6 +16,11 @@ li {
           align-items: center;
 }
 
+.main .section-header .link-more {
+  color: #002bd2;
+  font-size: 13px;
+}
+
 .main .section-title {
   font-size: 24px;
   line-height: 32px;
@@ -60,6 +65,40 @@ li {
 .main .section-inner .img-thumb {
   -o-object-fit: cover;
      object-fit: cover;
+  z-index: 1;
+  -webkit-transition: scale 0.2s;
+  transition: scale 0.2s;
+}
+
+.main .section-inner .img-wrap {
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+  cursor: pointer;
+}
+
+.main .section-inner .img-wrap::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.main .section-inner .img-wrap:hover .img-thumb {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.main .section-inner .img-wrap:hover::after {
+  opacity: 0.3;
 }
 
 .main .section-inner .item-title {
