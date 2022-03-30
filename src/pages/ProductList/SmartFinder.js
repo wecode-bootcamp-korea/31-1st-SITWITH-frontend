@@ -5,6 +5,7 @@ import ProductListShow from './ProductListShow';
 const ProductList = () => {
   const [chairs, setChairs] = useState([]);
   const [usetSearchInput, setUserSearchInput] = useState('');
+  const [selected, setSelected] = useState('selected');
 
   const handleUserSearch = event => {
     setUserSearchInput(event.target.value);
@@ -18,13 +19,7 @@ const ProductList = () => {
 
   const priceList = [0, 10, 20, 30, 40];
 
-  const category = [
-    '사무용의자',
-    '학생용의자',
-    '유아용의자',
-    '중역용의자',
-    '인테리어의자',
-  ];
+  const category = ['office', 'student', 'child', 'executive', 'interior'];
 
   const colorObject = [
     { Black: 'black' },
@@ -72,7 +67,12 @@ const ProductList = () => {
                 {category.map(categories => (
                   <div
                     key={categories}
-                    className={`category category-${categories}`}
+                    className={`category category-${categories} ${selected}`}
+                    onClick={() => {
+                      selected == 'selected'
+                        ? setSelected('notSelected')
+                        : setSelected('selected');
+                    }}
                   >
                     <div className="finder-select-bar"></div>
                     <span>{categories}</span>

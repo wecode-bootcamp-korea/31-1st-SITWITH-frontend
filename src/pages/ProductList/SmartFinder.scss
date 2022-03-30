@@ -90,6 +90,17 @@
 
         .finder-category {
           display: flex;
+
+          .selected {
+            div {
+              background-color: red;
+            }
+            color: red;
+            cursor: pointer;
+          }
+
+          .notSelected {
+          }
         }
         .finder-color {
           display: flex;
