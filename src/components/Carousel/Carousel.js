@@ -39,7 +39,7 @@ const Carousel = ({ slides }) => {
         return (
           <div className="carousel-display">
             {index === current && (
-              <div className="carousel-item" key={index}>
+              <div className="carousel-item" key={slide.title}>
                 <div className="img-area">
                   <img
                     className="img-thumb"
