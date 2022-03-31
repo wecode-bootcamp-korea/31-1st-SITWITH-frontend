@@ -40,7 +40,7 @@ const Carousel = ({ slides }) => {
           return (
             <div className="carousel-item" key={index}>
               {index === current && (
-                <>
+                <div className="carousel-inner" key={index}>
                   <div className="img-area">
                     <img
                       className="img-thumb"
@@ -52,7 +52,7 @@ const Carousel = ({ slides }) => {
                     <div className="sub-txt">{slide.sub}</div>
                     <div className="title-txt">{slide.title}</div>
                   </div>
-                </>
+                </div>
               )}
             </div>
           );
