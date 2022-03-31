@@ -31,31 +31,33 @@ const Carousel = ({ slides }) => {
   };
 
   useInterval(() => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-  }, 4000);
+    nextSlide();
+  }, 3000);
   return (
     <div className="carousel">
-      {slides.map((slide, index) => {
-        return (
-          <div className="carousel-display">
-            {index === current && (
-              <div className="carousel-item" key={slide.title}>
-                <div className="img-area">
-                  <img
-                    className="img-thumb"
-                    src={slide.image}
-                    alt={slide.alt}
-                  />
+      <div className="carousel-display">
+        {slides.map((slide, index) => {
+          return (
+            <>
+              {index === current && (
+                <div className="carousel-item" key={index}>
+                  <div className="img-area">
+                    <img
+                      className="img-thumb"
+                      src={slide.image}
+                      alt={slide.alt}
+                    />
+                  </div>
+                  <div className="txt-area">
+                    <div className="sub-txt">{slide.sub}</div>
+                    <div className="title-txt">{slide.title}</div>
+                  </div>
                 </div>
-                <div className="txt-area">
-                  <div className="sub-txt">{slide.sub}</div>
-                  <div className="title-txt">{slide.title}</div>
-                </div>
-              </div>
-            )}
-          </div>
-        );
-      })}
+              )}
+            </>
+          );
+        })}
+      </div>
       <div className="carousel-nav">
         <button className="btn-prev" onClick={prevSlide}>
           PREV
