@@ -1,41 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProductList.scss';
 
 const ProductList = () => {
   const [btnStatus, setBtnStatus] = useState('hide');
+  const [productData, setProductData] = useState([]);
 
-  const productList = [
-    {
-      name: 'T500HLDA',
-      price: '₩200,000',
-      image_list: [
-        {
-          image: '/images/productList/chair1.jpeg',
-          sequence: 1,
-        },
-      ],
-    },
-    {
-      name: 'T500HDA',
-      price: '₩190,000',
-      image_list: [
-        {
-          image: '/images/productList/chair2.jpeg',
-          sequence: 1,
-        },
-      ],
-    },
-    {
-      name: 'T503F',
-      price: '₩180,000',
-      image_list: [
-        {
-          image: '/images/productList/chair3.jpeg',
-          sequence: 1,
-        },
-      ],
-    },
-  ];
+  useEffect(() => {
+    fetch('/data/productListData/productListMockData.json')
+      .then(response => response.json())
+      .then(chairData => setProductData(chairData));
+  }, []);
+
+  console.log(productData);
 
   return (
     <div className="product-list-page">
@@ -76,48 +52,33 @@ const ProductList = () => {
             <table className="list-table">
               <tbody>
                 <tr>
-                  <td
-                    onMouseEnter={() => {
-                      setBtnStatus('show');
-                    }}
-                    onMouseLeave={() => {
-                      setBtnStatus('hide');
-                    }}
-                  >
-                    <img
-                      alt="chair image"
-                      src={productList[0].image_list[0].image}
-                    />
-                    <span className="product-name">{productList[0].name}</span>
-                    <span className="product-price">
-                      {productList[0].price}
-                    </span>
-                    <div className={`product-hover-box-${btnStatus}`}>
-                      <button className="btn-detail">상세정보</button>
-                      <button className="btn-cart">장바구니</button>
-                      <button className="btn-compare">비교하기</button>
-                    </div>
-                  </td>
-                  <td>
-                    <img
-                      alt="chair image"
-                      src={productList[1].image_list[0].image}
-                    />
-                    <span className="product-name">{productList[1].name}</span>
-                    <span className="product-price">
-                      {productList[1].price}
-                    </span>
-                  </td>
-                  <td>
-                    <img
-                      alt="chair image"
-                      src={productList[2].image_list[0].image}
-                    />
-                    <span className="product-name">{productList[2].name}</span>
-                    <span className="product-price">
-                      {productList[2].price}
-                    </span>
-                  </td>
+                  {productData.map(list => (
+                    <td
+                      key={list.name}
+                      onMouseEnter={() => {
+                        setBtnStatus('show');
+                      }}
+                      onMouseLeave={() => {
+                        setBtnStatus('hide');
+                      }}
+                    >
+                      <img
+                        alt="chair image"
+                        src={list.name && list.image_list[0].image}
+                      />
+                      <span className="product-name">
+                        {list.name && list.name}
+                      </span>
+                      <span className="product-price">
+                        {list.name && list.price}
+                      </span>
+                      <div className={`product-hover-box-${btnStatus}`}>
+                        <button className="btn-detail">상세정보</button>
+                        <button className="btn-cart">장바구니</button>
+                        <button className="btn-compare">비교하기</button>
+                      </div>
+                    </td>
+                  ))}
                 </tr>
               </tbody>
             </table>

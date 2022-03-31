@@ -1,5 +1,52 @@
 [
   {
-    "id": 1
+    "name": "T500HLDA",
+    "price": "₩200,000",
+    "image_list": [
+      {
+        "image": "/images/productList/chair1.jpeg",
+        "sequence": 1
+      }
+    ]
+  },
+  {
+    "name": "T500HDA",
+    "price": "₩190,000",
+    "image_list": [
+      {
+        "image": "/images/productList/chair2.jpeg",
+        "sequence": 1
+      }
+    ]
+  },
+  {
+    "name": "T503F",
+    "price": "₩180,000",
+    "image_list": [
+      {
+        "image": "/images/productList/chair3.jpeg",
+        "sequence": 1
+      }
+    ]
+  },
+  {
+    "name": "T503A12",
+    "price": "₩183,000",
+    "image_list": [
+      {
+        "image": "/images/productList/chair4.jpeg",
+        "sequence": 1
+      }
+    ]
+  },
+  {
+    "name": "T503P21",
+    "price": "₩146,000",
+    "image_list": [
+      {
+        "image": "/images/productList/chair5.jpeg",
+        "sequence": 1
+      }
+    ]
   }
 ]
