@@ -32,15 +32,15 @@ const Carousel = ({ slides }) => {
 
   useInterval(() => {
     nextSlide();
-  }, 3000);
+  }, 4000);
   return (
     <div className="carousel">
       <div className="carousel-display">
         {slides.map((slide, index) => {
           return (
-            <>
+            <div className="carousel-item" key={index}>
               {index === current && (
-                <div className="carousel-item" key={index}>
+                <>
                   <div className="img-area">
                     <img
                       className="img-thumb"
@@ -52,9 +52,9 @@ const Carousel = ({ slides }) => {
                     <div className="sub-txt">{slide.sub}</div>
                     <div className="title-txt">{slide.title}</div>
                   </div>
-                </div>
+                </>
               )}
-            </>
+            </div>
           );
         })}
       </div>

@@ -3,26 +3,6 @@ import Carousel from '../../components/Carousel/Carousel';
 import './Main.scss';
 
 const Main = () => {
-  const ImageData = [
-    {
-      image: '/images/main/img_slide_01.jpeg',
-      sub: '의자 위 인생은\n진행중',
-      title: 'SIDIZ',
-      alt: 'SIDIZ',
-    },
-    {
-      image: '/images/main/img_slide_02.jpeg',
-      sub: '유니크한 감각의\n인테리어체어',
-      title: 'WINDEN',
-      alt: 'WINDEN',
-    },
-    {
-      image: '/images/main/img_slide_03.jpeg',
-      sub: '바퀴는 빼고\n집중력은 더하다',
-      title: 'ible',
-      alt: 'ible',
-    },
-  ];
   return (
     <main className="main">
       <div className="carousel-section">
@@ -114,5 +94,26 @@ const Main = () => {
     </main>
   );
 };
+
+const ImageData = [
+  {
+    image: '/images/main/img_slide_01.jpeg',
+    sub: '의자 위 인생은\n진행중',
+    title: 'SIDIZ',
+    alt: 'SIDIZ',
+  },
+  {
+    image: '/images/main/img_slide_02.jpeg',
+    sub: '유니크한 감각의\n인테리어체어',
+    title: 'WINDEN',
+    alt: 'WINDEN',
+  },
+  {
+    image: '/images/main/img_slide_03.jpeg',
+    sub: '바퀴는 빼고\n집중력은 더하다',
+    title: 'ible',
+    alt: 'ible',
+  },
+];
 
 export default Main;

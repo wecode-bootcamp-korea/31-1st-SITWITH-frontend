@@ -1,9 +1,11 @@
 .carousel {
   position: relative;
   height: 900px;
+
   .carousel-display {
     max-width: 1680px;
     margin: 0 auto;
+
     .img-area {
       width: 70%;
       height: 900px;
@@ -11,6 +13,7 @@
       right: 0;
       top: 0;
     }
+
     img {
       object-fit: cover;
     }
@@ -23,6 +26,7 @@
       opacity: 1;
     }
   }
+
   .carousel-item {
     justify-content: space-between;
     position: absolute;
@@ -33,11 +37,13 @@
     overflow: hidden;
     transition: opacity 0.2s;
     animation: fadein 2s;
+
     .txt-area {
       position: absolute;
       top: 50px;
       left: 20px;
       padding-top: 80px;
+
       &::before {
         content: '';
         display: block;
@@ -49,6 +55,7 @@
         height: 270px;
       }
     }
+
     .sub-txt {
       line-height: 70px;
       margin-bottom: 10px;
@@ -58,16 +65,19 @@
       position: relative;
       white-space: pre-wrap;
     }
+
     .title-txt {
       font-size: 80px;
       font-weight: bold;
       position: relative;
     }
   }
+
   .carousel-nav {
     position: absolute;
     bottom: 100px;
     left: 20px;
+
     .btn-prev,
     .btn-next {
       border: 0;
@@ -79,6 +89,7 @@
       position: relative;
       transition: color 0.2s;
       cursor: pointer;
+
       &::before {
         content: '';
         display: inline-block;
@@ -89,22 +100,28 @@
         border-left: 2px solid #000;
         border-top: 2px solid #000;
       }
+
       &:hover {
         color: #002bd2;
+
         &::before {
           border-color: #002bd2;
         }
       }
     }
+
     .btn-prev {
       text-align: right;
+
       &::before {
         left: 0;
         transform: rotate(-45deg);
       }
     }
+
     .btn-next {
       text-align: left;
+
       &::before {
         content: '';
         right: 0;
