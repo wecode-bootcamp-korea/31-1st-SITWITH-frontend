@@ -1,0 +1,115 @@
+.carousel {
+  position: relative;
+  height: 900px;
+  .carousel-display {
+    max-width: 1680px;
+    margin: 0 auto;
+    .img-area {
+      width: 70%;
+      height: 900px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    img {
+      object-fit: cover;
+    }
+  }
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .carousel-item {
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    transition: opacity 0.2s;
+    animation: fadein 2s;
+    .txt-area {
+      position: absolute;
+      top: 50px;
+      left: 20px;
+      padding-top: 80px;
+      &::before {
+        content: '';
+        display: block;
+        background-color: #fff;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 300px;
+        height: 270px;
+      }
+    }
+    .sub-txt {
+      line-height: 70px;
+      margin-bottom: 10px;
+      font-size: 60px;
+      font-weight: lighter;
+      letter-spacing: 3px;
+      position: relative;
+      white-space: pre-wrap;
+    }
+    .title-txt {
+      font-size: 80px;
+      font-weight: bold;
+      position: relative;
+    }
+  }
+  .carousel-nav {
+    position: absolute;
+    bottom: 100px;
+    left: 20px;
+    .btn-prev,
+    .btn-next {
+      border: 0;
+      background-color: transparent;
+      height: 26px;
+      width: 80px;
+      font-size: 20px;
+      font-weight: bold;
+      position: relative;
+      transition: color 0.2s;
+      cursor: pointer;
+      &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: calc(50% - 4px);
+        width: 8px;
+        height: 8px;
+        border-left: 2px solid #000;
+        border-top: 2px solid #000;
+      }
+      &:hover {
+        color: #002bd2;
+        &::before {
+          border-color: #002bd2;
+        }
+      }
+    }
+    .btn-prev {
+      text-align: right;
+      &::before {
+        left: 0;
+        transform: rotate(-45deg);
+      }
+    }
+    .btn-next {
+      text-align: left;
+      &::before {
+        content: '';
+        right: 0;
+        transform: rotate(135deg);
+      }
+    }
+  }
+}

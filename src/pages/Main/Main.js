@@ -6,27 +6,28 @@ const Main = () => {
   const ImageData = [
     {
       image: '/images/main/img_slide_01.jpeg',
-      sub: `의자 위 인생은\n진행중`,
+      sub: '의자 위 인생은\n진행중',
       title: 'SIDIZ',
+      alt: 'SIDIZ',
     },
     {
       image: '/images/main/img_slide_02.jpeg',
       sub: '유니크한 감각의\n인테리어체어',
       title: 'WINDEN',
+      alt: 'WINDEN',
     },
     {
-      image: '/images/main/img_slide_04.jpeg',
-      sub: '바퀴는 빼고 \n집중력은 더하다',
+      image: '/images/main/img_slide_03.jpeg',
+      sub: '바퀴는 빼고\n집중력은 더하다',
       title: 'ible',
+      alt: 'ible',
     },
   ];
   return (
     <main className="main">
-      {/* carousel-seciton */}
       <div className="carousel-section">
         <Carousel slides={ImageData} />
       </div>
-      {/* taskchair-section */}
       <section className="product-section">
         <article className="section-inner">
           <div className="section-header">
@@ -63,7 +64,6 @@ const Main = () => {
           </div>
         </article>
       </section>
-      {/* kidschair-section */}
       <section className="product-section">
         <article className="section-inner">
           <div className="section-header">
