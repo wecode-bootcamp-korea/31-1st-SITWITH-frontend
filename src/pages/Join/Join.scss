@@ -1,0 +1,164 @@
+$border-line: 1px solid #b5b5b5;
+$title-color: gray;
+
+@mixin small-font(
+  $font-size: smaller,
+  $color: $title-color,
+  $font-weight: lighter,
+  $text-align: left,
+  $padding: 15px
+) {
+  font-size: $font-size;
+  color: $title-color;
+  font-weight: $font-weight;
+  text-align: $text-align;
+  padding: $padding;
+}
+
+@mixin input-border {
+  margin-right: 10px;
+  border: 1px solid gray;
+  line-height: 25px;
+  width: 20%;
+}
+
+.join {
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
+
+  .join-title {
+    color: $title-color;
+  }
+
+  .bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 15px;
+    border-left: $border-line;
+    border-right: $border-line;
+
+    .bar-line {
+      border-bottom: $border-line;
+    }
+  }
+
+  .agreement {
+    margin-bottom: 50px;
+
+    .agreement-title {
+      text-align: center;
+      height: 25px;
+      font-size: 20px;
+      color: $title-color;
+      margin: 0px;
+    }
+
+    .check-terms-use {
+      font-size: smaller;
+
+      .terms-use-title {
+        color: $title-color;
+        font-weight: lighter;
+      }
+    }
+  }
+
+  .terms-use {
+    overflow: scroll;
+    border: $border-line;
+    height: 250px;
+    margin: 30px 0px;
+
+    p {
+      color: $title-color;
+      font-weight: lighter;
+      font-size: small;
+    }
+  }
+
+  .bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 15px;
+    border-left: $border-line;
+    border-right: $border-line;
+
+    .bar-line {
+      border-bottom: $border-line;
+    }
+  }
+
+  .member-data {
+    .member-data-title {
+      text-align: center;
+      height: 25px;
+      font-size: 20px;
+      color: $title-color;
+      margin: 0px;
+    }
+
+    .member-data-container {
+      .member-data-box {
+        margin: 30px 0px;
+
+        .member-data-table {
+          border: $border-line;
+
+          tbody {
+            .member-id-box {
+              .member-id-title {
+                @include small-font($font-weight: bold);
+                border-right: $border-line;
+                border-bottom: $border-line;
+              }
+
+              .member-id-message {
+                @include small-font;
+                border-bottom: $border-line;
+
+                .member-id-input {
+                  @include input-border;
+                }
+              }
+            }
+
+            .member-pw-box {
+              .member-pw-title {
+                @include small-font($font-weight: bold);
+                border-right: $border-line;
+                border-bottom: $border-line;
+              }
+
+              .member-pw-message {
+                @include small-font;
+                border-bottom: $border-line;
+
+                .member-pw-input {
+                  @include input-border;
+                }
+              }
+            }
+
+            .member-email-box {
+              .member-email-title {
+                @include small-font($font-weight: bold);
+                border-right: $border-line;
+              }
+
+              .member-email-message {
+                @include small-font;
+
+                .member-email-input {
+                  @include input-border;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
