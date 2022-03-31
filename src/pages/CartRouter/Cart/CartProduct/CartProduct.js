@@ -1,22 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './CartProduct.scss';
 
 const CartProduct = ({ product, checkList, checkHandler, deleteHandler }) => {
   const { img, id, name, color, price, quantity } = product;
-  const [count, setCount] = useState(1);
 
-  // decrease, increase 추가 기능 구현 때 사용
-  const decrease = e => {
-    e.preventDefault();
-    if (count > 1) {
-      setCount(count - 1);
-    }
-  };
-
-  const increase = e => {
-    e.preventDefault();
-    setCount(count + 1);
-  };
   return (
     <tr>
       <td className="tct">
@@ -39,21 +26,13 @@ const CartProduct = ({ product, checkList, checkHandler, deleteHandler }) => {
       <td className="trt">
         {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
       </td>
-      <td className="tct count">
-        <button onClick={decrease}>
-          <p>-</p>
-        </button>
-        {quantity}
-        <button onClick={increase}>
-          <p>+</p>
-        </button>
-      </td>
+      <td className="tct count">{quantity}</td>
       <td className="trt">
         {(quantity * price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
       </td>
       <td className="tct btn-list">
         <button className="order-btn">주문하기</button>
-        <button onClick={e => deleteHandler(e, id)}>삭제</button>
+        <button onClick={deleteHandler}>삭제</button>
       </td>
     </tr>
   );

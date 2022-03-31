@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Cart.scss';
 import CartProduct from './CartProduct/CartProduct';
+import './Cart.scss';
 
 const Cart = () => {
   const [cartList, setCartList] = useState([]);
@@ -19,9 +19,9 @@ const Cart = () => {
     }
     setTotal(sum);
   };
-
+  // FIXME : useEffect 내부 장바구니 api 완성되면 수정
   useEffect(() => {
-    fetch('/data/data.json')
+    fetch('/data/cart.json')
       .then(res => res.json())
       .then(data => {
         setCartList(data.result);
@@ -43,11 +43,12 @@ const Cart = () => {
       setCheckList(checkList.filter(checkId => checkId !== id));
     }
   };
-  const deleteHandler = (e /*, id*/) => {
+  // FIXME :  deleteHandler 내부 장바구니 api 완성되면 수정
+  const deleteHandler = e => {
     e.preventDefault();
-    fetch('/data/data.json').then(res => {
+    fetch('/data/cart.json').then(res => {
       if (res.status === 200) {
-        fetch('/data/data2.json')
+        fetch('/data/updateCart.json')
           .then(res => res.json())
           .then(data => {
             setCartList(data.result);
@@ -55,56 +56,9 @@ const Cart = () => {
           });
       }
     });
-    //  APi 사용 때 수정
-    /*
-    fetch('http://주소/삭제/id', {
-      method: 'delete',
-      headers: {
-        Authorization: localStorage.getItem('Authorization'),
-      },
-    }).then(res => {
-      if (res.status === 204) {
-        fetch('http://주소/장바구니', {
-          headers: {
-            Authorization: localStorage.getItem('Authorization'),
-          },
-        })
-          .then(res.json())
-          .then(data => {
-            setCartList(data.result);
-            sum(data);
-          });
-      }
-    });
-    */
+
+    // TODO : 선택항목 삭제 함수 구현
   };
-  // APi 사용 때 수정
-  /*
-  const deleteCheckHandler = e => {
-    e.preventDefault();
-    fetch('http://주소/삭제', {
-      method: 'delete',
-      headers: {
-        Authorization: localStorage.getItem('Authorization'),
-      },
-      body: JSON.stringify({
-        cart_id: checkList,
-      }),
-    }).then(res => {
-      if (res.statusCode === 204) {
-        fetch('http://주소/장바구니', {
-          headers: {
-            Authorization: localStorage.getItem('Authorization'),
-          },
-        })
-          .then(res.json())
-          .then(data => {
-            setCartList(data.result);
-            sum(data);
-          });
-      }
-    });
-  };*/
   return (
     <div className="contents">
       <h1>장바구니</h1>
