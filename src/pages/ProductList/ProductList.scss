@@ -1,4 +1,4 @@
-// variables mixins
+//sass variables mixins
 $font-gray: gray;
 $separate-border: 1px solid rgba(0, 0, 0, 0.2);
 
@@ -11,8 +11,12 @@ $separate-border: 1px solid rgba(0, 0, 0, 0.2);
 .product-list-page {
   display: flex;
   justify-content: center;
+
+  //Delete
+  border: 1px solid black;
+
   .product-list-container {
-    width: 50%;
+    width: 90%;
     // 제품명
     .product-list-title {
       h1 {
