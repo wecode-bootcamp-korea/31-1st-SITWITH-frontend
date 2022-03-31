@@ -4,6 +4,8 @@ import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
 import Main from './pages/Main/Main';
 import Product from './pages/Product/Product';
+import './styles/reset.scss';
+import './styles/common.scss';
 
 const Router = () => {
   return (
