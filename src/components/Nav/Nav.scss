@@ -47,6 +47,84 @@ $nav-border: solid #ccc;
       }
     }
   }
+
+  .nav-bottom {
+    @include flexBetween;
+    padding: 0 10px;
+    height: 60px;
+    border-bottom: $nav-border;
+
+    > * {
+      line-height: 0;
+    }
+
+    .link-logo {
+      display: inline-block;
+      height: 24px;
+    }
+  }
+
+  .product-menu {
+    @include flexCenter;
+    position: relative;
+    height: 60px;
+
+    &:hover {
+      .product-menu-list {
+        opacity: 1;
+        display: block;
+      }
+
+      .menu-title {
+        color: #002bd2;
+      }
+    }
+
+    .menu-title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  .product-menu-list {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    margin: 0;
+    padding: 10px 20px;
+    width: 160px;
+    background-color: #282828;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 20;
+  }
+
+  .product-menu-item {
+    display: block;
+    text-align: left;
+    padding: 5px 3px;
+
+    .link-product {
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+      transition: color 0.2s;
+      color: #fff;
+    }
+
+    &.product-all {
+      border-bottom: 1px dotted rgba($color: #fff, $alpha: 0.2);
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+    }
+
+    &:hover {
+      .link-product {
+        color: #002bd2;
+      }
+    }
+  }
 }
 
 .ico-nav {

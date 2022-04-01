@@ -41,6 +41,11 @@ const Nav = () => {
           <div className="product-menu">
             <div className="menu-title">PRODUCTS</div>
             <ul className="product-menu-list">
+              <li className="product-menu-item product-all">
+                <Link className="link-product" to="/Product">
+                  모든 제품보기
+                </Link>
+              </li>
               <li className="product-menu-item">
                 <Link className="link-product" to="/Product">
                   사무용 의자
