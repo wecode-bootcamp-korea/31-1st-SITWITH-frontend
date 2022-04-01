@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import ProductCard from './ProductCard';
 import './ProductList.scss';
 
 const ProductList = () => {
-  const [btnStatus, setBtnStatus] = useState('hide');
   const [productData, setProductData] = useState([]);
 
   useEffect(() => {
@@ -10,8 +10,6 @@ const ProductList = () => {
       .then(response => response.json())
       .then(chairData => setProductData(chairData));
   }, []);
-
-  console.log(productData);
 
   return (
     <div className="product-list-page">
@@ -49,39 +47,7 @@ const ProductList = () => {
           <h3 className="series-list-title">Product List</h3>
 
           <div className="product-list-show">
-            <table className="list-table">
-              <tbody>
-                <tr>
-                  {productData.map(list => (
-                    <td
-                      key={list.name}
-                      onMouseEnter={() => {
-                        setBtnStatus('show');
-                      }}
-                      onMouseLeave={() => {
-                        setBtnStatus('hide');
-                      }}
-                    >
-                      <img
-                        alt="chair image"
-                        src={list.name && list.image_list[0].image}
-                      />
-                      <span className="product-name">
-                        {list.name && list.name}
-                      </span>
-                      <span className="product-price">
-                        {list.name && list.price}
-                      </span>
-                      <div className={`product-hover-box-${btnStatus}`}>
-                        <button className="btn-detail">상세정보</button>
-                        <button className="btn-cart">장바구니</button>
-                        <button className="btn-compare">비교하기</button>
-                      </div>
-                    </td>
-                  ))}
-                </tr>
-              </tbody>
-            </table>
+            <ProductCard productData={productData} />
           </div>
         </div>
       </div>

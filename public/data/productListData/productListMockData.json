@@ -48,5 +48,55 @@
         "sequence": 1
       }
     ]
+  },
+  {
+    "name": "T302P11",
+    "price": "₩215,000",
+    "image_list": [
+      {
+        "image": "/images/productList/chair6.jpeg",
+        "sequence": 1
+      }
+    ]
+  },
+  {
+    "name": "T553P13",
+    "price": "₩139,000",
+    "image_list": [
+      {
+        "image": "/images/productList/chair7.jpeg",
+        "sequence": 1
+      }
+    ]
+  },
+  {
+    "name": "T163P21",
+    "price": "₩102,000",
+    "image_list": [
+      {
+        "image": "/images/productList/chair8.jpeg",
+        "sequence": 1
+      }
+    ]
+  },
+  {
+    "name": "T704P34",
+    "price": "₩118,000",
+    "image_list": [
+      {
+        "image": "/images/productList/chair9.jpeg",
+        "sequence": 1
+      }
+    ]
+  },
+  {
+    "name": "T803P78",
+    "price": "₩140,000",
+    "image_list": [
+      {
+        "image": "/images/productList/chair10.jpeg",
+        "sequence": 1
+      }
+    ]
   }
 ]
