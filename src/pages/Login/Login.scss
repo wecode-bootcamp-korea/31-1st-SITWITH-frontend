@@ -1,79 +1,85 @@
+$border-line: 1px solid #d1d1d1;
+
+@mixin title-font {
+  padding: 15px;
+  border-right: $border-line;
+  border-bottom: $border-line;
+
+  color: gray;
+  font-size: small;
+  text-align: left;
+}
+
+@mixin input-style {
+  border: 1px solid gray;
+  line-height: 25px;
+  width: 30%;
+}
+
 .login {
   position: relative;
+  width: 1000px;
+  height: 800px;
   margin: 0 auto;
-  width: 90%;
 
   .login-title {
     color: gray;
   }
 
   .bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 15px;
-    border-left: 1px solid #b5b5b5;
-    border-right: 1px solid #b5b5b5;
+    border-right: $border-line;
+    border-left: $border-line;
 
-    p {
-      border-bottom: 1px solid #b5b5b5;
-      height: 4px;
-      font-size: 1px;
+    .bar-line {
+      border-bottom: $border-line;
     }
   }
 
   .member-login {
     .member-login-title {
-      text-align: center;
       height: 25px;
-      font-size: 20px;
       color: gray;
+      font-size: 20px;
+      text-align: center;
     }
   }
 
   .login-container {
     .login-table {
-      border: 1px solid #d1d1d1;
+      border: $border-line;
 
       .table-box {
         height: 200px;
 
         .id-box {
           .id-title {
-            text-align: left;
-            color: gray;
-            padding: 15px;
-            font-size: small;
-            border-right: 1px solid #d1d1d1;
-            border-bottom: 1px solid #d1d1d1;
+            @include title-font;
           }
 
           td {
-            border-bottom: 1px solid #d1d1d1;
             padding: 15px;
+            border-bottom: $border-line;
 
             input {
-              line-height: 25px;
-              width: 30%;
-              border: 1px solid gray;
+              @include input-style;
             }
           }
         }
         .pw-box {
           .pw-title {
-            text-align: left;
-            color: gray;
-            padding: 15px;
-            font-size: small;
-            border-right: 1px solid #d1d1d1;
-            border-bottom: 1px solid #d1d1d1;
+            @include title-font;
           }
 
           td {
             padding: 15px;
-            border-bottom: 1px solid #d1d1d1;
+            border-bottom: $border-line;
 
             input {
-              border: 1px solid gray;
-              line-height: 25px;
-              width: 30%;
+              @include input-style;
             }
           }
         }

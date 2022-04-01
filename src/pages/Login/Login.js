@@ -10,21 +10,30 @@ const Login = () => {
 
   const navigate = useNavigate();
   const onLogin = () => {
-    fetch('http://10.58.0.163:8000/users/signin', {
-      method: 'POST',
-      body: JSON.stringify({
-        username: loginValue.id,
-        password: loginValue.pw,
-      }),
-    })
-      .then(res => res.json())
-      .then(res => {
-        if (res.token) {
-          navigate('/Main/Main');
-        } else {
-          alert(res);
-        }
-      });
+    const valid = loginValue.id === '';
+
+    if (loginValue.id === '' || loginValue.pw === '') {
+      valid
+        ? alert('[ 아이디 ] 는(은) 필수항목입니다.')
+        : alert('[ 비밀번호 ] 는(은) 필수항목입니다.');
+    } else {
+      fetch('http://10.58.6.159:8000/users/signin', {
+        method: 'POST',
+        body: JSON.stringify({
+          username: loginValue.id,
+          password: loginValue.pw,
+        }),
+      })
+        .then(res => res.json())
+        .then(res => {
+          if (res.message) {
+            alert('로그인에 실패하셨습니다.');
+          } else if (res.token) {
+            localStorage.setItem('token', res.token);
+            navigate('/Main/Main');
+          }
+        });
+    }
   };
 
   function handleInputValue(e) {
@@ -36,7 +45,7 @@ const Login = () => {
     <div className="login">
       <h1 className="login-title">LOGIN</h1>
       <div className="bar">
-        <p />
+        <div className="bar-line" />
       </div>
       <div className="member-login">
         <h2 className="member-login-title">회원 로그인</h2>
