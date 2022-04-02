@@ -32,10 +32,24 @@ const Join = () => {
         })
           .then(res => res.json())
           .then(res => {
-            if (res.message !== 'Success') {
+            if (res.message === 'Invalid username') {
+              alert(
+                '아이디는 공백없는 3~15자의 소문자와 숫자를 조합하여 입력해주세요.'
+              );
+            } else if (res.message === 'Invalid password') {
+              alert(
+                '비밀번호는 8~15자의 영문/특수문자/숫자를 조합하여 입력해야 합니다.'
+              );
+            } else if (res.message === 'Invalid email') {
+              alert('이메일은 공백없이 @/. 을 조합하여 입력해야 합니다');
+            } else if (res.message === 'Username already exists') {
+              alert('이미 존재하는 아이디입니다.');
+            } else if (res.message === 'Email already exists') {
+              alert('이미 존재하는 이메일입니다.');
+            } else if (res.message !== 'Success') {
               alert('회원가입에 실패하셨습니다.');
             } else if (res.message === 'Success') {
-              navigate('/Login/Login');
+              navigate('/login');
             }
           });
   };
