@@ -1,0 +1,13 @@
+{
+  "message": "Success",
+  "colorproductlist": [
+    {
+      "name": "chair04",
+      "code": "REAL1000",
+      "price": "$500,000",
+      "color": "red",
+      "image_url": "/images/product/unsplash-chair-image-1.jpg",
+      "image_list": ["red_01", "red_02"]
+    }
+  ]
+}

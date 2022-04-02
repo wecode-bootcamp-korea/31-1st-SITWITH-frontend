@@ -1,0 +1,56 @@
+@import '../../styles/reset.scss';
+@import '../../styles/common.scss';
+$gray: rgb(220, 220, 220);
+@mixin border {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 15px;
+  border-left: 1px solid $gray;
+  border-right: 1px solid $gray;
+
+  div {
+    width: 100%;
+    border-bottom: 1px solid $gray;
+  }
+}
+
+@mixin flexColumCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-detail {
+  width: 60%;
+
+  .border {
+    margin-top: 70px;
+    @include border;
+  }
+
+  h2 {
+    color: gray;
+    margin: 0;
+  }
+
+  .product-detail-basic-information {
+    @include flexColumCenter;
+  }
+
+  .product-detail-function-material {
+    @include flexColumCenter;
+  }
+
+  .product-detail-story {
+    @include flexColumCenter;
+  }
+
+  .product-detail-dimension {
+    @include flexColumCenter;
+  }
+
+  .product-detail-delivery {
+    @include flexColumCenter;
+  }
+}
