@@ -4,6 +4,11 @@ import './ProductList.scss';
 
 const ProductList = () => {
   const [productData, setProductData] = useState([]);
+  // Pagination 관련 state
+  const [limit, setLimit] = useState(9);
+  const [page, setPage] = useState(1);
+
+  const offset = (page - 1) * limit;
 
   useEffect(() => {
     fetch('/data/productListData/productListMockData.json')
@@ -47,7 +52,13 @@ const ProductList = () => {
           <h3 className="series-list-title">Product List</h3>
 
           <div className="product-list-show">
-            <ProductCard productData={productData} />
+            <ProductCard
+              productData={productData}
+              offset={offset}
+              limit={limit}
+              page={page}
+              setPage={setPage}
+            />
           </div>
         </div>
       </div>
