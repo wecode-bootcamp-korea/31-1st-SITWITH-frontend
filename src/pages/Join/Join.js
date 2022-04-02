@@ -1,7 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Join.scss';
 
 const Join = () => {
+  const [joinValue, setJoinValue] = useState({
+    id: '',
+    pw: '',
+    email: '',
+  });
+
+  const navigate = useNavigate();
+
+  const onJoin = () => {
+    const validId = joinValue.id === '';
+    const validPw = joinValue.pw === '';
+    const validEmail = joinValue.email === '';
+
+    validId
+      ? alert('[ 아이디 ] 는(은) 필수항목입니다.')
+      : validPw
+      ? alert('[ 비밀번호 ] 는(은) 필수항목입니다.')
+      : validEmail
+      ? alert('[ 이메일 ] 은(는) 필수항목입니다.')
+      : fetch('http://10.58.1.169:8000/users/signup', {
+          method: 'POST',
+          body: JSON.stringify({
+            username: joinValue.id,
+            password: joinValue.pw,
+            email: joinValue.email,
+          }),
+        })
+          .then(res => res.json())
+          .then(res => {
+            if (res.message !== 'Success') {
+              alert('회원가입에 실패하셨습니다.');
+            } else if (res.message === 'Success') {
+              navigate('/Login/Login');
+            }
+          });
+  };
+
+  function handleJoinValue(e) {
+    const { name, value } = e.target;
+    setJoinValue(joinValue => ({ ...joinValue, [name]: value }));
+  }
+
   return (
     <div className="join">
       <h1 className="join-title">통합회원가입</h1>
@@ -77,8 +120,13 @@ const Join = () => {
                 <tr className="member-id-box">
                   <th className="member-id-title">아이디</th>
                   <td className="member-id-message">
-                    <input className="member-id-input" type="text" name="id" />
-                    3~15자의 영문 또는 숫자를 공백없이 입력해주세요.
+                    <input
+                      onChange={handleJoinValue}
+                      className="member-id-input"
+                      type="text"
+                      name="id"
+                    />
+                    공백없는 3~15자의 소문자와 숫자를 조합하여 입력해주세요.
                   </td>
                 </tr>
 
@@ -86,12 +134,13 @@ const Join = () => {
                   <th className="member-pw-title">비밀번호</th>
                   <td className="member-pw-message">
                     <input
+                      onChange={handleJoinValue}
                       className="member-pw-input"
                       name="pw"
                       type="password"
                     />
                     <p>
-                      공백없는 8~15자의 영문/숫자/특수문자를 조합하여 입력해야
+                      공백없는 8~15자의 영문/특수문자/숫자를 조합하여 입력해야
                       합니다.
                     </p>
                   </td>
@@ -100,16 +149,21 @@ const Join = () => {
                   <th className="member-email-title">이메일</th>
                   <td className="member-email-message">
                     <input
+                      onChange={handleJoinValue}
                       className="member-email-input"
                       name="email"
                       type="email"
                     />
-                    <p>마케팅 동의를 하신 분은 꼭 기입해주세요.</p>
+                    <p>공백없이 @/. 을 조합하여 입력해야 합니다.</p>
                   </td>
                 </tr>
               </tbody>
             </table>
-            <button type="button" className="member-data-button">
+            <button
+              onClick={onJoin}
+              type="button"
+              className="member-data-button"
+            >
               확인
             </button>
           </form>

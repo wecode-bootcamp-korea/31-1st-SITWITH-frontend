@@ -2,30 +2,31 @@ $border-line: 1px solid #b5b5b5;
 $title-color: gray;
 
 @mixin small-font(
-  $font-size: smaller,
+  $padding: 15px,
   $color: $title-color,
   $font-weight: lighter,
-  $text-align: left,
-  $padding: 15px
+  $font-size: smaller,
+  $text-align: left
 ) {
-  font-size: $font-size;
+  padding: $padding;
   color: $title-color;
   font-weight: $font-weight;
+  font-size: $font-size;
   text-align: $text-align;
-  padding: $padding;
 }
 
 @mixin input-border {
   margin-right: 10px;
+  width: 20%;
   border: 1px solid gray;
   line-height: 25px;
-  width: 20%;
 }
 
 .join {
   position: relative;
   margin: 0 auto;
-  width: 90%;
+  width: 1000px;
+  height: 800px;
 
   .join-title {
     color: $title-color;
@@ -36,8 +37,8 @@ $title-color: gray;
     flex-direction: column;
     justify-content: center;
     height: 15px;
-    border-left: $border-line;
     border-right: $border-line;
+    border-left: $border-line;
 
     .bar-line {
       border-bottom: $border-line;
@@ -48,11 +49,11 @@ $title-color: gray;
     margin-bottom: 50px;
 
     .agreement-title {
-      text-align: center;
-      height: 25px;
-      font-size: 20px;
-      color: $title-color;
       margin: 0px;
+      height: 25px;
+      color: $title-color;
+      font-size: 20px;
+      text-align: center;
     }
 
     .check-terms-use {
@@ -66,10 +67,10 @@ $title-color: gray;
   }
 
   .terms-use {
-    overflow: scroll;
-    border: $border-line;
     height: 250px;
     margin: 30px 0px;
+    border: $border-line;
+    overflow: scroll;
 
     p {
       color: $title-color;
@@ -93,11 +94,11 @@ $title-color: gray;
 
   .member-data {
     .member-data-title {
-      text-align: center;
-      height: 25px;
-      font-size: 20px;
-      color: $title-color;
       margin: 0px;
+      height: 25px;
+      color: $title-color;
+      font-size: 20px;
+      text-align: center;
     }
 
     .member-data-container {
