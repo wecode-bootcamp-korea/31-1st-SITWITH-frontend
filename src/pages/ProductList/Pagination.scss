@@ -1,16 +1,22 @@
 $gray: rgb(220, 220, 220);
 
 .pagination-nav {
+  margin-top: 30px;
+
+  .nav-first-btn,
   .nav-prev-btn,
   .nav-page-btn,
-  .nav-next-btn {
+  .nav-next-btn,
+  .nav-last-btn {
     border-style: none;
     background-color: white;
     margin: 0 5px;
   }
+  .nav-first-btn:hover,
   .nav-prev-btn:hover,
   .nav-page-btn:hover,
-  .nav-next-btn:hover {
+  .nav-next-btn:hover,
+  .nav-last-btn:hover {
     border: 1px solid $gray;
   }
 

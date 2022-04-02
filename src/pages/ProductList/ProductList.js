@@ -5,7 +5,7 @@ import './ProductList.scss';
 const ProductList = () => {
   const [productData, setProductData] = useState([]);
   // Pagination 관련 state
-  const [limit, setLimit] = useState(9);
+  const [limit, setLimit] = useState(6);
   const [page, setPage] = useState(1);
 
   const offset = (page - 1) * limit;

@@ -7,6 +7,13 @@ const Pagination = ({ total, limit, page, setPage }) => {
   return (
     <nav className="pagination-nav">
       <button
+        className="nav-first-btn"
+        onClick={() => setPage(1)}
+        disabled={page === 1}
+      >
+        FIRST
+      </button>
+      <button
         className="nav-prev-btn"
         onClick={() => setPage(page - 1)}
         disabled={page === 1}
@@ -32,6 +39,13 @@ const Pagination = ({ total, limit, page, setPage }) => {
         disabled={page === numPages}
       >
         NEXT &gt;
+      </button>
+      <button
+        className="nav-last-btn"
+        onClick={() => setPage(numPages)}
+        disabled={page === numPages}
+      >
+        LAST
       </button>
     </nav>
   );
