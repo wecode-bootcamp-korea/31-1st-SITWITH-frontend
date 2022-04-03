@@ -1,4 +1,4 @@
-$gray: rgb(220, 220, 220);
+@import '../../styles/variables.scss';
 
 .pagination-nav {
   margin-top: 30px;
@@ -17,10 +17,10 @@ $gray: rgb(220, 220, 220);
   .nav-page-btn:hover,
   .nav-next-btn:hover,
   .nav-last-btn:hover {
-    border: 1px solid $gray;
+    border: 1px solid $pale-gray;
   }
 
   .nav-page-btn:focus {
-    border: 1px solid gray;
+    border: 1px solid $gray;
   }
 }

@@ -1,17 +1,5 @@
-////SASS Variables and Mixins
-///delete
-$font-gray: gray;
-$separate-border: 1px solid rgba(0, 0, 0, 0.2);
+@import '../../styles/variables.scss';
 
-@mixin flexColumnCenter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/////////////////////
-//PAGE SASS STARAT///delete
-/////////////////////
 .product-list-page {
   display: flex;
   justify-content: center;
@@ -25,22 +13,13 @@ $separate-border: 1px solid rgba(0, 0, 0, 0.2);
         margin-top: 20px;
         margin-bottom: 35px;
         font-size: 50px;
-        color: $font-gray;
+        color: $gray;
       }
     }
 
     //separate border
     .separate-border {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 100%;
-      height: 10px;
-      border-right: $separate-border;
-      border-left: $separate-border;
-      div {
-        border-bottom: $separate-border;
-      }
+      @include border;
     }
 
     //series feature
@@ -52,7 +31,7 @@ $separate-border: 1px solid rgba(0, 0, 0, 0.2);
         font-size: 23px;
         margin-top: 5px;
         margin-bottom: 5px;
-        color: $font-gray;
+        color: $gray;
       }
 
       .series-feature-image {
@@ -77,12 +56,12 @@ $separate-border: 1px solid rgba(0, 0, 0, 0.2);
         }
 
         button:hover {
-          background-color: gray;
+          background-color: $gray;
           cursor: pointer;
         }
 
         button:focus {
-          background-color: gray;
+          background-color: $gray;
           cursor: pointer;
         }
       }
@@ -90,14 +69,12 @@ $separate-border: 1px solid rgba(0, 0, 0, 0.2);
         font-size: 23px;
         margin-top: 5px;
         margin-bottom: 5px;
-        color: $font-gray;
+        color: $gray;
       }
 
       .product-list-show {
-        display: flex;
-        flex-direction: column;
+        @include flexColumnCenter;
         justify-content: center;
-        align-items: center;
         width: 100%;
       }
     }

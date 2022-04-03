@@ -1,5 +1,4 @@
-$font-gray: gray;
-$separate-border: 1px solid rgba(0, 0, 0, 0.2);
+@import '../../styles/variables.scss';
 
 .list-table {
   display: flex;
@@ -41,10 +40,8 @@ $separate-border: 1px solid rgba(0, 0, 0, 0.2);
   }
 
   .product-card:hover .product-hover-box {
+    @include flexBetween;
     position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -64,10 +61,10 @@ $separate-border: 1px solid rgba(0, 0, 0, 0.2);
       background-color: red;
     }
     .btn-cart {
-      background-color: gray;
+      background-color: $gray;
     }
     .btn-compare {
-      background-color: gray;
+      background-color: $gray;
     }
   }
 }

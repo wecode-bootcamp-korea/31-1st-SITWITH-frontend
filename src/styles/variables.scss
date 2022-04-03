@@ -15,3 +15,28 @@
   justify-content: space-around;
   align-items: center;
 }
+
+@mixin flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin border {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 15px;
+  border-left: 1px solid $pale-gray;
+  border-right: 1px solid $pale-gray;
+
+  div {
+    width: 100%;
+    border-bottom: 1px solid $pale-gray;
+  }
+}
+
+//$variables color
+$pale-gray: rgb(220, 220, 220);
+$gray: gray;
+$separate-border: 1px solid rgba(0, 0, 0, 0.2);
