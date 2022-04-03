@@ -11,7 +11,7 @@ const Router = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/smartfinder" element={<SmartFinder />} />
+        <Route path="/smart-finder" element={<SmartFinder />} />
       </Routes>
       <Footer />
     </BrowserRouter>

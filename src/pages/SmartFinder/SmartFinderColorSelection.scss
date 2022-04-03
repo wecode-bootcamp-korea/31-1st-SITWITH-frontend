@@ -1,0 +1,61 @@
+.finder-color-box {
+  .finder-color-bar {
+    width: 70px;
+    height: 30px;
+    background-color: gray;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+
+  .black {
+    background-color: black;
+  }
+  .gray {
+    background-color: gray;
+  }
+  .red {
+    background-color: red;
+  }
+  .blue {
+    background-color: blue;
+  }
+  .green {
+    background-color: green;
+  }
+  .pink {
+    background-color: pink;
+  }
+  .orange {
+    background-color: orange;
+  }
+  .yellow {
+    background-color: yellow;
+  }
+  .beige {
+    background-color: beige;
+  }
+  .white {
+    background-color: white;
+  }
+}
+.finder-color-box:hover,
+.selected {
+  div {
+    border: 3px solid red;
+  }
+  color: black;
+}
+
+.red:hover {
+  div {
+    border: 3px solid black;
+  }
+  color: red;
+}
+
+.red.selected {
+  div {
+    border: 3px solid black;
+  }
+  color: red;
+}
