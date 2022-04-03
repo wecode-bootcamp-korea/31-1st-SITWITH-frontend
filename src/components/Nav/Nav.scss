@@ -1,7 +1,5 @@
 @import '../../styles/variables.scss';
 
-$nav-border: solid #ccc;
-
 .nav {
   margin-top: -8px;
   margin-left: -8px;
@@ -12,7 +10,7 @@ $nav-border: solid #ccc;
     display: flex;
     flex-direction: row-reverse;
     height: 40px;
-    border-bottom: $nav-border;
+    border-bottom: $border-line;
   }
 
   .sub-menu-list {
@@ -52,7 +50,7 @@ $nav-border: solid #ccc;
     @include flexBetween;
     padding: 0 10px;
     height: 60px;
-    border-bottom: $nav-border;
+    border-bottom: $border-line;
 
     > * {
       line-height: 0;
@@ -121,7 +119,7 @@ $nav-border: solid #ccc;
 
     &:hover {
       .link-product {
-        color: #002bd2;
+        color: #0042ff;
       }
     }
   }
