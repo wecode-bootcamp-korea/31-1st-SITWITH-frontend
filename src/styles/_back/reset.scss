@@ -1,0 +1,70 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  line-height: 1.5em;
+}
+pre,
+code,
+form,
+fieldset,
+legend,
+textarea,
+p,
+blockquote,
+th,
+td,
+input,
+select,
+img,
+menu,
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+input select,
+button {
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: 'Noto Sans KR', 'Malgun Gothic', '돋움', dotum, sans-serif;
+  color: #333;
+}
+a,
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+table {
+  width: 100%; /*border-collapse:collapse;*/
+  border-spacing: 0;
+}
+caption,
+legend {
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+}
