@@ -1,17 +1,72 @@
-// @mixin flex
+$pale-gray: #dcdcdc;
+$gray: gray;
+$separate-border: 1px solid rgba(0, 0, 0, 0.2);
+$border-color: #b5b5b5;
+$border-line: 1px solid #b5b5b5;
+$section-title-color: #807f83;
 
 @mixin flexCenter {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 @mixin flexBetween {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 @mixin flexAround {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+@mixin flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin small-font(
+  $padding: 15px,
+  $color: $title-color,
+  $font-weight: lighter,
+  $font-size: smaller,
+  $text-align: left
+) {
+  padding: $padding;
+  color: $title-color;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  text-align: $text-align;
+}
+
+@mixin section-title {
+  padding: 15px;
+  border-right: $border-line;
+  border-bottom: $border-line;
+  color: $section-title-color;
+  font-size: small;
+  text-align: left;
+}
+
+@mixin bar {
+  border-left: $border-line;
+  border-right: $border-line;
+  height: 9px;
+  font-size: 1px;
+  margin-bottom: 2px;
+  & > * {
+    border-bottom: $border-line;
+    height: 4px;
+    font-size: 1px;
+  }
+}
+
+@mixin input-style {
+  border: 1px solid gray;
+  line-height: 25px;
+  width: 30%;
 }

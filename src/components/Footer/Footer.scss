@@ -1,0 +1,80 @@
+@mixin footer-font {
+  margin-top: 30px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 30px;
+}
+
+@mixin footer-title-font {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+
+  .footer-banner {
+    display: flex;
+    justify-content: space-between;
+    margin: 100px;
+
+    .logo-img {
+      height: 35px;
+      filter: invert(100%);
+    }
+  }
+
+  .footer-main {
+    display: flex;
+    margin: 100px;
+    color: white;
+
+    .inform {
+      .inform-title {
+        @include footer-title-font;
+      }
+
+      .inform-main {
+        @include footer-font;
+      }
+    }
+
+    .footer-category {
+      width: 100%;
+
+      .title-list {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+
+        .products-title {
+          @include footer-title-font;
+
+          .products {
+            @include footer-font;
+          }
+        }
+
+        .service-title {
+          @include footer-title-font;
+
+          .service {
+            @include footer-font;
+          }
+        }
+
+        .support-title {
+          @include footer-title-font;
+
+          .support {
+            @include footer-font;
+          }
+        }
+      }
+    }
+  }
+}
