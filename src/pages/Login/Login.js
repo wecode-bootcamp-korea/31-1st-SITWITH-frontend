@@ -10,13 +10,14 @@ const Login = () => {
 
   const navigate = useNavigate();
   const onLogin = () => {
-    const valid = loginValue.id === '';
-
-    if (loginValue.id === '' || loginValue.pw === '') {
-      valid
-        ? alert('[ 아이디 ] 는(은) 필수항목입니다.')
-        : alert('[ 비밀번호 ] 는(은) 필수항목입니다.');
-    } else {
+    const emptyIdInput = loginValue.id.trim() === '';
+    const emptyPwInput = loginValue.pw.trim() === '';
+    const emptyLoginInput = emptyIdInput && emptyPwInput;
+    if (emptyIdInput) {
+      alert('[ 아이디 ] 는(은) 필수항목입니다.');
+    } else if (emptyPwInput) {
+      alert('[ 비밀번호 ] 는(은) 필수항목입니다.');
+    } else if (!emptyLoginInput) {
       fetch('http://10.58.6.159:8000/users/signin', {
         method: 'POST',
         body: JSON.stringify({
