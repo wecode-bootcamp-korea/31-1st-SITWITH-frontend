@@ -4,18 +4,36 @@ import './Pagination.scss';
 const Pagination = ({ total, limit, page, setPage }) => {
   const numPages = Math.ceil(total / limit);
 
+  localStorage.setItem('pageNum', page);
+
+  const goToFirstPage = () => {
+    setPage(1);
+  };
+
+  const goToLastPage = () => {
+    setPage(numPages);
+  };
+
+  const goToNextPage = () => {
+    setPage(page + 1);
+  };
+
+  const goToPrevPage = () => {
+    setPage(page - 1);
+  };
+
   return (
     <nav className="pagination-nav">
       <button
         className="nav-first-btn"
-        onClick={() => setPage(1)}
+        onClick={goToFirstPage}
         disabled={page === 1}
       >
         FIRST
       </button>
       <button
         className="nav-prev-btn"
-        onClick={() => setPage(page - 1)}
+        onClick={goToPrevPage}
         disabled={page === 1}
       >
         &lt; PREV
@@ -35,14 +53,14 @@ const Pagination = ({ total, limit, page, setPage }) => {
 
       <button
         className="nav-next-btn"
-        onClick={() => setPage(page + 1)}
+        onClick={goToNextPage}
         disabled={page === numPages}
       >
         NEXT &gt;
       </button>
       <button
         className="nav-last-btn"
-        onClick={() => setPage(numPages)}
+        onClick={goToLastPage}
         disabled={page === numPages}
       >
         LAST

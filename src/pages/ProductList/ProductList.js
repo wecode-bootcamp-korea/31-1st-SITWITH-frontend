@@ -5,11 +5,25 @@ import './ProductList.scss';
 
 const ProductList = () => {
   const [productData, setProductData] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(
+    localStorage.getItem('pageNum') !== null
+      ? JSON.parse(localStorage.getItem('pageNum'))
+      : 1
+  );
   const offset = (page - 1) * PAGINATION_LIMIT;
 
+  // useEffect(() => {
+  //   fetch('http://10.58.3.140:8000/products')
+  //     .then(res => {
+  //       return res.json();
+  //     })
+  //     .then(chairData => {
+  //       setProductData(chairData.result);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch('http://10.58.3.140:8000/products')
+    fetch('/data/productListData/productData.json')
       .then(res => {
         return res.json();
       })
