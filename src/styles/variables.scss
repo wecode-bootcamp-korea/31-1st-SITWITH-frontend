@@ -5,28 +5,10 @@ $border-color: #b5b5b5;
 $border-line: 1px solid #b5b5b5;
 $section-title-color: #807f83;
 
-@mixin flexCenter {
+@mixin flex($justify-content: center, $align-items: center) {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin flexBetween {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-@mixin flexAround {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-@mixin flexColumnCenter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: $justify-content;
+  align-items: $align-items;
 }
 
 @mixin small-font(
