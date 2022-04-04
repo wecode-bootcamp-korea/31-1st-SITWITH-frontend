@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import Pagination from './Pagination';
-import './ProductList.scss';
+import './ProductList.scss
 
 const ProductList = () => {
   const [productData, setProductData] = useState([]);
