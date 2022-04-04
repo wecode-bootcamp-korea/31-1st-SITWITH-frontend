@@ -1,39 +1,57 @@
 @mixin footer-font {
   margin-top: 30px;
   font-weight: 400;
-  font-size: 13px;
-  line-height: 30px;
+  font-size: 17px;
+  line-height: 1.5;
+
+  > li {
+    padding: 4px 0;
+  }
 }
 
 @mixin footer-title-font {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
-  line-height: 22px;
+  line-height: 30px;
 }
 
 .footer {
-  position: fixed;
   bottom: 0;
-  width: 100%;
-  background-color: black;
+  // margin: 0 auto;
+  min-width: 1000px;
+  height: 600px;
+  background-color: #141414;
 
   .footer-banner {
     display: flex;
     justify-content: space-between;
-    margin: 100px;
+    padding: 100px;
+    background-color: #141414;
 
     .logo-img {
       height: 35px;
       filter: invert(100%);
     }
+
+    .link-github {
+      opacity: 0.8;
+      transition: opacity 0.2s;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 
   .footer-main {
     display: flex;
-    margin: 100px;
+    padding: 0 100px;
     color: white;
 
     .inform {
+      width: 500px;
+
       .inform-title {
         @include footer-title-font;
       }
@@ -56,6 +74,15 @@
 
           .products {
             @include footer-font;
+
+            a {
+              text-decoration: none;
+              color: #fff;
+
+              > li {
+                padding: 4px 0;
+              }
+            }
           }
         }
 
@@ -72,6 +99,10 @@
 
           .support {
             @include footer-font;
+
+            .num {
+              font-size: 35px;
+            }
           }
         }
       }
