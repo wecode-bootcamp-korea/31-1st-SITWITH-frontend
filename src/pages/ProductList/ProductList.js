@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import Pagination from './Pagination';
-=======
-import React from 'react';
->>>>>>> master
 import './ProductList.scss';
 
 const ProductList = () => {
