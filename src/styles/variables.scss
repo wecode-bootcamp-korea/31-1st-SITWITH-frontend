@@ -11,6 +11,7 @@ $section-title-color: #807f83;
   align-items: $align-items;
 }
 
+<<<<<<< HEAD
 @mixin section-title {
   padding: 15px;
   border-right: $border-line;
@@ -20,6 +21,31 @@ $section-title-color: #807f83;
   text-align: left;
 }
 
+=======
+@mixin small-font(
+  $padding: 15px,
+  $color: $title-color,
+  $font-weight: lighter,
+  $font-size: smaller,
+  $text-align: left
+) {
+  padding: $padding;
+  color: $title-color;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  text-align: $text-align;
+}
+
+@mixin section-title {
+  padding: 15px;
+  border-right: $border-line;
+  border-bottom: $border-line;
+  color: $section-title-color;
+  font-size: small;
+  text-align: left;
+}
+
+>>>>>>> master
 @mixin bar {
   border-left: $border-line;
   border-right: $border-line;

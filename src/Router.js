@@ -3,6 +3,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
 import Main from './pages/Main/Main';
+import CartRouter from './pages/CartRouter/CartRouter';
+import Login from './pages/Login/Login';
+import Join from './pages/Join/Join';
 import ProductList from './pages/ProductList/ProductList';
 
 const Router = () => {
@@ -11,7 +14,10 @@ const Router = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/product/category" element={<ProductList />} />
+        <Route path="/cart/*" element={<CartRouter />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/join" element={<Join />} />
+        <Route path="/productList" element={<ProductList />} />
       </Routes>
       <Footer />
     </BrowserRouter>
