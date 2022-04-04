@@ -1,0 +1,77 @@
+{
+  "message": "Success",
+  "result": [
+    {
+      "primary_key": 1,
+      "category": "task_chairs",
+      "name": "chair01",
+      "color": "black",
+      "price": "50000.00",
+      "image": ["/images/productList/chair1.jpeg"]
+    },
+    {
+      "primary_key": 2,
+      "category": "task_chairs",
+      "name": "chair01",
+      "color": "red",
+      "price": "50000.00",
+      "image": ["/images/productList/chair2.jpeg"]
+    },
+    {
+      "primary_key": 3,
+      "category": "task_chairs",
+      "name": "chair02",
+      "color": "green",
+      "price": "200000.00",
+      "image": ["/images/productList/chair3.jpeg"]
+    },
+    {
+      "primary_key": 4,
+      "category": "task_chairs",
+      "name": "chair02",
+      "color": "black",
+      "price": "200000.00",
+      "image": ["/images/productList/chair4.jpeg"]
+    },
+    {
+      "primary_key": 5,
+      "category": "study_chairs",
+      "name": "chair03",
+      "color": "red",
+      "price": "300000.00",
+      "image": ["/images/productList/chair4.jpeg"]
+    },
+    {
+      "primary_key": 6,
+      "category": "study_chairs",
+      "name": "chair04",
+      "color": "black",
+      "price": "500000.00",
+      "image": ["/images/productList/chair5.jpeg"]
+    },
+    {
+      "primary_key": 7,
+      "category": "study_chairs",
+      "name": "chair04",
+      "color": "red",
+      "price": "500000.00",
+      "image": ["/images/productList/chair6.jpeg"]
+    },
+    {
+      "primary_key": 8,
+      "category": "study_chairs",
+      "name": "chair04",
+      "color": "green",
+      "price": "500000.00",
+      "image": ["/images/productList/chair7.jpeg"]
+    },
+    {
+      "primary_key": 9,
+      "category": "study_chairs",
+      "name": "chair04",
+      "color": "pink",
+      "price": "500000.00",
+      "image": ["/images/productList/chair8.jpeg"]
+    }
+  ]
+}

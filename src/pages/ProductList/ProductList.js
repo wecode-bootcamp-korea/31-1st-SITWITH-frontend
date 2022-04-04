@@ -5,41 +5,38 @@ import './ProductList.scss';
 
 const ProductList = () => {
   const [productData, setProductData] = useState([]);
-  // Pagination 관련 state
-  const [limit, setLimit] = useState(6);
   const [page, setPage] = useState(1);
-
-  const offset = (page - 1) * limit;
+  const offset = (page - 1) * PAGINATION_LIMIT;
 
   useEffect(() => {
-    fetch('http://10.58.2.66:8000/products')
+    fetch('http://10.58.3.140:8000/products')
       .then(res => {
-        if (res.status == '200') return res.json();
+        return res.json();
       })
-      .then(chairData => setProductData(chairData.result));
+      .then(chairData => {
+        setProductData(chairData.result);
+      });
   }, []);
-
-  console.log(productData);
 
   return (
     <div className="product-list-page">
       <div className="product-list-container">
-        <div className="product-list-title">
-          {/* 의자 이름 표시  */}
-          <h1>T50</h1>
+        <div className="product-list-title-wrap">
+          <h1 className="product-list-title">T50</h1>
         </div>
 
         <div className="separate-border">
-          <div></div>
+          <div />
         </div>
 
         <div className="product-list-series-feature">
           <h3 className="series-feature-title">SERIES FEATURE</h3>
-          <div className="series-feature-image">
+          <div className="series-feature-image-wrap">
             <img
-              alt="T50 chair image"
+              className="series-feature-image"
+              alt="T50 chair"
               src="/images/productList/product-list-chair-image.jpeg"
-            ></img>
+            />
           </div>
         </div>
         <div className="product-list">
@@ -51,33 +48,32 @@ const ProductList = () => {
           </div>
 
           <div className="separate-border">
-            <div></div>
+            <div />
           </div>
-
           <h3 className="series-list-title">Product List</h3>
-
           <div className="product-list-show">
-            {productData[0] ? (
-              productData
-                .slice(offset, offset + limit)
-                .map(list => (
-                  <ProductCard key={list.primary_key} productData={list} />
-                ))
-            ) : (
-              <h1>Loading...</h1>
-            )}
-            {/* {productData.map(product => (
-              <ProductCard
-                productData={product}
-                offset={offset}
-                limit={limit}
-                page={page}
-                setPage={setPage}
-              />
-            ))} */}
+            <ul className="product-list-wrap">
+              {productData[0] ? (
+                productData
+                  .slice(offset, offset + PAGINATION_LIMIT)
+                  .map(productData => (
+                    <ProductCard
+                      key={productData.primary_key}
+                      productData={productData}
+                    />
+                  ))
+              ) : (
+                <div className="product-list-loading-container">
+                  <div className="product-loading-circle" />
+                  <h1 className="product-list-loading">
+                    리스트를 불러오는 중입니다...
+                  </h1>
+                </div>
+              )}
+            </ul>
             <Pagination
               total={productData.length}
-              limit={limit}
+              limit={PAGINATION_LIMIT}
               page={page}
               setPage={setPage}
             />
@@ -87,5 +83,6 @@ const ProductList = () => {
     </div>
   );
 };
+const PAGINATION_LIMIT = 6;
 
 export default ProductList;

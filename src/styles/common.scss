@@ -1,13 +1,17 @@
-.blind {
-  font-size: 0;
-  line-height: 0;
-  text-indent: -10000px;
+.trt {
+  text-align: right;
 }
 
-.mt5 {
-  margin-top: 5px;
+.tlt {
+  text-align: left;
 }
 
-.mb5 {
-  margin-bottom: 5px;
+.tct {
+  text-align: center;
+}
+
+#root {
+  > :nth-child(2) {
+    min-height: calc(100vh - 700px);
+  }
 }
