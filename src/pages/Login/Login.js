@@ -11,8 +11,8 @@ const Login = () => {
   const navigate = useNavigate();
   const onLogin = () => {
     const { id, pw } = loginValue;
-    const emptyIdInput = loginValue.id.trim() === '';
-    const emptyPwInput = loginValue.pw.trim() === '';
+    const emptyIdInput = id.trim() === '';
+    const emptyPwInput = pw.trim() === '';
     const emptyLoginInput = emptyIdInput && emptyPwInput;
     if (emptyIdInput) {
       alert('[ 아이디 ] 는(은) 필수항목입니다.');
