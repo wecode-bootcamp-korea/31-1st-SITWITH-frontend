@@ -1,0 +1,143 @@
+.carousel {
+  position: relative;
+  height: 800px;
+  min-width: 1080px;
+  border-bottom: 1px solid #000;
+
+  .carousel-display {
+    max-width: 1680px;
+    margin: 0 auto;
+
+    .img-area {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 70%;
+      height: 900px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 80px;
+    right: 0;
+    overflow: hidden;
+
+    &:empty {
+      display: none;
+    }
+
+    .carousel-inner {
+      animation: fadein 2s;
+      transition: opacity 0.2s;
+    }
+    .txt-area {
+      position: absolute;
+      top: 50px;
+      left: 20px;
+      padding-top: 80px;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 300px;
+        height: 270px;
+        background-color: #fff;
+      }
+    }
+
+    .sub-txt {
+      position: relative;
+      margin-bottom: 10px;
+      line-height: 70px;
+      white-space: pre-wrap;
+      letter-spacing: 3px;
+      font-weight: lighter;
+      font-size: 60px;
+    }
+
+    .title-txt {
+      position: relative;
+      font-weight: bold;
+      font-size: 80px;
+    }
+  }
+
+  .carousel-nav {
+    position: absolute;
+    bottom: 180px;
+    left: 20px;
+
+    .btn-prev,
+    .btn-next {
+      position: relative;
+      width: 80px;
+      height: 26px;
+      line-height: 26px;
+      border: 0;
+      background-color: transparent;
+      transition: color 0.2s;
+      font-size: 20px;
+      font-weight: bold;
+      color: #000;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: calc(50% - 4px);
+        width: 8px;
+        height: 8px;
+        border-left: 2px solid #000;
+        border-top: 2px solid #000;
+      }
+
+      &:hover {
+        color: #002bd2;
+
+        &::before {
+          border-color: #002bd2;
+        }
+      }
+    }
+
+    .btn-prev {
+      text-align: right;
+
+      &::before {
+        left: 0;
+        transform: rotate(-45deg);
+      }
+    }
+
+    .btn-next {
+      text-align: left;
+
+      &::before {
+        content: '';
+        right: 0;
+        transform: rotate(135deg);
+      }
+    }
+  }
+}
