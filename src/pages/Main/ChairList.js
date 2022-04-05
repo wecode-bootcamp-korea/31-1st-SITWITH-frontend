@@ -1,9 +1,12 @@
 import React from 'react';
+import './ChairList.scss';
 
 const ChairList = props => {
+  const { category } = props;
+
   return (
     <ul className="menu-list">
-      {CHAIR_DATA[props.category].map(chair => (
+      {CHAIR_DATA[category].map(chair => (
         <li className="menu-item" key={chair.title}>
           <div className="img-wrap">
             <img
