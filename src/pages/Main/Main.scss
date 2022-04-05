@@ -29,7 +29,7 @@
     .menu-list {
       @include flex(space-between, flex-start);
 
-      &.col-2 {
+      @at-root .col-2 {
         .menu-item {
           width: calc(50% - 50px);
 
@@ -50,7 +50,7 @@
           }
         }
       }
-      &.col-3 {
+      @at-root .col-3 {
         .menu-item {
           width: calc(33% - 50px);
         }

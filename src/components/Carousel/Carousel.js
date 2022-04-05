@@ -19,9 +19,9 @@ function useInterval(callback, delay) {
   }, [delay]);
 }
 
-const Carousel = ({ slides }) => {
+const Carousel = () => {
   const [current, setCurrent] = useState(0);
-  const length = slides.length;
+  const length = BANNER_DATA.length;
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -37,7 +37,7 @@ const Carousel = ({ slides }) => {
   return (
     <div className="carousel">
       <div className="carousel-display">
-        {slides.map((slide, index) => {
+        {BANNER_DATA.map((slide, index) => {
           return (
             <div className="carousel-item" key={index}>
               {index === current && (
@@ -75,5 +75,36 @@ const Carousel = ({ slides }) => {
     </div>
   );
 };
+
+const BANNER_DATA = [
+  {
+    id: '1',
+    sub: '함께 앉아\n스터디',
+    title: 'SW-STUDY',
+    alt: 'SW-STUDY',
+    url: 'study',
+  },
+  {
+    id: '2',
+    sub: '함께 앉아서\n성장하는 아이들',
+    title: 'SW-BABY',
+    alt: 'SW-BABY',
+    url: 'baby',
+  },
+  {
+    id: '3',
+    sub: '함께 앉아\n정년퇴직',
+    title: 'SW-EXECUTIVE',
+    alt: 'SW-EXECUTIVE',
+    url: 'executive',
+  },
+  {
+    id: '4',
+    sub: '모두 함께\n칼퇴근',
+    title: 'SW-OFFICE',
+    alt: 'SW-OFFICE',
+    url: 'office',
+  },
+];
 
 export default Carousel;
