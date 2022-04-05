@@ -10,6 +10,7 @@ const Login = () => {
 
   const navigate = useNavigate();
   const onLogin = () => {
+    const { id, pw } = loginValue;
     const emptyIdInput = loginValue.id.trim() === '';
     const emptyPwInput = loginValue.pw.trim() === '';
     const emptyLoginInput = emptyIdInput && emptyPwInput;
@@ -21,14 +22,16 @@ const Login = () => {
       fetch('http://10.58.6.159:8000/users/signin', {
         method: 'POST',
         body: JSON.stringify({
-          username: loginValue.id,
-          password: loginValue.pw,
+          username: id,
+          password: pw,
         }),
       })
         .then(res => res.json())
         .then(res => {
-          if (res.message) {
-            alert('로그인에 실패하셨습니다.');
+          if (res.message === 'User does not exist') {
+            alert('존재하지 않는 아이디입니다.');
+          } else if (res.message === 'Password does not match') {
+            alert('비밀번호가 일치하지 않습니다.');
           } else if (res.token) {
             localStorage.setItem('token', res.token);
             navigate('/Main/Main');
