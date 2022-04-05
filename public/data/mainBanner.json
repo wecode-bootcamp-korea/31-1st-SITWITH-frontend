@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "sub": "함께 앉아서\n스터디",
+    "title": "SW-STUDY",
+    "alt": "SW-STUDY",
+    "url": "study"
+  },
+  {
+    "id": "2",
+    "sub": "함께 앉아\n성장하는 아이들",
+    "title": "SW-BABY",
+    "alt": "SW-BABY",
+    "url": "baby"
+  },
+  {
+    "id": "3",
+    "sub": "근무도 회식도\n모두 함께",
+    "title": "SW-EXECUTIVE",
+    "alt": "SW-EXECUTIVE",
+    "url": "executive"
+  },
+  {
+    "id": "4",
+    "sub": "모두 함께\n칼퇴근",
+    "title": "SW-OFFICE",
+    "alt": "SW-OFFICE",
+    "url": "office"
+  }
+]

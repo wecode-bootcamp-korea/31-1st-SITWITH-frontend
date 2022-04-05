@@ -1,25 +1,17 @@
-@import './variables.scss';
-
-* {
-  box-sizing: border-box;
-  outline: none;
+.trt {
+  text-align: right;
 }
 
-input:focus {
-  outline: none;
-}
-a {
-  color: #333;
-  text-decoration: none;
-}
-li {
-  list-style: none;
-}
-button {
-  vertical-align: middle;
+.tlt {
+  text-align: left;
 }
 
-img {
-  width: 100%;
-  height: 100%;
+.trt {
+  text-align: center;
+}
+
+#root {
+  > :nth-child(2) {
+    min-height: calc(100vh - 700px);
+  }
 }

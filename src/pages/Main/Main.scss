@@ -2,10 +2,12 @@
 .main {
   .product-section {
     border-bottom: 1px solid #ccc;
+    min-width: 1080px;
   }
 
   .section-header {
-    @include flexBetween;
+    @include flex(space-between, center);
+    margin-bottom: 30px;
 
     .link-more {
       color: #002bd2;
@@ -22,20 +24,25 @@
   .section-inner {
     max-width: 1260px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 30px 20px;
 
     .menu-list {
-      @include flexBetween;
+      @include flex(space-between, flex-start);
 
       &.col-2 {
         .menu-item {
           width: calc(50% - 50px);
+
+          .img-thumb {
+            width: 100%;
+          }
 
           &:nth-child(even) {
             .img-thumb {
               height: 800px;
             }
           }
+
           &:nth-child(odd) {
             .img-thumb {
               height: 600px;
@@ -111,6 +118,5 @@
   }
 }
 .carousel-section {
-  padding: 20px 0 70px;
-  border-bottom: 1px solid #000;
+  padding: 20px 0 0;
 }

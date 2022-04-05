@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from '../../components/Carousel/Carousel';
 import './Main.scss';
 
 const Main = () => {
+  const [banner, setBanner] = useState([]);
+  const [babyChair, setBabyChair] = useState([]);
+  const [officeChair, setOfficeChair] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/mainBanner.json')
+      .then(res => res.json())
+      .then(res => setBanner(res));
+  });
   return (
     <main className="main">
-      <div className="carousel-section">
-        <Carousel slides={ImageData} />
-      </div>
+      <section className="carousel-section">
+        <Carousel slides={banner} />
+      </section>
       <section className="product-section">
         <article className="section-inner">
           <div className="section-header">
@@ -94,26 +103,4 @@ const Main = () => {
     </main>
   );
 };
-
-const ImageData = [
-  {
-    image: '/images/main/img_slide_01.jpeg',
-    sub: '함께\n앉아서',
-    title: 'SITWITH',
-    alt: 'SITWITH',
-  },
-  {
-    image: '/images/main/img_slide_02.jpeg',
-    sub: '함께\n앉아서',
-    title: 'SITWITH',
-    alt: 'SITWITH',
-  },
-  {
-    image: '/images/main/img_slide_03.jpeg',
-    sub: '함께\n앉아서',
-    title: 'SITWITH',
-    alt: 'SITWITH',
-  },
-];
-
 export default Main;

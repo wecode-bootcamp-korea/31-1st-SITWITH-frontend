@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './Carousel.scss';
 
 function useInterval(callback, delay) {
@@ -42,11 +43,16 @@ const Carousel = ({ slides }) => {
               {index === current && (
                 <div className="carousel-inner" key={index}>
                   <div className="img-area">
-                    <img
-                      className="img-thumb"
-                      src={slide.image}
-                      alt={slide.alt}
-                    />
+                    <Link
+                      className="link-category"
+                      to={`/category/${slide.url}`}
+                    >
+                      <img
+                        className="img-thumb"
+                        src={`/images/main/img_slide_${slide.id}.jpeg`}
+                        alt={slide.alt}
+                      />
+                    </Link>
                   </div>
                   <div className="txt-area">
                     <div className="sub-txt">{slide.sub}</div>
