@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Cart from './Cart/Cart';
-import Compare from './Compare/Compare';
+import CompareList from './CompareList/CompareList';
 import CartNav from './CartNav';
+import './CartRouter.scss';
 
 const CartRouter = () => {
+  const [select, setSelect] = useState('');
+
   return (
     <>
-      <CartNav />
+      <CartNav select={select} />
       <div className="container">
-        <Routes>
-          <Route path="/" element={<Cart />} />
-          <Route path="/compare" element={<Compare />} />
-        </Routes>
+        <div className="contents">
+          <Routes>
+            <Route path="/" element={<Cart setSelect={setSelect} />} />
+            <Route
+              path="/compare"
+              element={<CompareList setSelect={setSelect} />}
+            />
+          </Routes>
+        </div>
       </div>
     </>
   );

@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './CartNav.scss';
 
-const CartNav = () => {
-  const [select, setSelect] = useState(true);
-
-  const handleSelect = () => {
-    setSelect(!select);
-  };
+const CartNav = ({ select }) => {
   return (
     <div className="cart-nav">
       <dl>
@@ -16,12 +11,12 @@ const CartNav = () => {
             <button>HOME</button>
           </Link>
         </dt>
-        <dd className={select ? 'selected' : ''} onClick={handleSelect}>
+        <dd className={select === 'cart' ? 'selected' : ''}>
           <Link to="/cart">
             <button>장바구니</button>
           </Link>
         </dd>
-        <dd className={select ? '' : 'selected'} onClick={handleSelect}>
+        <dd className={select === 'compare' ? 'selected' : ''}>
           <Link to="/cart/compare">
             <button>비교하기</button>
           </Link>

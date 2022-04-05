@@ -1,55 +1,50 @@
-tr {
+@import '../../../../styles/variables.scss';
+
+.cartProduct {
   td {
-    padding: 30px 20px 30px 20px;
+    height: 150px;
+    padding: 5px;
+    border-right: $border-line;
+    vertical-align: middle;
   }
 
-  .product-img {
-    text-align: center;
-    width: 250px;
-    border-bottom: 1px solid #d1d1d1;
-    padding: 0 0 0 15px;
-
-    .product-img-wrap {
+  .product {
+    @include flex;
+    P {
+      min-width: 110px;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    .product-img {
       width: 90px;
       height: 90px;
-      margin: 0 auto;
+      margin-right: 40px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
-  .product-name {
-    border-bottom: 1px solid #d1d1d1;
-    border-right: 1px solid #d1d1d1;
-  }
-
-  button {
-    background-color: inherit;
-    border: none;
-    vertical-align: middle;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-  }
-
-  .count p {
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 15px;
-  }
-
   .btn-list {
+    border-right: none;
+
     button {
+      width: 58px;
+      height: 25px;
+      padding: 5px;
+      margin-top: 3px;
       border-radius: 5px;
       border-color: inherit;
       background-color: #807f83;
       color: white;
       font-size: 12px;
-      padding: 5px;
     }
 
     .order-btn {
       background-color: #ef4130;
-      margin-bottom: 3px;
     }
   }
 }

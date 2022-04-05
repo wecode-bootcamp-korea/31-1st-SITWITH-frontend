@@ -1,38 +1,53 @@
 import React from 'react';
 import './CartProduct.scss';
 
-const CartProduct = ({ product, checkList, checkHandler, deleteHandler }) => {
-  const { img, id, name, color, price, quantity } = product;
-
+const CartProduct = ({
+  product,
+  checkList,
+  checkHandler,
+  cartDelete,
+  addCompareList,
+}) => {
+  const {
+    image_url,
+    cart_id,
+    product_name,
+    color_name,
+    product_price,
+    quantity,
+  } = product;
   return (
-    <tr>
+    <tr className="cartProduct">
       <td className="tct">
         <input
           type="checkbox"
           className="checkbox"
-          checked={checkList.indexOf(id) >= 0 ? true : false}
-          onChange={e => checkHandler(e, id)}
+          checked={checkList.includes(cart_id)}
+          onChange={e => checkHandler(e, cart_id)}
         />
       </td>
-      <td className="product-img">
-        <div className="product-img-wrap">
-          <img src={img} alt={`상품이미지${id}`} />
+      <td className="product">
+        <div className="product-img">
+          <img src={image_url} alt={`상품이미지${cart_id}`} />
         </div>
+        <p>{product_name.replace(/\\n/g, '\n')}</p>
       </td>
-      <td className="product-name">
-        <p>{name}</p>
-      </td>
-      <td className="tct">{color}</td>
+      <td className="tct">{color_name}</td>
       <td className="trt">
-        {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+        {Math.floor(product_price)
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
       </td>
       <td className="tct count">{quantity}</td>
       <td className="trt">
-        {(quantity * price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+        {(quantity * product_price)
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
       </td>
       <td className="tct btn-list">
         <button className="order-btn">주문하기</button>
-        <button onClick={deleteHandler}>삭제</button>
+        <button onClick={e => cartDelete(e, cart_id)}>삭제</button>
+        <button onClick={e => addCompareList(e, product)}>비교하기</button>
       </td>
     </tr>
   );
