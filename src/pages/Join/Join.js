@@ -9,6 +9,8 @@ const Join = () => {
     email: '',
   });
 
+  const [checked, setChecked] = useState(false);
+
   const navigate = useNavigate();
 
   const onJoin = () => {
@@ -17,7 +19,9 @@ const Join = () => {
     const validPw = pw !== '' && 7 < pw.length < 16;
     const validEmail = email !== '' && pw.includes('@', '.');
 
-    if (!validId) {
+    if (!checked) {
+      alert('이용약관은 필수 동의 사항입니다.');
+    } else if (!validId) {
       alert(
         '[ 아이디 ] 는(은) 공백없는 3~15자의 소문자와 숫자를 조합하여 입력해주세요.'
       );
@@ -53,6 +57,10 @@ const Join = () => {
     setJoinValue(joinValue => ({ ...joinValue, [name]: value }));
   }
 
+  function handleCheckbox(e) {
+    setChecked(e.target.checked);
+  }
+
   return (
     <div className="join">
       <h1 className="join-title">통합회원가입</h1>
@@ -62,7 +70,7 @@ const Join = () => {
       <div className="agreement">
         <h3 className="section-title">약관동의</h3>
         <div className="check-terms-use">
-          <input type="checkbox" />
+          <input type="checkbox" onChange={handleCheckbox} />
           <span className="terms-use-title">이용약관</span>
         </div>
         <div className="terms-use">
