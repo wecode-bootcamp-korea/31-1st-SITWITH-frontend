@@ -1,15 +1,14 @@
-$border-line: 1px solid #b5b5b5;
-$title-color: gray;
+@import '../../styles/variables.scss';
 
 @mixin small-font(
   $padding: 15px,
-  $color: $title-color,
-  $font-weight: lighter,
-  $font-size: smaller,
+  $color: $gray,
+  $font-weight: normal,
+  $font-size: 13px,
   $text-align: left
 ) {
   padding: $padding;
-  color: $title-color;
+  color: $gray;
   font-weight: $font-weight;
   font-size: $font-size;
   text-align: $text-align;
@@ -29,39 +28,36 @@ $title-color: gray;
   height: 800px;
 
   .join-title {
-    color: $title-color;
+    margin: 30px 0;
+    color: $gray;
+    font-size: 32px;
+    font-weight: bold;
   }
 
   .bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 15px;
-    border-right: $border-line;
-    border-left: $border-line;
+    @include bar;
 
     .bar-line {
       border-bottom: $border-line;
     }
   }
+  .section-title {
+    margin: 10px 0 0;
+    height: 25px;
+    color: $gray;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
 
   .agreement {
     margin-bottom: 50px;
 
-    .agreement-title {
-      margin: 0px;
-      height: 25px;
-      color: $title-color;
-      font-size: 20px;
-      text-align: center;
-    }
-
     .check-terms-use {
-      font-size: smaller;
+      font-size: 13px;
 
       .terms-use-title {
-        color: $title-color;
-        font-weight: lighter;
+        color: $gray;
       }
     }
   }
@@ -69,13 +65,14 @@ $title-color: gray;
   .terms-use {
     height: 250px;
     margin: 30px 0px;
+    padding: 10px;
+    line-height: 1.33em;
     border: $border-line;
     overflow: scroll;
 
     p {
-      color: $title-color;
-      font-weight: lighter;
-      font-size: small;
+      color: $gray;
+      font-size: 13px;
     }
   }
 
@@ -96,7 +93,7 @@ $title-color: gray;
     .member-data-title {
       margin: 0px;
       height: 25px;
-      color: $title-color;
+      color: $gray;
       font-size: 20px;
       text-align: center;
     }
@@ -107,6 +104,12 @@ $title-color: gray;
 
         .member-data-table {
           border: $border-line;
+          width: 100%;
+          td {
+            > input + p {
+              margin-top: 8px;
+            }
+          }
 
           tbody {
             .member-id-box {
