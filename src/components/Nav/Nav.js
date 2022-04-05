@@ -19,13 +19,13 @@ const Nav = () => {
           </li>
           <li className="sub-menu-item">
             <Link className="link-menu" to="/Compare">
-              <i className="ico-nav ico-nav-compare"></i>
+              <i className="ico-nav ico-nav-compare" />
               <span className="txt">비교하기</span>
             </Link>
           </li>
           <li className="sub-menu-item">
             <Link className="link-menu" to="/Cart">
-              <i className="ico-nav ico-nav-cart"></i>
+              <i className="ico-nav ico-nav-cart" />
               <span className="txt">장바구니</span>
             </Link>
           </li>
