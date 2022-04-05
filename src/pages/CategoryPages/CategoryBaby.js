@@ -12,18 +12,17 @@ const ProductList = () => {
   );
   const offset = (page - 1) * PAGINATION_LIMIT;
 
-  useEffect(() => {
-    fetch('http://10.58.6.153:8000/products')
-      .then(res => {
-        return res.json();
-      })
-      .then(chairData => {
-        console.log(chairData);
-        setProductData(chairData.result);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://10.58.3.140:8000/products')
+  //     .then(res => {
+  //       return res.json();
+  //     })
+  //     .then(chairData => {
+  //       setProductData(chairData.result);
+  //     });
+  // }, []);
 
-  console.log(productData);
+  // console.log('productList 부분' + productData);
 
   //[comment]Down is Mock Data Fetch
   // useEffect(() => {
@@ -76,7 +75,7 @@ const ProductList = () => {
                   .slice(offset, offset + PAGINATION_LIMIT)
                   .map(productData => (
                     <ProductCard
-                      key={productData.name}
+                      key={productData.primary_key}
                       productData={productData}
                     />
                   ))
