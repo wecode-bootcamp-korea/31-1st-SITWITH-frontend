@@ -1,6 +1,6 @@
 @import '../../styles/variables.scss';
 
-$hover-color: #002bd2;
+$hover-color: #0042ff;
 
 .nav {
   background-color: #fff;
@@ -115,7 +115,7 @@ $hover-color: #002bd2;
       color: #fff;
     }
 
-    &.product-all {
+    &:first-child {
       margin-bottom: 10px;
       padding-bottom: 12px;
       border-bottom: 1px dotted rgba($color: #fff, $alpha: 0.2);
