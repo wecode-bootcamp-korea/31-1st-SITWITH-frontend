@@ -59,9 +59,53 @@ $font-color: #807f83;
           transparent 3px,
           transparent 6px
         );
+        cursor: not-allowed;
 
-        .color {
-          width: 100%;
+        &.Red {
+          background: #e54f65;
+          border: 0;
+          cursor: pointer;
+        }
+
+        &.Green {
+          background: #499a7d;
+          border: 0;
+          cursor: pointer;
+        }
+
+        &.Blue {
+          background: #4f78e5;
+          border: 0;
+          cursor: pointer;
+        }
+
+        &.Yellow {
+          background: #f1bd21;
+          border: 0;
+          cursor: pointer;
+        }
+
+        &.Purple {
+          background: #f1bd21;
+          border: 0;
+          cursor: pointer;
+        }
+
+        &.active {
+          border: 3px solid #ff2e17;
+
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: calc(50% - 8px);
+            left: calc(50% - 9px);
+            width: 15px;
+            height: 7px;
+            border-right: 3px solid #ff2e17;
+            border-top: 3px solid #ff2e17;
+            transform: rotate(135deg);
+          }
         }
       }
 

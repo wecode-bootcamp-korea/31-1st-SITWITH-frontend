@@ -34,16 +34,12 @@ const Product = () => {
               <div className="color-group">
                 <div className="group-title">color / 색상</div>
                 <ul className="color-list">
-                  <li className="color-item">
-                    <div className="color red" />
-                  </li>
-                  <li className="color-item">
-                    <div className="color green" />
-                  </li>
-                  <li className="color-item null" />
-                  <li className="color-item null" />
-                  <li className="color-item null" />
-                  <li className="color-item null" />
+                  <li className="color-item Green active" name="Green" />
+                  <li className="color-item Red" />
+                  <li className="color-item" />
+                  <li className="color-item" />
+                  <li className="color-item" />
+                  <li className="color-item" />
                 </ul>
                 <div className="color-name">그린</div>
               </div>
