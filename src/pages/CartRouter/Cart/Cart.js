@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CartProduct from './CartProduct/CartProduct';
+import { API } from '../../../config';
 import './Cart.scss';
 
 const Cart = ({ setSelect }) => {
@@ -8,6 +9,14 @@ const Cart = ({ setSelect }) => {
   const [checkList, setCheckList] = useState([]);
   const [total, setTotal] = useState(0);
   const [compareList, setCompareList] = useState([]);
+  const cols = ['50px', '', '100px', '90px', '80px', '100px', '100px'];
+  const thNames = ['제품정보', '색상', '판매가격', '수량', '주문금액', ''];
+  const buttons = [
+    { link: '/', className: '', content: '계속쇼핑하기' },
+    { link: '', className: '', content: '선택상품 삭제하기' },
+    { link: '', className: '', content: '선택상품 주문하기' },
+    { link: '', className: 'order-all', content: '전체상품 주문하기' },
+  ];
 
   const orderPrice = data => {
     return data.result.map(
@@ -23,7 +32,7 @@ const Cart = ({ setSelect }) => {
   };
 
   useEffect(() => {
-    fetch('http://10.58.2.32:8000/:8000/cart', {
+    fetch(`${API.cart}`, {
       headers: { Authorization: localStorage.getItem('Authorization') },
     })
       .then(res => {
@@ -82,15 +91,15 @@ const Cart = ({ setSelect }) => {
 
   const cartDelete = (e, cart_id) => {
     e.preventDefault();
-    fetch(`http://10.58.2.32:8000/:8000/cart?id=${cart_id}`, {
+    fetch(`${API.cart}?id=${cart_id}`, {
       method: 'delete',
       headers: {
         Authorization: localStorage.getItem('Authorization'),
       },
     }).then(res => {
-      if (res.status === 200) {
+      if (res.status === 204) {
         alert('삭제되었습니다');
-        fetch('http://10.58.2.32:8000/:8000/cart', {
+        fetch(`${API.cart}`, {
           headers: { Authorization: localStorage.getItem('Authorization') },
         })
           .then(res => res.json())
@@ -146,13 +155,9 @@ const Cart = ({ setSelect }) => {
         <form className="cart-form">
           <table className="cart-table">
             <colgroup>
-              <col width="50px" />
-              <col />
-              <col width="100px" />
-              <col width="90px" />
-              <col width="80px" />
-              <col width="100px" />
-              <col width="100px" />
+              {cols.map((col, idx) => (
+                <col key={idx} width={col} />
+              ))}
             </colgroup>
             <thead>
               <tr>
@@ -163,12 +168,11 @@ const Cart = ({ setSelect }) => {
                     onChange={checkAllHandler}
                   />
                 </th>
-                <th className="tct">제품정보</th>
-                <th className="tct">색상</th>
-                <th className="tct">판매가격</th>
-                <th className="tct">수량</th>
-                <th className="tct">주문금액</th>
-                <th className="tct">&nbsp;</th>
+                {thNames.map((name, idx) => (
+                  <th key={idx} className="tct">
+                    {name}
+                  </th>
+                ))}
               </tr>
             </thead>
             {cartList.length !== 0 ? (
@@ -208,20 +212,13 @@ const Cart = ({ setSelect }) => {
       </div>
       <div className="button-list">
         <ul>
-          <li>
-            <Link to="/">
-              <button>계속쇼핑하기</button>
+          {buttons.map((button, idx) => (
+            <Link key={idx} to={button.link}>
+              <li>
+                <button className={button.className}>{button.content}</button>
+              </li>
             </Link>
-          </li>
-          <li>
-            <button>선택상품 삭제하기</button>
-          </li>
-          <li>
-            <button>선택상품 주문하기</button>
-          </li>
-          <li>
-            <button className="order-all">전체상품 주문하기</button>
-          </li>
+          ))}
         </ul>
       </div>
     </div>

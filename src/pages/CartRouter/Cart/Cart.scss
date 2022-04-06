@@ -1,9 +1,7 @@
 @import '../../../styles/variables.scss';
 .cart {
   .process-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between, center);
 
     .process-bar-img {
       width: 30px;
@@ -16,9 +14,7 @@
     }
 
     .cart-bar {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex;
       width: 480px;
       padding: 30px;
       margin-top: 20px;
@@ -27,9 +23,7 @@
     }
 
     .order-bar {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex;
       width: 480px;
       padding: 30px;
       margin-top: 20px;
