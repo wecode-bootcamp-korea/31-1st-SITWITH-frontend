@@ -59,7 +59,7 @@ const CategoryStudy = () => {
                 <div className="product-list-loading-container">
                   <div className="product-loading-circle" />
                   <h1 className="product-list-loading">
-                    리스트를 불러오는 중입니다...
+                    상품 리스트를 불러오는 중입니다...
                   </h1>
                 </div>
               )}

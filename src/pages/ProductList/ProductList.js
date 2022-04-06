@@ -6,37 +6,20 @@ import './ProductList.scss';
 
 const ProductList = () => {
   const [productsData, setProductsData] = useState([]);
-  const [totalNum, setTotalNum] = useState([]);
-  const [page, setPage] = useState();
-  // localStorage.getItem('pageNum') !== null
-  //   ? JSON.parse(localStorage.getItem('pageNum'))
-  //   : 1
-  const offset = (page - 1) * PAGINATION_LIMIT;
-
   const navigate = useNavigate();
   const location = useLocation();
 
   const updateOffset = buttonIndex => {
-    // 각각 버튼마다 보이는 갯수
-    const limit = 6;
-    const offset = buttonIndex * limit;
-    const queryString = `?offset=${offset}&limit=${limit}`;
+    const offset = buttonIndex * PAGINATION_LIMIT;
+    const queryString = `?offset=${offset}&limit=${PAGINATION_LIMIT}`;
     navigate(queryString);
   };
 
   useEffect(() => {
-    fetch('http://10.58.2.32:8000/products')
-      .then(res => {
-        return res.json();
-      })
-      .then(chairData => {
-        setTotalNum(chairData.result);
-      });
-  }, []);
-
-  useEffect(() => {
     fetch(
-      `http://10.58.2.32:8000/products${location.search || `?offset=0&limit=3`}`
+      `http://10.58.2.32:8000/products${
+        location.search || `?offset=0&limit=${PAGINATION_LIMIT}`
+      }`
     )
       .then(res => {
         return res.json();
@@ -45,13 +28,6 @@ const ProductList = () => {
         setProductsData(chairData.result);
       });
   }, [location.search]);
-
-  // useEffect(() => {
-  //   localStorage.setItem(
-  //     'Authorization',
-  //     'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImV4cCI6MTY0OTI0NjY4N30.Mz4_jvVlpGrxE4b0EKx2KoF3pHwxlDXs4RaiFQnfdPk'
-  //   );
-  // }, []);
 
   return (
     <div className="product-list-page">
@@ -99,42 +75,18 @@ const ProductList = () => {
                 <div className="product-list-loading-container">
                   <div className="product-loading-circle" />
                   <h1 className="product-list-loading">
-                    리스트를 불러오는 중입니다...
+                    상품 리스트를 불러오는 중입니다...
                   </h1>
                 </div>
               )}
-              {/* {productsData[0] ? (
-                productsData
-                  .slice(offset, offset + PAGINATION_LIMIT)
-                  .map(productData => (
-                    <ProductCard
-                      key={productData.name}
-                      productData={productData}
-                      addCompareList={addCompareList}
-                    />
-                  ))
-              ) : (
-                <div className="product-list-loading-container">
-                  <div className="product-loading-circle" />
-                  <h1 className="product-list-loading">
-                    리스트를 불러오는 중입니다...
-                  </h1>
-                </div>
-              )} */}
             </ul>
-            <Pagination
-              total={totalNum.length}
-              limit={PAGINATION_LIMIT}
-              page={page}
-              setPage={setPage}
-              updateOffset={updateOffset}
-            />
+            {productsData[0] && <Pagination updateOffset={updateOffset} />}
           </div>
         </div>
       </div>
     </div>
   );
 };
-const PAGINATION_LIMIT = 6;
+let PAGINATION_LIMIT = 6;
 
 export default ProductList;

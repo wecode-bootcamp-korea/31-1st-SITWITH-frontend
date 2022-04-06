@@ -12,8 +12,8 @@ const ProductCard = ({ productData }) => {
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
-  const goToInfo = (e, productId) => {
-    e.preventDefault();
+  const goToInfo = (event, productId) => {
+    event.preventDefault();
     navigate(`/info/${productId}`);
   };
 
