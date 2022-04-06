@@ -11,7 +11,7 @@
 }
 
 #root {
-  x > :nth-child(2) {
+   > :nth-child(2) {
     min-height: calc(100vh - 700px);
   }
 }
