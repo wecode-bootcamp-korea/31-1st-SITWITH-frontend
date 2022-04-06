@@ -1,5 +1,5 @@
 import React from 'react';
-import 'Products.scss';
+import './ProductList.scss';
 
 const ProductList = () => {
   return <div>ProductList</div>;

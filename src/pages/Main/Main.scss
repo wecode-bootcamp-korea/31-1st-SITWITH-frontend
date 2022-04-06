@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+.main {
+  .product-section {
+    border-bottom: 1px solid #ccc;
+    min-width: 1080px;
+  }
+
+  .section-header {
+    @include flex(space-between, center);
+    margin-bottom: 30px;
+
+    .link-more {
+      color: #002bd2;
+      font-size: 13px;
+    }
+  }
+
+  .section-title {
+    line-height: 32px;
+    font-weight: normal;
+    font-size: 24px;
+  }
+
+  .section-inner {
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 30px 20px;
+  }
+}
+.carousel-section {
+  padding: 20px 0 0;
+}

@@ -8,7 +8,7 @@ const Nav = () => {
       <div className="nav-top">
         <ul className="sub-menu-list">
           {MENU_DATA.service.map(menu => (
-            <li className="sub-menu-item">
+            <li className="sub-menu-item" key={menu.title}>
               <Link className="link-menu" to={menu.link}>
                 <i className={`ico-nav ico-nav-${menu.icon}`} />
                 <span className="txt">{menu.title}</span>
@@ -28,7 +28,7 @@ const Nav = () => {
             <div className="menu-title">PRODUCTS</div>
             <ul className="product-menu-list">
               {MENU_DATA.product.map(menu => (
-                <li className="product-menu-item">
+                <li className="product-menu-item" key={menu.title}>
                   <Link className="link-product" to={menu.link}>
                     {menu.title}
                   </Link>
