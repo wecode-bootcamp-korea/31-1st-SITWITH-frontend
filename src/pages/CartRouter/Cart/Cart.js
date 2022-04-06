@@ -32,7 +32,7 @@ const Cart = ({ setSelect }) => {
   };
 
   useEffect(() => {
-    fetch(`${API.cart}`, {
+    fetch(`${API.carts}`, {
       headers: { Authorization: localStorage.getItem('Authorization') },
     })
       .then(res => {
@@ -91,7 +91,7 @@ const Cart = ({ setSelect }) => {
 
   const cartDelete = (e, cart_id) => {
     e.preventDefault();
-    fetch(`${API.cart}?id=${cart_id}`, {
+    fetch(`${API.carts}?id=${cart_id}`, {
       method: 'delete',
       headers: {
         Authorization: localStorage.getItem('Authorization'),
@@ -99,7 +99,7 @@ const Cart = ({ setSelect }) => {
     }).then(res => {
       if (res.status === 204) {
         alert('삭제되었습니다');
-        fetch(`${API.cart}`, {
+        fetch(`${API.carts}`, {
           headers: { Authorization: localStorage.getItem('Authorization') },
         })
           .then(res => res.json())

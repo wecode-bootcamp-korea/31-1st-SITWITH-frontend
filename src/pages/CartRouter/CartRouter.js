@@ -7,12 +7,7 @@ import './CartRouter.scss';
 
 const CartRouter = () => {
   const [select, setSelect] = useState('');
-  useEffect(() => {
-    localStorage.setItem(
-      'Authorization',
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImV4cCI6MTY0OTMzMTc1NX0.NYTtNkfMXk3hYVh4kHriCv0UM5CvZQEAvK-DIQCLFWI'
-    );
-  }, []);
+
   return (
     <>
       <CartNav select={select} />
