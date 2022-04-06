@@ -87,6 +87,26 @@
             }
           }
         }
+
+        .button-box {
+          height: 80px;
+
+          .button-title {
+            display: flex;
+            align-items: center;
+            margin-left: 15px;
+            height: 100%;
+
+            .login-button {
+              width: 230px;
+              height: 40px;
+              border-radius: 4px;
+              background-color: #ef412f;
+              font-size: 15px;
+              color: #fff;
+            }
+          }
+        }
       }
     }
   }
