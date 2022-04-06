@@ -40,7 +40,6 @@ const Nav = () => {
       </div>
     </nav>
   );
-<<<<<<< HEAD
 };
 
 const MENU_DATA = {
@@ -57,8 +56,6 @@ const MENU_DATA = {
     { title: '유아용 의자', link: '/ProductList/category/baby' },
     { title: '중역용 의자', link: '/ProductList/category/executive' },
   ],
-=======
->>>>>>> fc066c021024f5250d26e798810adbdb9431aa18
 };
 
 export default Nav;
