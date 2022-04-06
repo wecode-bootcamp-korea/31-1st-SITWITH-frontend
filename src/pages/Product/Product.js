@@ -2,20 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './Product.scss';
 
 const Product = () => {
-  const [chairData, setChairData] = useState([]);
-
-  useEffect(() => {
-    fetch('/data/Product/PRODUCT_DATA.json')
-      .then(response => response.json())
-      .then(data => setChairData(data));
-  }, []);
-
-  let chairColor = [];
-
-  chairData.message && (chairColor = chairData.colorproductlist[0].image_list);
-
-  chairData.message && console.log(chairColor);
-
   return (
     <div className="product">
       <div className="detail-section">
@@ -23,7 +9,11 @@ const Product = () => {
           <div className="group-wrap">
             <div className="left-area">
               <div className="img-wrap">
-                <img className="img-thumb" src="" alt=""></img>
+                <img
+                  className="img-thumb"
+                  src="../images/KakaoTalk_20220328_182759320.jpg"
+                  alt=""
+                ></img>
               </div>
             </div>
             <div className="right-area">
@@ -69,10 +59,16 @@ const Product = () => {
             <div className="img-select">
               <ul className="img-list">
                 <li className="img-item active">
-                  <img src="" alt="" />
+                  <img
+                    src="../images/KakaoTalk_20220328_182759320.jpg"
+                    alt=""
+                  />
                 </li>
                 <li className="img-item">
-                  <img src="" alt="" />
+                  <img
+                    src="../images/KakaoTalk_20220328_182759320.jpg"
+                    alt=""
+                  />
                 </li>
               </ul>
             </div>
@@ -83,11 +79,19 @@ const Product = () => {
         <div className="group-wrap">
           <img
             className="img-info"
-            src="../../public/images/productDetail/img-chair-info.jpg"
+            src="../images/productDetail/img-chair-info.jpg"
             alt=""
           />
-          <img className="img-info" src="" alt="" />
-          <img className="img-info" src="" alt="" />
+          <img
+            className="img-info"
+            src="../images/KakaoTalk_20220328_182759320.jpg"
+            alt=""
+          />
+          <img
+            className="img-info"
+            src="../images/KakaoTalk_20220328_182759320.jpg"
+            alt=""
+          />
         </div>
       </div>
     </div>
