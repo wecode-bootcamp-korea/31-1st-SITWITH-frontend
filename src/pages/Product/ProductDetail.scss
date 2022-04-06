@@ -1,0 +1,40 @@
+@import '../../styles/variables.scss';
+
+.product-detail {
+  width: 60%;
+
+  .border {
+    margin-top: 70px;
+    @include bar;
+  }
+
+  h2 {
+    color: $gray;
+    margin: 0;
+  }
+
+  .product-detail-basic-information {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-detail-function-material {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-detail-story {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-detail-dimension {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-detail-delivery {
+    display: flex;
+    flex-direction: column;
+  }
+}

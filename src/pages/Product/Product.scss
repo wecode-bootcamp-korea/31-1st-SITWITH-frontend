@@ -1,0 +1,150 @@
+@import '../../styles/variables.scss';
+
+$font-color: #807f83;
+.product {
+  .group-wrap {
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+  .header-group {
+    background-color: #e6e6e6;
+
+    .group-wrap {
+      @include flex(space-between, flex-start);
+    }
+
+    .txt-group {
+      padding: 40px 0;
+
+      .name {
+        margin-bottom: 4px;
+        font-size: 30px;
+        color: $font-color;
+      }
+
+      .price {
+        font-size: 28px;
+        font-weight: lighter;
+        color: $font-color;
+      }
+    }
+
+    .group-title {
+      margin-bottom: 3px;
+      font-size: 13px;
+      font-weight: bold;
+      color: $font-color;
+      margin-bottom: 10px;
+    }
+
+    .color-group {
+      padding: 0 0 20px;
+
+      .color-list {
+        @include flex(flex-start, flex-start);
+        margin-bottom: 10px;
+      }
+
+      .color-item {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        margin-right: 15px;
+        border: 1px solid #b2b2b2;
+        background: repeating-linear-gradient(
+          -45deg,
+          #cfcfcf 1px,
+          #cfcfcf 2px,
+          transparent 3px,
+          transparent 6px
+        );
+
+        .color {
+          width: 100%;
+        }
+      }
+
+      .color-name {
+        height: 20px;
+        margin-bottom: 20px;
+        background-color: #fff;
+        font-size: 13px;
+        line-height: 1.55;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+        color: #666;
+      }
+    }
+
+    .count-group {
+      margin-bottom: 20px;
+
+      .counter {
+        display: table;
+        border-bottom: 1px solid #333;
+      }
+
+      .inpt-count {
+        display: inline-block;
+        width: 120px;
+        height: 30px;
+        vertical-align: middle;
+        border: 0;
+        text-align: center;
+        background-color: transparent;
+        font-size: 24px;
+      }
+
+      button {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        width: 30px;
+        height: 30px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: calc(50% - 4px);
+          left: calc(50% - 8px);
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 8px 10px 8px;
+          border-color: transparent transparent #666 transparent;
+        }
+      }
+
+      .btn-dec {
+        transform: rotate(180deg);
+      }
+    }
+
+    .btn-group {
+      padding-bottom: 50px;
+
+      button {
+        width: 170px;
+        height: 48px;
+        border-radius: 4px;
+
+        .btn-txt {
+          font-size: 18px;
+          font-weight: bold;
+          color: #fff;
+        }
+      }
+
+      .btn-purchase {
+        background-color: #ef412f;
+        margin-right: 10px;
+      }
+
+      .btn-cart {
+        background-color: #999;
+      }
+    }
+  }
+}

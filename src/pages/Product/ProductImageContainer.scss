@@ -1,0 +1,13 @@
+.product-images-container {
+  width: 60%;
+  display: flex;
+
+  .product-images-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+
+    li {
+    }
+  }
+}
