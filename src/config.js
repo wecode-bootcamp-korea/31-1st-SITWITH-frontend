@@ -4,5 +4,5 @@ export const API = {
   join: `${BASE_URL}/join`,
   product: `${BASE_URL}/product`,
   products: `${BASE_URL}/products`,
-  cart: `${BASE_URL}/cart`,
+  carts: `${BASE_URL}/carts`,
 };
