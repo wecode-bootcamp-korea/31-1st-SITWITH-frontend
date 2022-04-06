@@ -1,0 +1,93 @@
+@import '../../styles/variables.scss';
+
+@mixin title-font {
+  padding: 15px;
+  border-right: $border-line;
+  border-bottom: $border-line;
+  color: $gray;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: left;
+}
+
+@mixin small-font(
+  $padding: 15px,
+  $color: $gray,
+  $font-weight: normal,
+  $font-size: 13px,
+  $text-align: left
+) {
+  padding: $padding;
+  color: $title-color;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  text-align: $text-align;
+}
+
+.login {
+  position: relative;
+  width: 1000px;
+  height: 800px;
+  margin: 0 auto;
+  line-height: 4em;
+
+  .login-title {
+    margin: 30px 0;
+    color: $gray;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .bar {
+    @include bar;
+  }
+
+  .member-login {
+    .member-login-title {
+      color: $gray;
+      font-size: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  .login-container {
+    .login-table {
+      border: $border-line;
+
+      .table-box {
+        width: 100%;
+        height: 200px;
+
+        .id-box {
+          .id-title {
+            @include title-font;
+          }
+
+          td {
+            padding: 15px;
+            border-bottom: $border-line;
+
+            input {
+              @include input-style;
+            }
+          }
+        }
+        .pw-box {
+          .pw-title {
+            @include title-font;
+          }
+
+          td {
+            padding: 15px;
+            border-bottom: $border-line;
+
+            input {
+              @include input-style;
+            }
+          }
+        }
+      }
+    }
+  }
+}
