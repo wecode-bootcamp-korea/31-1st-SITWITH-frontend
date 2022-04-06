@@ -5,8 +5,6 @@ import './ProductCard.scss';
 const ProductCard = ({ productData }) => {
   const { name, price, colors, product_id } = productData;
   const navigate = useNavigate();
-  console.log(productData);
-
   const productPrice = price
     .split('.')[0]
     .toString()
