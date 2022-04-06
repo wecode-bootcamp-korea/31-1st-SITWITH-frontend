@@ -1,192 +1,44 @@
-[
-  {
-    "name": "T500HLDA",
-    "price": "₩200,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair1.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T500HDA",
-    "price": "₩190,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair2.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T503F",
-    "price": "₩180,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair3.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T503A12",
-    "price": "₩183,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair4.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T503P21",
-    "price": "₩146,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair5.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T302P11",
-    "price": "₩215,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair6.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T553P13",
-    "price": "₩139,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair7.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T163P21",
-    "price": "₩102,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair8.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T704P34",
-    "price": "₩118,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair9.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T803P78",
-    "price": "₩140,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair10.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T904P78",
-    "price": "₩230,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair11.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T803N78",
-    "price": "₩189,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair12.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T9AA78",
-    "price": "₩103,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair13.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T8P3P78",
-    "price": "₩300,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair14.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T823N78",
-    "price": "₩180,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair15.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T803888",
-    "price": "₩230,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair16.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T80TT78",
-    "price": "₩340,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair17.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T803U78",
-    "price": "₩129,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair18.jpeg",
-        "sequence": 1
-      }
-    ]
-  },
-  {
-    "name": "T80AA78",
-    "price": "₩192,000",
-    "image_list": [
-      {
-        "image": "/images/productList/chair19.jpeg",
-        "sequence": 1
-      }
-    ]
-  }
-]
+{
+  "result": [
+    {
+      "category": 1,
+      "product_id": 1,
+      "name": "T800HLDAS\ud654\uc774\ud2b8\uc258\ucc9c\uc5f0\uac00\uc8fd",
+      "price": "1038000.00",
+      "colors": [
+        {
+          "id": 1,
+          "color_id": 4,
+          "color": "White",
+          "image": "https://i.ibb.co/TKQfrDF/T800-HLDAS-white-front.jpg"
+        },
+        {
+          "id": 2,
+          "color_id": 2,
+          "color": "Blue",
+          "image": "https://i.ibb.co/TbPJC41/T800-HLDAS-blue-front.jpg"
+        }
+      ]
+    },
+    {
+      "category": 1,
+      "product_id": 2,
+      "name": "T800HLDA\uba54\uc26c",
+      "price": "778000.00",
+      "colors": [
+        {
+          "id": 3,
+          "color_id": 1,
+          "color": "Red",
+          "image": "https://i.ibb.co/brRb8J5/T800-HLDA-red-front.jpg"
+        },
+        {
+          "id": 4,
+          "color_id": 4,
+          "color": "White",
+          "image": "https://i.ibb.co/V3C5b59/T800-HLDA-white-front.jpg"
+        }
+      ]
+    }
+  ]
+}

@@ -1,13 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ProductCard.scss';
 
 const ProductCard = ({ productData }) => {
-  const { name, price, colors } = productData;
+  const { name, price, colors, product_id } = productData;
+  const navigate = useNavigate();
+  console.log(productData);
 
   const productPrice = price
     .split('.')[0]
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+  const goToInfo = (e, productId) => {
+    e.preventDefault();
+    navigate(`/info/${productId}`);
+  };
 
   const addToCart = event => {
     event.preventDefault();
@@ -29,11 +37,15 @@ const ProductCard = ({ productData }) => {
       <span className="product-name">{name}</span>
       <span className="product-price">₩{productPrice}</span>
       <div className="product-hover-box">
-        <button className="btn btn-detail">상세정보</button>
+        <button
+          className="btn btn-detail"
+          onClick={event => goToInfo(event, product_id)}
+        >
+          상세정보
+        </button>
         <button className="btn btn-cart" onClick={event => addToCart(event)}>
           장바구니
         </button>
-        <button className="btn btn-compare">비교하기</button>
       </div>
     </li>
   );

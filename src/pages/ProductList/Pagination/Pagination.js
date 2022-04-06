@@ -1,9 +1,10 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import './Pagination.scss';
 
-const Pagination = ({ total, limit, page, setPage, updateOffset }) => {
+const Pagination = ({ total, limit, page, setPage }) => {
   const numPages = Math.ceil(total / limit);
+
+  localStorage.setItem('pageNum', page);
 
   const goToFirstPage = () => {
     setPage(1);
@@ -23,11 +24,7 @@ const Pagination = ({ total, limit, page, setPage, updateOffset }) => {
 
   return (
     <nav className="pagination-nav">
-      <button onClick={() => updateOffset(0)}>1</button>
-      <button onClick={() => updateOffset(1)}>2</button>
-      {/* <button onClick={() => updateOffset(2)}>3</button> */}
-
-      {/* <button
+      <button
         className="nav-first-btn"
         onClick={goToFirstPage}
         disabled={page === 1}
@@ -67,7 +64,7 @@ const Pagination = ({ total, limit, page, setPage, updateOffset }) => {
         disabled={page === numPages}
       >
         LAST
-      </button> */}
+      </button>
     </nav>
   );
 };

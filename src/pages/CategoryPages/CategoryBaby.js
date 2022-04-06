@@ -6,6 +6,10 @@ const CategoryBaby = () => {
   const [productData, setProductData] = useState([]);
 
   useEffect(() => {
+    localStorage.setItem('pageNum', 1);
+  }, []);
+
+  useEffect(() => {
     fetch('http://10.58.2.32:8000/products')
       .then(res => {
         return res.json();

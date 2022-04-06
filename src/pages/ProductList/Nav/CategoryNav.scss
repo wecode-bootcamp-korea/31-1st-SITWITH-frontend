@@ -1,0 +1,22 @@
+@import '../../../styles//variables.scss';
+
+.category-nav {
+  width: 100%;
+  border-bottom: 1px solid #e6e6e6;
+  dl {
+    @include flex(space-around, center);
+    width: 1000px;
+    margin: 0 auto;
+    padding: 115px 20px 20px 20px;
+    dt button {
+      padding: 0 0 0 15px;
+      font-size: 15px;
+    }
+    dd {
+      button {
+        padding: 10px;
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -11,6 +11,7 @@ import CategoryOffice from './pages/CategoryPages/CategoryOffice';
 import CategoryBaby from './pages/CategoryPages/CategoryBaby';
 import CategoryStudy from './pages/CategoryPages/CategoryStudy';
 import CategoryExecutive from './pages/CategoryPages/CategoryExecutive';
+import ProductsRouter from './pages/ProductList/ProductsRouter';
 
 const Router = () => {
   return (
@@ -21,11 +22,7 @@ const Router = () => {
         {/* <Route path="/cart/*" element={<CartRouter />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/join" element={<Join />} />
-        <Route path="/products" element={<ProductList />} />
-        <Route path="/products/office" element={<CategoryOffice />} />
-        <Route path="/products/baby" element={<CategoryBaby />} />
-        <Route path="/products/study" element={<CategoryStudy />} />
-        <Route path="/products/executive" element={<CategoryExecutive />} />
+        <Route path="/products/*" element={<ProductsRouter />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -1,76 +1,164 @@
 {
   "result": [
     {
-      "primary_key": 1,
-      "category": "task_chairs",
-      "name": "chair01",
-      "color": "black",
-      "price": "50000.00",
-      "image": ["/images/productList/chair1.jpeg"]
+      "category": 1,
+      "product_id": 1,
+      "name": "T800HLDAS\ud654\uc774\ud2b8\uc258\ucc9c\uc5f0\uac00\uc8fd",
+      "price": "1038000.00",
+      "colors": [
+        {
+          "id": 1,
+          "color_id": 4,
+          "color": "White",
+          "image": "https://i.ibb.co/TKQfrDF/T800-HLDAS-white-front.jpg"
+        },
+        {
+          "id": 2,
+          "color_id": 2,
+          "color": "Blue",
+          "image": "https://i.ibb.co/TbPJC41/T800-HLDAS-blue-front.jpg"
+        }
+      ]
     },
     {
-      "primary_key": 2,
-      "category": "task_chairs",
-      "name": "chair01",
-      "color": "red",
-      "price": "50000.00",
-      "image": ["/images/productList/chair2.jpeg"]
+      "category": 1,
+      "product_id": 2,
+      "name": "T800HLDA\uba54\uc26c",
+      "price": "778000.00",
+      "colors": [
+        {
+          "id": 3,
+          "color_id": 1,
+          "color": "Red",
+          "image": "https://i.ibb.co/brRb8J5/T800-HLDA-red-front.jpg"
+        },
+        {
+          "id": 4,
+          "color_id": 4,
+          "color": "White",
+          "image": "https://i.ibb.co/V3C5b59/T800-HLDA-white-front.jpg"
+        }
+      ]
     },
     {
-      "primary_key": 3,
-      "category": "task_chairs",
-      "name": "chair02",
-      "color": "green",
-      "price": "200000.00",
-      "image": ["/images/productList/chair3.jpeg"]
+      "category": 2,
+      "product_id": 3,
+      "name": "\ub9c1\uace0\uace0\uc815\ud615",
+      "price": "268000.00",
+      "colors": [
+        {
+          "id": 5,
+          "color_id": 4,
+          "color": "White",
+          "image": "https://i.ibb.co/ZJdqy17/ringo-front.jpg"
+        },
+        {
+          "id": 6,
+          "color_id": 3,
+          "color": "Black",
+          "image": "https://i.ibb.co/6NhDddf/ringo-front-blak.jpg"
+        }
+      ]
     },
     {
-      "primary_key": 4,
-      "category": "task_chairs",
-      "name": "chair02",
-      "color": "black",
-      "price": "200000.00",
-      "image": ["/images/productList/chair4.jpeg"]
+      "category": 2,
+      "product_id": 4,
+      "name": "\ubbf8\ub610\ud68c\uc804\ud615",
+      "price": "252000.00",
+      "colors": [
+        {
+          "id": 7,
+          "color_id": 2,
+          "color": "Blue",
+          "image": "https://i.ibb.co/Qc0L49R/mitoo-front.jpg"
+        },
+        {
+          "id": 8,
+          "color_id": 3,
+          "color": "Black",
+          "image": "https://i.ibb.co/4tZWHLj/mitoo-front-01.jpg"
+        }
+      ]
     },
     {
-      "primary_key": 5,
-      "category": "study_chairs",
-      "name": "chair03",
-      "color": "red",
-      "price": "300000.00",
-      "image": ["/images/productList/chair4.jpeg"]
+      "category": 3,
+      "product_id": 5,
+      "name": "\ubab0\ud2f0_\ud5ec\ub85c\ubca0\uc774\ube44\uc138\ud2b8",
+      "price": "505000.00",
+      "colors": [
+        {
+          "id": 9,
+          "color_id": 1,
+          "color": "Red",
+          "image": "https://i.ibb.co/qWKy2tB/molti-front-red.png"
+        },
+        {
+          "id": 10,
+          "color_id": 4,
+          "color": "White",
+          "image": "https://i.ibb.co/4PsvS7X/molti-front-white.png"
+        }
+      ]
     },
     {
-      "primary_key": 6,
-      "category": "study_chairs",
-      "name": "chair04",
-      "color": "black",
-      "price": "500000.00",
-      "image": ["/images/productList/chair5.jpeg"]
+      "category": 3,
+      "product_id": 6,
+      "name": "\ubab0\ud2f0_\ud558\uc774\uccb4\uc5b4(+\uc774\uc720\uc2dd\uc138\ud2b8\ud3ec\ud568)",
+      "price": "349000.00",
+      "colors": [
+        {
+          "id": 11,
+          "color_id": 2,
+          "color": "Blue",
+          "image": "https://i.ibb.co/F3MYhT1/hello-blue-front.png"
+        },
+        {
+          "id": 12,
+          "color_id": 1,
+          "color": "Red",
+          "image": "https://i.ibb.co/G74k6Cj/hello-red-front.png"
+        }
+      ]
     },
     {
-      "primary_key": 7,
-      "category": "study_chairs",
-      "name": "chair04",
-      "color": "red",
-      "price": "500000.00",
-      "image": ["/images/productList/chair6.jpeg"]
+      "category": 4,
+      "product_id": 7,
+      "name": "PRONARD\ub192\uc740\ub4f1",
+      "price": "1390000.00",
+      "colors": [
+        {
+          "id": 13,
+          "color_id": 2,
+          "color": "Blue",
+          "image": "https://i.ibb.co/KD2F3gM/parona-blue-front.jpg"
+        },
+        {
+          "id": 14,
+          "color_id": 4,
+          "color": "White",
+          "image": "https://i.ibb.co/27mMFq6/parona-front-white.jpg"
+        }
+      ]
     },
     {
-      "primary_key": 8,
-      "category": "study_chairs",
-      "name": "chair04",
-      "color": "green",
-      "price": "500000.00",
-      "image": ["/images/productList/chair7.jpeg"]
-    },
-    {
-      "primary_key": 9,
-      "category": "study_chairs",
-      "name": "chair04",
-      "color": "pink",
-      "price": "500000.00",
-      "image": ["/images/productList/chair8.jpeg"]
+      "category": 4,
+      "product_id": 8,
+      "name": "VESTO\ud06c\ub86c\ud504\ub808\uc784",
+      "price": "1116000.00",
+      "colors": [
+        {
+          "id": 15,
+          "color_id": 4,
+          "color": "White",
+          "image": "https://i.ibb.co/QdLBrHP/chrome-white-front.jpg"
+        },
+        {
+          "id": 16,
+          "color_id": 3,
+          "color": "Black",
+          "image": "https://i.ibb.co/3MZYxw2/chorme-black-front.jpg"
+        }
+      ]
     }
   ]
 }

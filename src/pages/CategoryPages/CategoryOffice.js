@@ -5,6 +5,10 @@ import './CategoryOffice.scss';
 const CategoryOffice = () => {
   const [productData, setProductData] = useState([]);
 
+  useEffect(() => {
+    localStorage.setItem('pageNum', 1);
+  }, []);
+
   const officeChair = productData.filter(
     category => category.category === STUDY_CHAIR_CATEGORY_ID
   );
