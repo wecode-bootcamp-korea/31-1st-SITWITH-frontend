@@ -77,35 +77,41 @@ $font-color: #807f83;
           transparent 6px
         );
         cursor: not-allowed;
+        pointer-events: none;
 
         &.Red {
           background: #e07e69;
           border: 0;
           cursor: pointer;
+          pointer-events: all;
         }
 
         &.Green {
           background: #499a7d;
           border: 0;
           cursor: pointer;
+          pointer-events: all;
         }
 
         &.Blue {
           background: #4f78e5;
           border: 0;
           cursor: pointer;
+          pointer-events: all;
         }
 
         &.Yellow {
           background: #f1bd21;
           border: 0;
           cursor: pointer;
+          pointer-events: all;
         }
 
         &.Purple {
           background: #f1bd21;
           border: 0;
           cursor: pointer;
+          pointer-events: all;
         }
 
         &.active {
@@ -208,6 +214,7 @@ $font-color: #807f83;
       }
     }
   }
+
   .bottom-group {
     padding: 20px 0 30px;
     border-bottom: 1px solid #333;
@@ -233,8 +240,10 @@ $font-color: #807f83;
       }
     }
   }
+
   .info-section {
     padding: 30px 0;
+
     .img-info {
       width: 100%;
       margin-bottom: 30px;
