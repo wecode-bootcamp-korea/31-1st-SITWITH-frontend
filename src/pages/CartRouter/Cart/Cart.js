@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { API } from '../../apiConfig';
 import CartProduct from './CartProduct/CartProduct';
 import './Cart.scss';
 
@@ -24,7 +23,7 @@ const Cart = ({ setSelect }) => {
   };
 
   useEffect(() => {
-    fetch(`${API.CART}`, {
+    fetch('http://10.58.2.32:8000/:8000/cart', {
       headers: { Authorization: localStorage.getItem('Authorization') },
     })
       .then(res => {
@@ -83,7 +82,7 @@ const Cart = ({ setSelect }) => {
 
   const cartDelete = (e, cart_id) => {
     e.preventDefault();
-    fetch(`${API.CART}?id=${cart_id}`, {
+    fetch(`http://10.58.2.32:8000/:8000/cart?id=${cart_id}`, {
       method: 'delete',
       headers: {
         Authorization: localStorage.getItem('Authorization'),
@@ -91,7 +90,7 @@ const Cart = ({ setSelect }) => {
     }).then(res => {
       if (res.status === 200) {
         alert('삭제되었습니다');
-        fetch(`${API.CART}`, {
+        fetch('http://10.58.2.32:8000/:8000/cart', {
           headers: { Authorization: localStorage.getItem('Authorization') },
         })
           .then(res => res.json())
@@ -113,7 +112,10 @@ const Cart = ({ setSelect }) => {
       );
     }
 
-    if (compareList.findIndex(i => i.cart_id === product.cart_id) === -1) {
+    if (
+      compareList.findIndex(compare => compare.cart_id === product.cart_id) ===
+      -1
+    ) {
       setCompareList(compareList => [...compareList, product]);
     } else {
       alert('이미 비교하기에 있는 상품입니다.');
