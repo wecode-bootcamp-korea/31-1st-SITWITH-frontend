@@ -4,7 +4,7 @@ import Pagination from './Pagination';
 import './ProductList.scss';
 
 const ProductList = () => {
-  const [productData, setProductData] = useState([]);
+  const [productsData, setProductsData] = useState([]);
   const [page, setPage] = useState(
     localStorage.getItem('pageNum') !== null
       ? JSON.parse(localStorage.getItem('pageNum'))
@@ -13,34 +13,27 @@ const ProductList = () => {
   const offset = (page - 1) * PAGINATION_LIMIT;
 
   useEffect(() => {
-    fetch('http://10.58.6.153:8000/products')
+    fetch('http://10.58.2.32:8000/products')
       .then(res => {
         return res.json();
       })
       .then(chairData => {
-        console.log(chairData);
-        setProductData(chairData.result);
+        setProductsData(chairData.result);
       });
   }, []);
 
-  console.log(productData);
-
-  //[comment]Down is Mock Data Fetch
-  // useEffect(() => {
-  //   fetch('/data/productListData/productData.json')
-  //     .then(res => {
-  //       return res.json();
-  //     })
-  //     .then(chairData => {
-  //       setProductData(chairData.result);
-  //     });
-  // }, []);
+  useEffect(() => {
+    localStorage.setItem(
+      'Authorization',
+      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImV4cCI6MTY0OTI0NjY4N30.Mz4_jvVlpGrxE4b0EKx2KoF3pHwxlDXs4RaiFQnfdPk'
+    );
+  }, []);
 
   return (
     <div className="product-list-page">
       <div className="product-list-container">
         <div className="product-list-title-wrap">
-          <h1 className="product-list-title">T50</h1>
+          <h1 className="product-list-title">Title</h1>
         </div>
 
         <div className="separate-border">
@@ -71,8 +64,8 @@ const ProductList = () => {
           <h3 className="series-list-title">Product List</h3>
           <div className="product-list-show">
             <ul className="product-list-wrap">
-              {productData[0] ? (
-                productData
+              {productsData[0] ? (
+                productsData
                   .slice(offset, offset + PAGINATION_LIMIT)
                   .map(productData => (
                     <ProductCard
@@ -90,7 +83,7 @@ const ProductList = () => {
               )}
             </ul>
             <Pagination
-              total={productData.length}
+              total={productsData.length}
               limit={PAGINATION_LIMIT}
               page={page}
               setPage={setPage}

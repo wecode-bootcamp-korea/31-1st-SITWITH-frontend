@@ -1,45 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import ProductCard from './ProductCard';
-import Pagination from './Pagination';
-import './ProductList.scss';
+import ProductCard from '../ProductList/ProductCard';
+import './CategoryStudy.scss';
 
-const ProductList = () => {
+const CategoryStudy = () => {
   const [productData, setProductData] = useState([]);
-  const [page, setPage] = useState(
-    localStorage.getItem('pageNum') !== null
-      ? JSON.parse(localStorage.getItem('pageNum'))
-      : 1
+
+  useEffect(() => {
+    fetch('http://10.58.2.32:8000/products')
+      .then(res => {
+        return res.json();
+      })
+      .then(chairData => {
+        setProductData(chairData.result);
+      });
+  }, []);
+
+  const studyChair = productData.filter(
+    category => category.category === STUDY_CHAIR_CATEGORY_ID
   );
-  const offset = (page - 1) * PAGINATION_LIMIT;
-
-  // useEffect(() => {
-  //   fetch('http://10.58.3.140:8000/products')
-  //     .then(res => {
-  //       return res.json();
-  //     })
-  //     .then(chairData => {
-  //       setProductData(chairData.result);
-  //     });
-  // }, []);
-
-  // console.log('productList 부분' + productData);
-
-  //[comment]Down is Mock Data Fetch
-  // useEffect(() => {
-  //   fetch('/data/productListData/productData.json')
-  //     .then(res => {
-  //       return res.json();
-  //     })
-  //     .then(chairData => {
-  //       setProductData(chairData.result);
-  //     });
-  // }, []);
 
   return (
     <div className="product-list-page">
       <div className="product-list-container">
         <div className="product-list-title-wrap">
-          <h1 className="product-list-title">T50</h1>
+          <h1 className="product-list-title">학생용의자</h1>
         </div>
 
         <div className="separate-border">
@@ -47,38 +31,26 @@ const ProductList = () => {
         </div>
 
         <div className="product-list-series-feature">
-          <h3 className="series-feature-title">SERIES FEATURE</h3>
+          <h3 className="series-feature-title">STUDY CHAIRS</h3>
           <div className="series-feature-image-wrap">
             <img
               className="series-feature-image"
-              alt="T50 chair"
-              src="/images/productList/product-list-chair-image.jpeg"
+              alt="study"
+              src="/images/category/category-study.jpg"
             />
           </div>
         </div>
         <div className="product-list">
-          <div className="product-list-btns">
-            <button>인기순</button>
-            <button>신상품순</button>
-            <button>높은가격순</button>
-            <button>낮은가격순</button>
-          </div>
-
           <div className="separate-border">
             <div />
           </div>
           <h3 className="series-list-title">Product List</h3>
           <div className="product-list-show">
             <ul className="product-list-wrap">
-              {productData[0] ? (
-                productData
-                  .slice(offset, offset + PAGINATION_LIMIT)
-                  .map(productData => (
-                    <ProductCard
-                      key={productData.primary_key}
-                      productData={productData}
-                    />
-                  ))
+              {studyChair[0] ? (
+                studyChair.map(Data => (
+                  <ProductCard key={Data.name} productData={Data} />
+                ))
               ) : (
                 <div className="product-list-loading-container">
                   <div className="product-loading-circle" />
@@ -88,18 +60,12 @@ const ProductList = () => {
                 </div>
               )}
             </ul>
-            <Pagination
-              total={productData.length}
-              limit={PAGINATION_LIMIT}
-              page={page}
-              setPage={setPage}
-            />
           </div>
         </div>
       </div>
     </div>
   );
 };
-const PAGINATION_LIMIT = 6;
+const STUDY_CHAIR_CATEGORY_ID = 2;
 
-export default ProductList;
+export default CategoryStudy;
