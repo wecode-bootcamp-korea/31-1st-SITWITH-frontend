@@ -43,10 +43,10 @@ const Join = () => {
         .then(res => res.json())
         .then(res => {
           const { message } = res;
-          if (res.message === 'Success') {
+          if (message === 'Success') {
             navigate('/login');
           } else {
-            alert(LOGIN_MESSAGE[`${message}`]);
+            alert(LOGIN_MESSAGE[message]);
           }
         });
     }
