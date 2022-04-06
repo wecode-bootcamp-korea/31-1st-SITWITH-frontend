@@ -11,20 +11,6 @@ $section-title-color: #807f83;
   align-items: $align-items;
 }
 
-@mixin small-font(
-  $padding: 15px,
-  $color: $title-color,
-  $font-weight: lighter,
-  $font-size: smaller,
-  $text-align: left
-) {
-  padding: $padding;
-  color: $title-color;
-  font-weight: $font-weight;
-  font-size: $font-size;
-  text-align: $text-align;
-}
-
 @mixin section-title {
   padding: 15px;
   border-right: $border-line;
