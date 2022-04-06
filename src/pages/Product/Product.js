@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Product.scss';
 
 const Product = () => {
+  const [products, setProducts] = useState([]);
+  const [counter, setCounter] = useState(1);
+
+  const increase = () => {
+    setCounter(count => count + 1);
+  };
+
+  const decrease = () => {
+    if (counter > 1) {
+      setCounter(count => count - 1);
+    }
+  };
+
   return (
     <div className="product">
       <div className="detail-section">
@@ -36,9 +49,9 @@ const Product = () => {
               <div className="count-group">
                 <div className="group-title">QUANTITY / 수량</div>
                 <div className="counter">
-                  <button className="btn-dec" />
-                  <input className="inpt-count" type={Number} value={0} />
-                  <button className="btn-inc" />
+                  <button className="btn-dec" onClick={decrease} />
+                  <input className="inpt-count" type={Number} value={counter} />
+                  <button className="btn-inc" onClick={increase} />
                 </div>
               </div>
               <div className="btn-group">
