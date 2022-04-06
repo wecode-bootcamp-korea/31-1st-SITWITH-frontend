@@ -98,7 +98,7 @@
           .support {
             @include footer-font;
 
-            .num {
+            li:first-child {
               font-size: 35px;
             }
           }

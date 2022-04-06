@@ -44,36 +44,27 @@ const Footer = () => {
             <li className="products-title">
               제품
               <ul className="products">
-                <Link to="/product/category">
-                  <li>사무용 의자</li>
-                </Link>
-                <Link to="/product/category">
-                  <li>학생용 의자</li>
-                </Link>
-                <Link to="/product/category">
-                  <li>유아용 의자</li>
-                </Link>
-                <Link to="/product/category">
-                  <li>중역용 의자</li>
-                </Link>
+                {PRODUCT_DATA.map((data, index) => (
+                  <li key={index}>
+                    <Link to={data.link}>{data.title}</Link>
+                  </li>
+                ))}
               </ul>
             </li>
             <li className="service-title">
               고객 센터
               <ul className="service">
-                <li>FAQ</li>
-                <li>품질 보증 서비스</li>
-                <li>제품설명서 다운로드</li>
-                <li>시디즈 서비스</li>
+                {SERVICE_DATA.map(data => (
+                  <li key={data.id}>{data.list}</li>
+                ))}
               </ul>
             </li>
             <li className="support-title">
               친절 상담
               <ul className="support">
-                <li className="num">7777-7777</li>
-                <li>평일 | 09:30 - 17:30</li>
-                <li>토요일 | 09:30 - 12:30</li>
-                <li>일요일, 공휴일 휴무</li>
+                {SUPPORT_DATA.map(data => (
+                  <li key={data.id}>{data.list}</li>
+                ))}
               </ul>
             </li>
           </ul>
@@ -84,3 +75,22 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const PRODUCT_DATA = [
+  { title: '사무용 의자', link: '/ProductList/category/office' },
+  { title: '학생용 의자', link: '/ProductList/category/study' },
+  { title: '유아용 의자', link: '/ProductList/category/baby' },
+  { title: '중역용 의자', link: '/ProductList/category/executive' },
+];
+const SERVICE_DATA = [
+  { id: 1, list: 'FAQ' },
+  { id: 2, list: '품질 보증 서비스' },
+  { id: 3, list: '제품설명서 다운로드' },
+  { id: 4, list: '시디즈 서비스' },
+];
+const SUPPORT_DATA = [
+  { id: 1, list: '7777-7777' },
+  { id: 2, list: '평일 | 09:30 - 17:30' },
+  { id: 3, list: '토요일 | 09:30 - 12:30' },
+  { id: 4, list: '일요일, 공휴일 휴무' },
+];
