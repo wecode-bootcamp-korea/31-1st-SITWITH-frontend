@@ -6,12 +6,12 @@
   text-align: left;
 }
 
-.trt {
+.tct {
   text-align: center;
 }
 
 #root {
-  > :nth-child(2) {
+   > :nth-child(2) {
     min-height: calc(100vh - 700px);
   }
 }
