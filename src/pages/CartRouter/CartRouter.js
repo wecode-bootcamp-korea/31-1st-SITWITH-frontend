@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Cart from './Cart/Cart';
 import CompareList from './CompareList/CompareList';
