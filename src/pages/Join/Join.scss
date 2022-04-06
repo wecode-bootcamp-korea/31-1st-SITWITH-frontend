@@ -25,7 +25,6 @@
   position: relative;
   margin: 0 auto;
   width: 1000px;
-  height: 800px;
 
   .join-title {
     margin: 30px 0;
@@ -100,11 +99,12 @@
 
     .member-data-container {
       .member-data-box {
-        margin: 30px 0px;
+        margin: 50px 0;
+        border: $border-line;
 
         .member-data-table {
-          border: $border-line;
           width: 100%;
+
           td {
             > input + p {
               margin-top: 8px;
@@ -150,10 +150,12 @@
               .member-email-title {
                 @include small-font($font-weight: bold);
                 border-right: $border-line;
+                border-bottom: $border-line;
               }
 
               .member-email-message {
                 @include small-font;
+                border-bottom: $border-line;
 
                 .member-email-input {
                   @include input-border;
@@ -161,6 +163,17 @@
               }
             }
           }
+        }
+
+        .member-data-button {
+          min-width: 170px;
+          height: 40px;
+          padding: 8px 12px;
+          margin: 30px 150px;
+          border-radius: 4px;
+          background-color: #ef412f;
+          font-size: 15px;
+          color: #fff;
         }
       }
     }
