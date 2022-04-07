@@ -1,0 +1,37 @@
+@import '../../styles//variables.scss';
+
+.cart-nav {
+  width: 100%;
+  border-bottom: 1px solid rgba($border-color, 0.5);
+
+  dl {
+    display: flex;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 115px 20px 20px 20px;
+
+    button {
+      font-weight: bold;
+    }
+
+    dt button {
+      font-size: 15px;
+    }
+
+    dd {
+      margin-left: 20px;
+      padding: 0, 5px, 0, 5px;
+      button {
+        font-size: 12px;
+      }
+    }
+
+    .selected {
+      border: 1px solid #ee4130;
+    }
+
+    .selected button {
+      color: #ee4130;
+    }
+  }
+}

@@ -34,6 +34,23 @@
       min-width: 100%;
     }
   }
+
+  .item-title {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    line-height: 65px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+  }
+
+  .item-desc {
+    margin-top: 0;
+    line-height: 32px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 24px;
+  }
 }
 
 .img-thumb {
@@ -70,21 +87,5 @@
 
   &:hover::after {
     opacity: 0.3;
-  }
-  .item-title {
-    margin-top: 30px;
-    margin-bottom: 10px;
-    line-height: 65px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 50px;
-  }
-
-  .item-desc {
-    margin-top: 0;
-    line-height: 32px;
-    text-align: center;
-    font-weight: normal;
-    font-size: 24px;
   }
 }

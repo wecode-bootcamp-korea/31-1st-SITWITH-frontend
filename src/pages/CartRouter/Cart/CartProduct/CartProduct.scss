@@ -1,0 +1,50 @@
+@import '../../../../styles/variables.scss';
+
+.cartProduct {
+  td {
+    height: 150px;
+    padding: 5px;
+    border-right: $border-line;
+    vertical-align: middle;
+  }
+
+  .product {
+    @include flex;
+    P {
+      min-width: 110px;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    .product-img {
+      width: 90px;
+      height: 90px;
+      margin-right: 40px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .btn-list {
+    border-right: none;
+
+    button {
+      width: 58px;
+      height: 25px;
+      padding: 5px;
+      margin-top: 3px;
+      border-radius: 5px;
+      border-color: inherit;
+      background-color: #807f83;
+      color: white;
+      font-size: 12px;
+    }
+
+    .order-btn {
+      background-color: #ef4130;
+    }
+  }
+}
