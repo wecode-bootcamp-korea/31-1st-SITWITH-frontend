@@ -6,6 +6,15 @@ $font-color: #807f83;
     width: 1000px;
     margin: 0 auto;
   }
+  input {
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 1em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+  }
 
   .header-group {
     background-color: #e6e6e6;
@@ -76,59 +85,81 @@ $font-color: #807f83;
           transparent 3px,
           transparent 6px
         );
-        cursor: not-allowed;
-        pointer-events: none;
+        // cursor: not-allowed;
+        // pointer-events: none;
 
-        &.Red {
-          background: #e07e69;
-          border: 0;
-          cursor: pointer;
-          pointer-events: all;
+        input {
+          border-radius: 4px;
+          box-shadow: none;
+          font-size: 1em;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          -o-appearance: none;
+          appearance: none;
+
+          &:checked + label {
+            border: 3px solid #f01800;
+
+            &::before {
+              content: '';
+              display: block;
+              position: absolute;
+              top: calc(50% - 8px);
+              left: calc(50% - 9px);
+              width: 15px;
+              height: 7px;
+              border-right: 3px solid #f01800;
+              border-top: 3px solid #f01800;
+              transform: rotate(135deg);
+            }
+          }
         }
 
-        &.Green {
-          background: #499a7d;
-          border: 0;
+        label {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
           cursor: pointer;
-          pointer-events: all;
-        }
+          &.Red {
+            background: #e07e69;
+            border: 0;
+            cursor: pointer;
+            pointer-events: all;
+          }
 
-        &.Blue {
-          background: #4f78e5;
-          border: 0;
-          cursor: pointer;
-          pointer-events: all;
-        }
+          &.Green {
+            background: #499a7d;
+            border: 0;
+            cursor: pointer;
+            pointer-events: all;
+          }
 
-        &.Yellow {
-          background: #f1bd21;
-          border: 0;
-          cursor: pointer;
-          pointer-events: all;
-        }
+          &.Blue {
+            background: #4f78e5;
+            border: 0;
+            cursor: pointer;
+            pointer-events: all;
+          }
 
-        &.Purple {
-          background: #f1bd21;
-          border: 0;
-          cursor: pointer;
-          pointer-events: all;
+          &.Yellow {
+            background: #f1bd21;
+            border: 0;
+            cursor: pointer;
+            pointer-events: all;
+          }
+
+          &.Purple {
+            background: #f1bd21;
+            border: 0;
+            cursor: pointer;
+            pointer-events: all;
+          }
         }
 
         &.active {
-          border: 3px solid #f01800;
-
-          &::before {
-            content: '';
-            display: block;
-            position: absolute;
-            top: calc(50% - 8px);
-            left: calc(50% - 9px);
-            width: 15px;
-            height: 7px;
-            border-right: 3px solid #f01800;
-            border-top: 3px solid #f01800;
-            transform: rotate(135deg);
-          }
         }
       }
 
@@ -171,6 +202,12 @@ $font-color: #807f83;
         width: 30px;
         height: 30px;
 
+        &:hover {
+          &::before {
+            border-color: transparent transparent #666 transparent;
+          }
+        }
+
         &::before {
           content: '';
           position: absolute;
@@ -180,7 +217,8 @@ $font-color: #807f83;
           height: 0;
           border-style: solid;
           border-width: 0 8px 10px 8px;
-          border-color: transparent transparent #666 transparent;
+          border-color: transparent transparent #999 transparent;
+          transition: border-color 0.2s;
         }
       }
 
@@ -196,6 +234,7 @@ $font-color: #807f83;
         width: 170px;
         height: 48px;
         border-radius: 4px;
+        transition: background-color 0.2s;
 
         .btn-txt {
           font-size: 18px;
@@ -207,10 +246,18 @@ $font-color: #807f83;
       .btn-purchase {
         background-color: #ef412f;
         margin-right: 10px;
+
+        &:hover {
+          background-color: #d03321;
+        }
       }
 
       .btn-cart {
         background-color: #999;
+
+        &:hover {
+          background-color: rgb(142, 142, 142);
+        }
       }
     }
   }
@@ -227,6 +274,7 @@ $font-color: #807f83;
         width: 100px;
         height: 100px;
         margin-right: 20px;
+        cursor: pointer;
 
         img {
           width: 100%;

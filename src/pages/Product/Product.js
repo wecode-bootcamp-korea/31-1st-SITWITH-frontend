@@ -1,9 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import './Product.scss';
 
-const Product = () => {
-  const [products, setProducts] = useState([]);
-  const [counter, setCounter] = useState(1);
+const Product = props => {
+  const [product, setProduct] = useState([]);
+  const [counter, setCounter] = useState(0);
+
+  // const index = setProduct;
+
+  const params = useParams();
+  // console.log(params);
+
+  useEffect(() => {
+    fetch(`http://10.58.5.32:8000/products/${params.id}`)
+      .then(res => res.json())
+      .then(res => console.log(res));
+    // .then(res => setProduct(res.result));
+  }, []);
 
   const increase = () => {
     setCounter(count => count + 1);
@@ -14,6 +27,8 @@ const Product = () => {
       setCounter(count => count - 1);
     }
   };
+
+  console.log(product);
 
   return (
     <div className="product">
@@ -26,19 +41,36 @@ const Product = () => {
                   className="img-thumb"
                   src="../images/KakaoTalk_20220328_182759320.jpg"
                   alt=""
-                ></img>
+                />
               </div>
             </div>
             <div className="right-area">
               <div className="txt-group">
-                <div className="name">T80</div>
-                <div className="price">￦1,999,000</div>
+                <div className="name">{product.name}</div>
+                <div className="price">￦{product[0].price}</div>
               </div>
               <div className="color-group">
                 <div className="group-title">color / 색상</div>
                 <ul className="color-list">
-                  <li className="color-item Green active" name="Green" />
-                  <li className="color-item Red" />
+                  <li className="color-item">
+                    <input
+                      type="radio"
+                      name="color"
+                      defaultValue="Green"
+                      id="Green"
+                    />
+                    <label htmlFor="Green" className="Green" />
+                  </li>
+                  <li className="color-item">
+                    <input
+                      type="radio"
+                      name="color"
+                      defaultValue="Red"
+                      id="Red"
+                    />
+                    <label htmlFor="Red" className="Red" />
+                  </li>
+
                   <li className="color-item" />
                   <li className="color-item" />
                   <li className="color-item" />
@@ -50,7 +82,7 @@ const Product = () => {
                 <div className="group-title">QUANTITY / 수량</div>
                 <div className="counter">
                   <button className="btn-dec" onClick={decrease} />
-                  <input className="inpt-count" type={Number} value={counter} />
+                  <input className="inpt-count" defaultValue={counter} />
                   <button className="btn-inc" onClick={increase} />
                 </div>
               </div>
@@ -72,6 +104,22 @@ const Product = () => {
             <div className="img-select">
               <ul className="img-list">
                 <li className="img-item active">
+                  <input
+                    type="radio"
+                    name="color"
+                    defaultValue="Green"
+                    id="Green"
+                  />
+                  <label
+                    htmlFor="Green"
+                    className="Green"
+                    style={{
+                      backgroundImage:
+                        'url(' +
+                        '../images/KakaoTalk_20220328_182759320.jpg' +
+                        ')',
+                    }}
+                  />
                   <img
                     src="../images/KakaoTalk_20220328_182759320.jpg"
                     alt=""
