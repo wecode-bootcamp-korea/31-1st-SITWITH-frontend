@@ -115,6 +115,8 @@
             .member-id-box {
               .member-id-title {
                 @include small-font($font-weight: bold);
+                text-align: center;
+                vertical-align: middle;
                 border-right: $border-line;
                 border-bottom: $border-line;
               }
@@ -132,6 +134,8 @@
             .member-pw-box {
               .member-pw-title {
                 @include small-font($font-weight: bold);
+                text-align: center;
+                vertical-align: middle;
                 border-right: $border-line;
                 border-bottom: $border-line;
               }
@@ -149,6 +153,8 @@
             .member-email-box {
               .member-email-title {
                 @include small-font($font-weight: bold);
+                text-align: center;
+                vertical-align: middle;
                 border-right: $border-line;
                 border-bottom: $border-line;
               }
@@ -174,6 +180,10 @@
           background-color: #ef412f;
           font-size: 15px;
           color: #fff;
+        }
+
+        .member-data-button:hover {
+          opacity: 0.7;
         }
       }
     }
