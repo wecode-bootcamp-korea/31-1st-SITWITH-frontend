@@ -8,14 +8,6 @@ const CategoryOffice = () => {
   const categoryId = 4;
 
   useEffect(() => {
-    localStorage.setItem('pageNum', 1);
-  }, []);
-
-  const officeChair = productData.filter(
-    category => category.category === categoryId
-  );
-
-  useEffect(() => {
     fetch(API.products)
       .then(res => {
         return res.json();
@@ -24,6 +16,10 @@ const CategoryOffice = () => {
         setProductData(chairData.result);
       });
   }, []);
+
+  const officeChair = productData.filter(
+    category => category.category === categoryId
+  );
 
   return (
     <div className="product-list-page">

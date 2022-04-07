@@ -8,10 +8,6 @@ const CategoryStudy = () => {
   const categoryId = 2;
 
   useEffect(() => {
-    localStorage.setItem('pageNum', 1);
-  }, []);
-
-  useEffect(() => {
     fetch(API.products)
       .then(res => {
         return res.json();

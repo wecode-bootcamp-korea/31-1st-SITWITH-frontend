@@ -8,10 +8,6 @@ const CategoryBaby = () => {
   const categoryId = 3;
 
   useEffect(() => {
-    localStorage.setItem('pageNum', 1);
-  }, []);
-
-  useEffect(() => {
     fetch(API.products)
       .then(res => {
         return res.json();
