@@ -18,7 +18,7 @@ const Join = () => {
     const { id, pw, email } = joinValue;
     const validId = id !== '' && 2 < id.length < 16;
     const validPw = pw !== '' && 7 < pw.length < 16;
-    const validEmail = email !== '' && pw.includes('@', '.');
+    const validEmail = email !== '' && email.includes('@', '.');
 
     if (!checked) {
       alert('이용약관은 필수 동의 사항입니다.');
@@ -45,6 +45,7 @@ const Join = () => {
         .then(res => {
           const { message } = res;
           if (message === 'Success') {
+            alert('회원가입이 완료되었습니다.');
             navigate('/login');
           } else {
             alert(LOGIN_MESSAGE[message]);
