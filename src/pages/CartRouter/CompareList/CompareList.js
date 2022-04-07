@@ -20,7 +20,7 @@ const CompareList = ({ setSelect }) => {
     return randomIndexArray;
   }
 
-  if (compareList !== [] && compareList.length % 4 !== 0) {
+  if (compareList.length !== 0 && compareList.length % 4 !== 0) {
     let randomNums = createRandom(4 - (compareList.length % 4));
     for (let i = 0; i < randomNums.length; i++) {
       setCompareList(compareList => [
@@ -28,14 +28,13 @@ const CompareList = ({ setSelect }) => {
         { cart_id: randomNums[i], product_name: 'none' },
       ]);
     }
-  } else {
+  } else if (compareList.length === 8) {
     let cnt = 0;
     compareList.forEach(compare => {
       if (compare.product_name === 'none') {
         cnt++;
       }
     });
-
     if (cnt === 4) {
       setCompareList(
         compareList.filter(compare => compare.product_name !== 'none')
