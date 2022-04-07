@@ -45,6 +45,7 @@ const Join = () => {
         .then(res => {
           const { message } = res;
           if (message === 'Success') {
+            alert('회원가입이 완료되었습니다.');
             navigate('/login');
           } else {
             alert(LOGIN_MESSAGE[message]);
