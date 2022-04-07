@@ -36,7 +36,7 @@ $hover-color: #0042ff;
 
       &:hover {
         .ico-nav {
-          background-image: url(../../../public/images/nav/ico_nav_active.svg);
+          background-image: url('/assets/nav/ico_nav_active.svg');
         }
 
         .txt {
@@ -133,7 +133,7 @@ $hover-color: #0042ff;
 .ico-nav {
   display: inline-block;
   vertical-align: middle;
-  background-image: url(../../../public/images/nav/ico_nav.svg);
+  background-image: url('/assets/nav/ico_nav.svg');
 
   &-compare {
     width: 11px;
