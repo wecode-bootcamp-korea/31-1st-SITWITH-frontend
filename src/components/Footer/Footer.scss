@@ -1,0 +1,109 @@
+@mixin footer-font {
+  margin-top: 30px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 17px;
+
+  > li {
+    padding: 4px 0;
+  }
+}
+
+@mixin footer-title-font {
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footer {
+  min-width: 1000px;
+  bottom: 0;
+  height: 600px;
+  background-color: #141414;
+
+  .footer-banner {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
+    background-color: #141414;
+
+    .logo-img {
+      height: 35px;
+      filter: invert(100%);
+    }
+
+    .link-github {
+      opacity: 0.8;
+      transition: opacity 0.2s;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .footer-main {
+    display: flex;
+    padding: 0 100px;
+    color: white;
+
+    .inform {
+      width: 500px;
+
+      .inform-title {
+        @include footer-title-font;
+      }
+
+      .inform-main {
+        @include footer-font;
+      }
+    }
+
+    .footer-category {
+      width: 100%;
+
+      .title-list {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+
+        .products-title {
+          @include footer-title-font;
+
+          .products {
+            @include footer-font;
+
+            a {
+              color: #fff;
+              text-decoration: none;
+              > li {
+                padding: 4px 0;
+              }
+            }
+          }
+        }
+
+        .service-title {
+          @include footer-title-font;
+
+          .service {
+            @include footer-font;
+          }
+        }
+
+        .support-title {
+          @include footer-title-font;
+
+          .support {
+            @include footer-font;
+
+            li:first-child {
+              font-size: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

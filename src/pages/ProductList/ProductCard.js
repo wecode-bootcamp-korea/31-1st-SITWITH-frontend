@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProductCard.scss';
+import { API } from '../../config';
 
 const ProductCard = ({ productData }) => {
   const { name, price, colors, product_id } = productData;
@@ -17,7 +18,7 @@ const ProductCard = ({ productData }) => {
 
   const addToCart = event => {
     event.preventDefault();
-    fetch('http://10.58.0.27:8000/carts', {
+    fetch(API.carts, {
       method: 'POST',
       headers: {
         Authorization: localStorage.getItem('Authorization'),

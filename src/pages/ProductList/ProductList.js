@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import ProductCard from './ProductCard';
 import Pagination from './Pagination';
 import './ProductList.scss';
+import { API } from '../../config';
 
 const ProductList = () => {
   const [productsData, setProductsData] = useState([]);
@@ -18,7 +19,7 @@ const ProductList = () => {
 
   useEffect(() => {
     fetch(
-      `http://10.58.4.226:8000/products${
+      `${API.products}${
         location.search || `?offset=0&limit=${paginationLimit}`
       }`
     )

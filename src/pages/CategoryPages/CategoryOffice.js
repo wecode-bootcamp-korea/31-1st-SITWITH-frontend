@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../ProductList/ProductCard';
 import './CategoryOffice.scss';
+import { API } from '../../config';
 
 const CategoryOffice = () => {
   const [productData, setProductData] = useState([]);
@@ -15,7 +16,7 @@ const CategoryOffice = () => {
   );
 
   useEffect(() => {
-    fetch('http://10.58.4.226:8000/products')
+    fetch(API.products)
       .then(res => {
         return res.json();
       })
