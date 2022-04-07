@@ -18,22 +18,29 @@ const ProductCard = ({ productData }) => {
 
   const addToCart = event => {
     event.preventDefault();
-    fetch(API.carts, {
-      method: 'POST',
-      headers: {
-        Authorization: localStorage.getItem('Authorization'),
-      },
-      body: JSON.stringify({
-        color_id: productData.colors[0].id,
-        quantity: 1,
-      }),
-    });
     if (localStorage.getItem('Authorization') == null) {
       alert(
         '장바구니 등록은 로그인이 필요합니다.\n로그인 페이지로 이동합니다.'
       );
       navigate('/login');
-    } else alert('장바구니에 등록하였습니다.');
+    } else {
+      fetch(API.carts, {
+        method: 'POST',
+        headers: {
+          Authorization: localStorage.getItem('Authorization'),
+        },
+        body: JSON.stringify({
+          productcolor_id: productData.colors[0].id,
+          quantity: 1,
+        }),
+      }).then(res => {
+        if (res.status === 200) {
+          alert('장바구니 등록완료');
+        } else {
+          alert('에러 발생');
+        }
+      });
+    }
   };
 
   return (

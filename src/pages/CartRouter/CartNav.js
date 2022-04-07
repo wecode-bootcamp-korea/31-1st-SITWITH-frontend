@@ -12,12 +12,12 @@ const CartNav = ({ select }) => {
           </Link>
         </dt>
         <dd className={select === 'cart' ? 'selected' : ''}>
-          <Link to="/cart">
+          <Link to="/carts">
             <button>장바구니</button>
           </Link>
         </dd>
         <dd className={select === 'compare' ? 'selected' : ''}>
-          <Link to="/cart/compare">
+          <Link to="/carts/compare">
             <button>비교하기</button>
           </Link>
         </dd>

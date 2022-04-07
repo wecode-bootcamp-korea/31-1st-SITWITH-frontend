@@ -1,21 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Carousel from '../../components/Carousel/Carousel';
 // import Chair from './Chair';
 import ChairList from './ChairList';
 import './Main.scss';
 
 const Main = () => {
-  const [banner, setBanner] = useState([]);
-
-  useEffect(() => {
-    fetch('/data/mainBanner.json')
-      .then(res => res.json())
-      .then(res => setBanner(res));
-  });
   return (
     <main className="main">
       <section className="carousel-section">
-        <Carousel slides={banner} />
+        <Carousel />
       </section>
       <section className="product-section">
         <article className="section-inner">
