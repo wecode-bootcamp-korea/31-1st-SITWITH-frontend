@@ -35,7 +35,7 @@ const ProductList = () => {
     <div className="product-list-page">
       <div className="product-list-container">
         <div className="product-list-title-wrap">
-          <h1 className="product-list-title">모든제품</h1>
+          <h1 className="product-list-title">SW ALL</h1>
         </div>
 
         <div className="separate-border">

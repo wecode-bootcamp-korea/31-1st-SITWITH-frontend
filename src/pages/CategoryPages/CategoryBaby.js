@@ -29,7 +29,7 @@ const CategoryBaby = () => {
     <div className="product-list-page">
       <div className="product-list-container">
         <div className="product-list-title-wrap">
-          <h1 className="product-list-title">유아용의자</h1>
+          <h1 className="product-list-title">SW BABY</h1>
         </div>
         <div className="separate-border">
           <div />
