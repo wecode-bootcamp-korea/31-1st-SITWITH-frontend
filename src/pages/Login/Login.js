@@ -34,7 +34,7 @@ const Login = () => {
           } else if (res.message === 'Password does not match') {
             alert('비밀번호가 일치하지 않습니다.');
           } else if (res.token) {
-            localStorage.setItem('token', res.token);
+            localStorage.setItem('Authorization', res.token);
             navigate('/');
           }
         });
