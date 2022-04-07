@@ -118,6 +118,7 @@ const Cart = ({ setSelect }) => {
       -1
     ) {
       setCompareList(compareList => [...compareList, product]);
+      alert('비교하기에 추가되었습니다.');
     } else {
       alert('이미 비교하기에 있는 상품입니다.');
     }
