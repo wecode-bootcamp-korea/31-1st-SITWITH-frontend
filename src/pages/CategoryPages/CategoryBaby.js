@@ -4,13 +4,14 @@ import './CategoryBaby.scss';
 
 const CategoryBaby = () => {
   const [productData, setProductData] = useState([]);
+  const categoryId = 3;
 
   useEffect(() => {
     localStorage.setItem('pageNum', 1);
   }, []);
 
   useEffect(() => {
-    fetch('http://10.58.2.32:8000/products')
+    fetch('http://10.58.4.226:8000/products')
       .then(res => {
         return res.json();
       })
@@ -20,7 +21,7 @@ const CategoryBaby = () => {
   }, []);
 
   const babyChair = productData.filter(
-    category => category.category === BABY_CHAIR_CATEGORY_ID
+    category => category.category === categoryId
   );
 
   return (
@@ -29,11 +30,9 @@ const CategoryBaby = () => {
         <div className="product-list-title-wrap">
           <h1 className="product-list-title">유아용의자</h1>
         </div>
-
         <div className="separate-border">
           <div />
         </div>
-
         <div className="product-list-series-feature">
           <h3 className="series-feature-title">BABY CHAIRS</h3>
           <div className="series-feature-image-wrap">
@@ -44,7 +43,6 @@ const CategoryBaby = () => {
             />
           </div>
         </div>
-
         <div className="product-list">
           <div className="separate-border">
             <div />
@@ -71,5 +69,4 @@ const CategoryBaby = () => {
     </div>
   );
 };
-const BABY_CHAIR_CATEGORY_ID = 3;
 export default CategoryBaby;

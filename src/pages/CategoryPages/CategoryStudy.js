@@ -4,13 +4,14 @@ import './CategoryStudy.scss';
 
 const CategoryStudy = () => {
   const [productData, setProductData] = useState([]);
+  const categoryId = 2;
 
   useEffect(() => {
     localStorage.setItem('pageNum', 1);
   }, []);
 
   useEffect(() => {
-    fetch('http://10.58.2.32:8000/products')
+    fetch('http://10.58.4.226:8000/products')
       .then(res => {
         return res.json();
       })
@@ -20,7 +21,7 @@ const CategoryStudy = () => {
   }, []);
 
   const studyChair = productData.filter(
-    category => category.category === STUDY_CHAIR_CATEGORY_ID
+    category => category.category === categoryId
   );
 
   return (
@@ -29,11 +30,9 @@ const CategoryStudy = () => {
         <div className="product-list-title-wrap">
           <h1 className="product-list-title">학생용의자</h1>
         </div>
-
         <div className="separate-border">
           <div />
         </div>
-
         <div className="product-list-series-feature">
           <h3 className="series-feature-title">STUDY CHAIRS</h3>
           <div className="series-feature-image-wrap">
@@ -70,6 +69,5 @@ const CategoryStudy = () => {
     </div>
   );
 };
-const STUDY_CHAIR_CATEGORY_ID = 2;
 
 export default CategoryStudy;

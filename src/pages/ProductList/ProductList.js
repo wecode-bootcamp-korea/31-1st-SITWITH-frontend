@@ -8,17 +8,18 @@ const ProductList = () => {
   const [productsData, setProductsData] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
+  const paginationLimit = 6;
 
   const updateOffset = buttonIndex => {
-    const offset = buttonIndex * PAGINATION_LIMIT;
-    const queryString = `?offset=${offset}&limit=${PAGINATION_LIMIT}`;
+    const offset = buttonIndex * paginationLimit;
+    const queryString = `?offset=${offset}&limit=${paginationLimit}`;
     navigate(queryString);
   };
 
   useEffect(() => {
     fetch(
-      `http://10.58.2.32:8000/products${
-        location.search || `?offset=0&limit=${PAGINATION_LIMIT}`
+      `http://10.58.4.226:8000/products${
+        location.search || `?offset=0&limit=${paginationLimit}`
       }`
     )
       .then(res => {
@@ -33,7 +34,7 @@ const ProductList = () => {
     <div className="product-list-page">
       <div className="product-list-container">
         <div className="product-list-title-wrap">
-          <h1 className="product-list-title">Title</h1>
+          <h1 className="product-list-title">모든제품</h1>
         </div>
 
         <div className="separate-border">
@@ -87,6 +88,5 @@ const ProductList = () => {
     </div>
   );
 };
-let PAGINATION_LIMIT = 6;
 
 export default ProductList;
