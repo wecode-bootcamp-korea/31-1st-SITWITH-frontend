@@ -16,9 +16,9 @@ const ProductMenu = () => {
 };
 
 const MENU_DATA = [
-  { title: '모든 제품보기', link: '/ProductList' },
-  { title: '사무용 의자', link: '/ProductList/category/office' },
-  { title: '학생용 의자', link: '/ProductList/category/study' },
+  { title: '모든 제품보기', link: '/Products' },
+  { title: '사무용 의자', link: '/Products/category/office' },
+  { title: '학생용 의자', link: '/Product/category/study' },
   { title: '유아용 의자', link: '/ProductList/category/baby' },
   { title: '중역용 의자', link: '/ProductList/category/executive' },
 ];

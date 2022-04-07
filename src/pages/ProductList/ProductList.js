@@ -69,7 +69,7 @@ const ProductList = () => {
               {productsData[0] ? (
                 productsData.map(productData => (
                   <ProductCard
-                    key={productData.name}
+                    key={productData.product_id}
                     productData={productData}
                   />
                 ))
