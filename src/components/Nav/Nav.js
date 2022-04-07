@@ -18,7 +18,7 @@ const Nav = () => {
         </div>
         <div className="right-area">
           <div className="product-menu">
-            <div className="menu-title">PRODUCTS</div>
+            <div className="menu-title">PRODUCT</div>
             <ProductMenu />
           </div>
         </div>
