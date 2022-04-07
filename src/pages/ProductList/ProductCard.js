@@ -28,6 +28,7 @@ const ProductCard = ({ productData }) => {
         quantity: 1,
       }),
     });
+    alert('장바구니에 등록하였습니다.');
   };
 
   return (
