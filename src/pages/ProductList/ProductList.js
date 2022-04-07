@@ -31,8 +31,6 @@ const ProductList = () => {
       });
   }, [location.search]);
 
-  console.log(productsData);
-
   return (
     <div className="product-list-page">
       <div className="product-list-container">
