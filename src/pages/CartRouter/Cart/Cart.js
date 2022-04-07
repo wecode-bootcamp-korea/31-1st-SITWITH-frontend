@@ -9,14 +9,6 @@ const Cart = ({ setSelect }) => {
   const [checkList, setCheckList] = useState([]);
   const [total, setTotal] = useState(0);
   const [compareList, setCompareList] = useState([]);
-  const cols = ['50px', '', '100px', '90px', '80px', '100px', '100px'];
-  const thNames = ['제품정보', '색상', '판매가격', '수량', '주문금액', ''];
-  const buttons = [
-    { link: '/', className: '', content: '계속쇼핑하기' },
-    { link: '', className: '', content: '선택상품 삭제하기' },
-    { link: '', className: '', content: '선택상품 주문하기' },
-    { link: '', className: 'order-all', content: '전체상품 주문하기' },
-  ];
 
   const orderPrice = data => {
     return data.result.map(
@@ -155,7 +147,7 @@ const Cart = ({ setSelect }) => {
         <form className="cart-form">
           <table className="cart-table">
             <colgroup>
-              {cols.map((col, idx) => (
+              {Cols_Width.map((col, idx) => (
                 <col key={idx} width={col} />
               ))}
             </colgroup>
@@ -168,7 +160,7 @@ const Cart = ({ setSelect }) => {
                     onChange={checkAllHandler}
                   />
                 </th>
-                {thNames.map((name, idx) => (
+                {Th_Names.map((name, idx) => (
                   <th key={idx} className="tct">
                     {name}
                   </th>
@@ -212,7 +204,7 @@ const Cart = ({ setSelect }) => {
       </div>
       <div className="button-list">
         <ul>
-          {buttons.map((button, idx) => (
+          {Buttons_Info.map((button, idx) => (
             <Link key={idx} to={button.link}>
               <li>
                 <button className={button.className}>{button.content}</button>
@@ -226,3 +218,12 @@ const Cart = ({ setSelect }) => {
 };
 
 export default Cart;
+
+const Cols_Width = ['50px', '', '100px', '90px', '80px', '100px', '100px'];
+const Th_Names = ['제품정보', '색상', '판매가격', '수량', '주문금액', ''];
+const Buttons_Info = [
+  { link: '/', className: '', content: '계속쇼핑하기' },
+  { link: '', className: '', content: '선택상품 삭제하기' },
+  { link: '', className: '', content: '선택상품 주문하기' },
+  { link: '', className: 'order-all', content: '전체상품 주문하기' },
+];
