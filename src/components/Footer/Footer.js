@@ -77,10 +77,10 @@ const Footer = () => {
 export default Footer;
 
 const PRODUCT_DATA = [
-  { title: '사무용 의자', link: '/products/category/office' },
-  { title: '학생용 의자', link: '/products/category/study' },
-  { title: '유아용 의자', link: '/products/category/baby' },
-  { title: '중역용 의자', link: '/products/category/executive' },
+  { title: '사무용 의자', link: '/products/office' },
+  { title: '학생용 의자', link: '/products/study' },
+  { title: '유아용 의자', link: '/products/baby' },
+  { title: '중역용 의자', link: '/products/executive' },
 ];
 const SERVICE_DATA = [
   { id: 1, list: 'FAQ' },
