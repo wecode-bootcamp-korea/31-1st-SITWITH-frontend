@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Join.scss';
+import { API } from '../../config';
 
 const Join = () => {
   const [joinValue, setJoinValue] = useState({
@@ -32,7 +33,7 @@ const Join = () => {
     } else if (!validEmail) {
       alert('[ 이메일 ] 은(는) 공백없이 @/. 을 조합하여 입력해야 합니다');
     } else {
-      fetch('http://10.58.0.27:8000/users/signup', {
+      fetch(`${API.join}`, {
         method: 'POST',
         body: JSON.stringify({
           username: id,
