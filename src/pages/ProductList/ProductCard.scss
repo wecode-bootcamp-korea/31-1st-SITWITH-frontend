@@ -1,0 +1,72 @@
+@import '../../styles/variables.scss';
+
+.product-card {
+  margin: 5px;
+  border: $separate-border;
+  position: relative;
+  width: 32%;
+  height: 335px;
+
+  .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .product-name {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5);
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  }
+
+  .product-price {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    font-weight: 700;
+    color: red;
+  }
+
+  .product-hover-box {
+    display: none;
+  }
+}
+
+.product-card:hover .product-hover-box {
+  @include flex(space-between, center);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #000000b3;
+  padding: 20px 30px;
+
+  .btn {
+    cursor: pointer;
+    color: white;
+    border-radius: 3px;
+    width: 45%;
+    height: 30px;
+    box-shadow: 1px 1px 1px;
+    transition: 0.01s ease-in-out 0s;
+  }
+
+  .btn:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+
+  .btn-detail {
+    background-color: red;
+  }
+  .btn-cart {
+    background-color: $gray;
+  }
+  .btn-compare {
+    background-color: $gray;
+  }
+}
