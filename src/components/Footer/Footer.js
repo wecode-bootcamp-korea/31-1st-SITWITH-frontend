@@ -14,7 +14,7 @@ const Footer = () => {
           className="link-github"
         >
           <img
-            clssName="github-img"
+            className="github"
             alt="github"
             src="/images/Footer/ico_github.png"
           />
