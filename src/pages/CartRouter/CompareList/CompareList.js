@@ -101,18 +101,11 @@ const CompareList = ({ setSelect }) => {
       <h2>제품 비교하기</h2>
       <div className="compare-main">
         <ul className="compare-column">
-          <li className="compare-column-product">
-            <h2>Product</h2>
-          </li>
-          <li>
-            <h2>가격</h2>
-          </li>
-          <li>
-            <h2>color</h2>
-          </li>
-          <li>
-            <h2>용도</h2>
-          </li>
+          {Compare_Columns.map((column, idx) => (
+            <li key={idx} className={column.className}>
+              {column.content}
+            </li>
+          ))}
         </ul>
 
         <div className="compare-slide">
@@ -140,3 +133,10 @@ const CompareList = ({ setSelect }) => {
 };
 
 export default CompareList;
+
+const Compare_Columns = [
+  { className: 'compare-column-product', content: 'Product' },
+  { className: '', content: '가격' },
+  { className: '', content: 'Color' },
+  { className: '', content: '용도' },
+];
