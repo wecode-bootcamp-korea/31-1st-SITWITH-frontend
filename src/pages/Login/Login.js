@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API } from '../../config';
 import './Login.scss';
 
 const Login = () => {
@@ -19,7 +20,7 @@ const Login = () => {
     } else if (emptyPwInput) {
       alert('[ 비밀번호 ] 는(은) 필수항목입니다.');
     } else if (!emptyLoginInput) {
-      fetch('http://10.58.6.159:8000/users/signin', {
+      fetch(`${API.login}`, {
         method: 'POST',
         body: JSON.stringify({
           username: id,
@@ -33,8 +34,8 @@ const Login = () => {
           } else if (res.message === 'Password does not match') {
             alert('비밀번호가 일치하지 않습니다.');
           } else if (res.token) {
-            localStorage.setItem('token', res.token);
-            navigate('/Main/Main');
+            localStorage.setItem('Authorization', res.token);
+            navigate('/');
           }
         });
     }
