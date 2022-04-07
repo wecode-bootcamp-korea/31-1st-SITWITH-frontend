@@ -79,8 +79,9 @@ const Login = () => {
                     />
                   </td>
                 </tr>
-                <tr>
-                  <td>
+                <tr className="button-box">
+                  <th />
+                  <td className="button-title">
                     <button
                       type="button"
                       onClick={onLogin}
