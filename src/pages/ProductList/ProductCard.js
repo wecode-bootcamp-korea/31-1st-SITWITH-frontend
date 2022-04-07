@@ -28,7 +28,12 @@ const ProductCard = ({ productData }) => {
         quantity: 1,
       }),
     });
-    alert('장바구니에 등록하였습니다.');
+    if (localStorage.getItem('Authorization') == null) {
+      alert(
+        '장바구니 등록은 로그인이 필요합니다.\n로그인 페이지로 이동합니다.'
+      );
+      navigate('/login');
+    } else alert('장바구니에 등록하였습니다.');
   };
 
   return (

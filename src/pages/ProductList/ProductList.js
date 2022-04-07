@@ -31,6 +31,8 @@ const ProductList = () => {
       });
   }, [location.search]);
 
+  console.log(productsData);
+
   return (
     <div className="product-list-page">
       <div className="product-list-container">
@@ -69,7 +71,7 @@ const ProductList = () => {
               {productsData[0] ? (
                 productsData.map(productData => (
                   <ProductCard
-                    key={productData.name}
+                    key={productData.product_id}
                     productData={productData}
                   />
                 ))
