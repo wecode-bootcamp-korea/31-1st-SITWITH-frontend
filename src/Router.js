@@ -6,22 +6,20 @@ import Main from './pages/Main/Main';
 import CartRouter from './pages/CartRouter/CartRouter';
 import Login from './pages/Login/Login';
 import Join from './pages/Join/Join';
-import ProductList from './pages/ProductList/ProductList';
-
+import ProductsRouter from './pages/ProductList/ProductsRouter';
 const Router = () => {
   return (
     <BrowserRouter>
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/cart/*" element={<CartRouter />} />
+        <Route path="/carts/*" element={<CartRouter />} />
         <Route path="/login" element={<Login />} />
         <Route path="/join" element={<Join />} />
-        <Route path="/productList" element={<ProductList />} />
+        <Route path="/products/*" element={<ProductsRouter />} />
       </Routes>
       <Footer />
     </BrowserRouter>
   );
 };
-
 export default Router;

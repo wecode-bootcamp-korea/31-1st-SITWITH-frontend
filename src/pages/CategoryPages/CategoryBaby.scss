@@ -14,7 +14,6 @@
 
 .product-list-page {
   @include flex;
-  flex-direction: column;
 
   .product-list-container {
     width: 70%;
@@ -52,6 +51,7 @@
     .product-list {
       @include flexColumnCenter;
       margin-top: 60px;
+      margin-bottom: 100px;
 
       .product-list-btns {
         align-self: flex-end;
@@ -93,7 +93,6 @@
         .product-list-wrap {
           display: flex;
           flex-wrap: wrap;
-          margin: 0px;
           width: 100%;
 
           .product-list-loading-container {
