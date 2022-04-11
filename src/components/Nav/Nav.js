@@ -13,7 +13,11 @@ const Nav = () => {
       <div className="nav-bottom">
         <div className="left-area">
           <Link className="link-logo" to="/">
-            <img className="img-logo" src="images/nav/logo.svg" alt="SITWITH" />
+            <img
+              className="img-logo"
+              src="/images/nav/logo.svg"
+              alt="SITWITH"
+            />
           </Link>
         </div>
         <div className="right-area">

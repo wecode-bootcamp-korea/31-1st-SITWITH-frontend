@@ -14,13 +14,13 @@ const Product = () => {
 
   const addToCart = event => {
     event.preventDefault();
-    if (localStorage.getItem('Authorization')) {
+    if (localStorage.getItem('Authorization') === null) {
       alert(
         '장바구니 등록은 로그인이 필요합니다.\n로그인 페이지로 이동합니다.'
       );
       navigate('/login');
     } else {
-      fetch('http://10.58.4.226:8000/carts', {
+      fetch(`${API.carts}`, {
         method: 'POST',
         headers: {
           Authorization: localStorage.getItem('Authorization'),
@@ -29,6 +29,10 @@ const Product = () => {
           productcolor_id: product[colorIndex].colors.id,
           quantity: counter,
         }),
+      }).then(res => {
+        if (res.status === 200) {
+          alert('장바구니 등록');
+        }
       });
     }
   };
@@ -50,13 +54,14 @@ const Product = () => {
       setCounter(count => count - 1);
     }
   };
-  console.log(product);
+
+  if (!product) return null;
 
   return (
     <div className="product-wrap">
       {product.length > 0 && (
         <Test
-          product={product.result}
+          product={product}
           colorIndex={colorIndex}
           imageIndex={imageIndex}
           setColorIndex={setColorIndex}

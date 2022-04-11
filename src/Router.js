@@ -14,16 +14,7 @@ const Router = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route
-          path="/carts/*"
-          element={
-            localStorage.getItem('Authorization') !== null ? (
-              <CartRouter />
-            ) : (
-              <Login />
-            )
-          }
-        />
+        <Route path="/carts/*" element={<CartRouter />} />
         <Route path="/login" element={<Login />} />
         <Route path="/join" element={<Join />} />
         <Route path="/products/*" element={<ProductsRouter />} />

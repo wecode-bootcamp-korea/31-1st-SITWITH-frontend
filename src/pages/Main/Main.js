@@ -13,8 +13,8 @@ const Main = () => {
       <section className="product-section">
         <article className="section-inner">
           <div className="section-header">
-            <h2 className="section-title">TASK CHAIR</h2>
-            <a className="link-more" href="#;">
+            <h2 className="section-title">OFFICE CHAIR</h2>
+            <a className="link-more" href="/products/office">
               ALL PRODUCTS
             </a>
           </div>
@@ -26,8 +26,8 @@ const Main = () => {
       <section className="product-section">
         <article className="section-inner">
           <div className="section-header">
-            <h2 className="section-title">KIDS CHAIR</h2>
-            <a href="#;" className="link-more">
+            <h2 className="section-title">BABY CHAIR</h2>
+            <a href="/products/baby" className="link-more">
               ALL PRODUCTS
             </a>
           </div>

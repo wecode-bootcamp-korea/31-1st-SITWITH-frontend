@@ -18,7 +18,7 @@ const ProductCard = ({ productData }) => {
 
   const addToCart = event => {
     event.preventDefault();
-    if (localStorage.getItem('Authorization') == null) {
+    if (localStorage.getItem('Authorization') === null) {
       alert(
         '장바구니 등록은 로그인이 필요합니다.\n로그인 페이지로 이동합니다.'
       );

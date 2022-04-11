@@ -28,7 +28,7 @@ const CompareList = ({ setSelect }) => {
         { cart_id: randomNums[i], product_name: 'none' },
       ]);
     }
-  } else if (compareList.length === 8) {
+  } else if (compareList.length !== 4) {
     let cnt = 0;
     compareList.forEach(compare => {
       if (compare.product_name === 'none') {

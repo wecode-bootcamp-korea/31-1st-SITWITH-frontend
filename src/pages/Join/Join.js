@@ -16,17 +16,28 @@ const Join = () => {
 
   const onJoin = () => {
     const { id, pw, email } = joinValue;
-    const validId = id !== '' && 2 < id.length < 16;
-    const validPw = pw !== '' && 7 < pw.length < 16;
     const validEmail = email !== '' && email.includes('@', '.');
+
+    function validId(asValue) {
+      let regExp = /^[a-zA-Z](?=.*[a-zA-Z])(?=.*[0-9]).{2,14}$/;
+
+      return regExp.test(asValue);
+    }
+
+    function validPw(asValue) {
+      let regExp =
+        /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
+
+      return regExp.test(asValue);
+    }
 
     if (!checked) {
       alert('이용약관은 필수 동의 사항입니다.');
-    } else if (!validId) {
+    } else if (!validId(id)) {
       alert(
         '[ 아이디 ] 는(은) 공백없는 3~15자의 소문자와 숫자를 조합하여 입력해주세요.'
       );
-    } else if (!validPw) {
+    } else if (!validPw(pw)) {
       alert(
         '[ 비밀번호 ] 는(은) 공백없는 8~15자의 영문/특수문자/숫자를 조합하여 입력해야 합니다.'
       );
