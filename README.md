@@ -8,7 +8,7 @@
 
 ### Frontend
 
-- React.js (v18.0)
+- React.js
 - Sass
 - JavaScript(ES6)
 - HTML5/CSS3
