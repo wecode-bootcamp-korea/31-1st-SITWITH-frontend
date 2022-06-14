@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://13.125.108.50:8000';
+export const BASE_URL = 'http://3.39.6.46:8000';
 export const API = {
   login: `${BASE_URL}/users/signin`,
   join: `${BASE_URL}/users/signup`,
